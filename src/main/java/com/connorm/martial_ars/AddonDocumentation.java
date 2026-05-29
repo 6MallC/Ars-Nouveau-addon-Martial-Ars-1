@@ -1,5 +1,4 @@
-package com.example.an_addon;
-import com.example.an_addon.datagen.Setup;
+package com.connorm.martial_ars;
 import com.hollingsworth.arsnouveau.api.documentation.DocCategory;
 import com.hollingsworth.arsnouveau.api.documentation.ReloadDocumentationEvent;
 import com.hollingsworth.arsnouveau.api.documentation.builder.DocEntryBuilder;
@@ -23,9 +22,9 @@ import net.neoforged.fml.common.EventBusSubscriber;
 
 import static com.hollingsworth.arsnouveau.api.registry.DocumentationRegistry.*;
 
-@EventBusSubscriber(modid = ExampleANAddon.MODID)
+@EventBusSubscriber(modid = MartialArs.MODID)
 public class AddonDocumentation {
-    public static final String root = ExampleANAddon.MODID;
+    public static final String root = MartialArs.MODID;
     @SubscribeEvent
     public static void addPages(ReloadDocumentationEvent.AddEntries event) {
         for (AbstractSpellPart glyph : ArsNouveauRegistry.registeredSpells) {
@@ -64,7 +63,7 @@ public class AddonDocumentation {
 
     static class EntryBuilder extends DocEntryBuilder {
         public static EntryBuilder of(DocCategory category, String name) {
-            return of(category, name, ExampleANAddon.prefix(name));
+            return of(category, name, MartialArs.prefix(name));
         }
 
         public static EntryBuilder of(DocCategory category, String name, ResourceLocation entryId) {

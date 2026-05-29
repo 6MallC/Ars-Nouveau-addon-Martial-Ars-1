@@ -1,7 +1,10 @@
-package com.example.an_addon;
+package com.connorm.martial_ars;
 
-import com.example.an_addon.registry.ModRegistry;
+import com.connorm.martial_ars.registry.ModRegistry;
+import com.hollingsworth.arsnouveau.common.items.ModItem;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -9,18 +12,20 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleANAddon.MODID)
-public class ExampleANAddon {
-    public static final String MODID = "an_addon";
+@Mod(MartialArs.MODID)
+public class MartialArs {
+    public static final String MODID = "martial_ars";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleANAddon(IEventBus modEventBus, ModContainer modContainer) {
+    public MartialArs(IEventBus modEventBus, ModContainer modContainer) {
         ModRegistry.registerRegistries(modEventBus);
         ArsNouveauRegistry.registerGlyphs();
         modEventBus.addListener(this::setup);
@@ -40,11 +45,21 @@ public class ExampleANAddon {
 
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+
+        // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModRegistry.SourceIngot);
+            event.accept(ModRegistry.SourceMatrix);
+        }
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.an_addon;
+package com.connorm.martial_ars;
 
 
 import net.neoforged.bus.api.SubscribeEvent;

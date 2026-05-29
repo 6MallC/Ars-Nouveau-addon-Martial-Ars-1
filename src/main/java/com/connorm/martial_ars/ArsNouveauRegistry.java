@@ -1,12 +1,10 @@
-package com.example.an_addon;
+package com.connorm.martial_ars;
 
-import com.example.an_addon.glyphs.TestEffect;
-import com.example.an_addon.registry.ModRegistry;
+import com.connorm.martial_ars.glyphs.TestEffect;
+import com.connorm.martial_ars.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.api.registry.GlyphRegistry;
 import com.hollingsworth.arsnouveau.api.registry.SpellSoundRegistry;
-import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
-import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
 import java.util.List;

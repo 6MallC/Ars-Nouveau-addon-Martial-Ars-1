@@ -14,11 +14,11 @@ license="GNU Lesser General Public License v3.0"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="an_addon" #mandatory
+modId="martial_ars" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 version="${file.jarVersion}" #mandatory
  # A display name for the mod
-displayName="Example Ars Nouveau Addon" #mandatory
+displayName="Martial Ars" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 #updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -28,7 +28,7 @@ displayName="Example Ars Nouveau Addon" #mandatory
 # A text field displayed in the mod UI
 credits="A bunch of Starbuncles" #optional
 # A text field displayed in the mod UI
-authors="Alexthw & BaileyHoll for base example, whoever forgot to change this for the rest." #optional
+authors="Alexthw & BaileyHoll for base example, THE GODKING JARVA for updating the base" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Starbuncles will conquer the world.
