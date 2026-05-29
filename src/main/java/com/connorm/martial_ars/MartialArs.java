@@ -59,6 +59,7 @@ public class MartialArs {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModRegistry.SourceIngot);
             event.accept(ModRegistry.SourceMatrix);
+            event.accept(ModRegistry.sourceingot_block);
         }
     }
 
