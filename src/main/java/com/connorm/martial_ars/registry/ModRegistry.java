@@ -2,12 +2,15 @@ package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
+import com.hollingsworth.arsnouveau.common.items.ModItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -33,6 +36,9 @@ public class ModRegistry {
         ITEMS.register(bus);
         SOUNDS.register(bus);
     }
+public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+    ModItem.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+}
 
     public static final DeferredHolder<Item, ? extends Item> EXAMPLE;
 
