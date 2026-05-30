@@ -1,20 +1,13 @@
 {
-  "type": "ars_nouveau:enchanting_apparatus",
-  "keepNbtOfReagent": false,
-  "pedestalItems": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
     {
-      "tag": "c:gems/source"
-    },
-    {
-      "tag": "c:gems/source"
+      "item": "martial_ars:sourceingot_block"
     }
-  ],
-  "reagent": {
-    "item": "minecraft:iron_ingot"
-  },
-  "result": {
-    "count": 1,
-    "id": "martial_ars:source_ingot"
-  },
-  "sourceCost": 100
+    ],
+    "result": {
+  "count": 9,
+  "id": "martial_ars:source_ingot"
+  }
 }

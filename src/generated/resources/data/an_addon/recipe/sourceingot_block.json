@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "martial_ars:sourceingot_block"
+  }
+}

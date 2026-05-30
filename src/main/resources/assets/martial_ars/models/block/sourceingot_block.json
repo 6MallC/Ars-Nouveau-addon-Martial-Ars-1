@@ -1,5 +1,5 @@
 {
-  "parent": "minecraftblock/cube_all",
+  "parent": "minecraft:block/cube_all",
   "textures": {
     "all": "martial_ars:block/sourceingot_block"
   }

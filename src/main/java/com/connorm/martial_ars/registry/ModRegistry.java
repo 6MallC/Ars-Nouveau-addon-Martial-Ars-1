@@ -2,7 +2,6 @@ package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
-import com.hollingsworth.arsnouveau.common.items.ModItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -47,6 +46,7 @@ public class ModRegistry {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         SOUNDS.register(bus);
+
     }
 public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
     ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

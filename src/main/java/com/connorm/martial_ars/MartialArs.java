@@ -1,5 +1,6 @@
 package com.connorm.martial_ars;
 
+import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.common.items.ModItem;
 import net.minecraft.resources.ResourceLocation;
@@ -9,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.IModBusEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -31,7 +33,11 @@ public class MartialArs {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         NeoForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
+        ModRegistry.registerRegistries(modEventBus);
     }
+
 
     public static ResourceLocation prefix(String path) {
         return ResourceLocation.fromNamespaceAndPath(MODID, path);
@@ -53,14 +59,6 @@ public class MartialArs {
         LOGGER.info("HELLO from server starting");
     }
 
-
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModRegistry.SourceIngot);
-            event.accept(ModRegistry.SourceMatrix);
-            event.accept(ModRegistry.sourceingot_block);
-        }
-    }
-
 }
+
+
