@@ -3,7 +3,8 @@
 	"an_addon.glyph_name.glyph_test": "Test",
 
 	"item.an_addon.star_hat": "Example hat",
-  "item.martial_ars.source_ingot": "Magenesium",
+  "item.martial_ars.source_ingot": "Magenesium Ingot",
   "item.martial_ars.source_matrix": "Source Matrix",
-  "block.martial_ars.sourceingot_block": "Block of Magenesium"
+  "block.martial_ars.sourceingot_block": "Block of Magenesium",
+  "creativetab.martial_ars.main": "Martial Ars"
 }

@@ -28,7 +28,6 @@ public class MartialArs {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public MartialArs(IEventBus modEventBus, ModContainer modContainer) {
-        ModRegistry.registerRegistries(modEventBus);
         ArsNouveauRegistry.registerGlyphs();
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);

@@ -26,9 +26,9 @@ displayName="Martial Ars" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="A bunch of Starbuncles" #optional
+credits="Connor M aka YeetMojo aka Mojobuncle- basically everything up to this point" #optional
 # A text field displayed in the mod UI
-authors="Alexthw & BaileyHoll for base example, THE GODKING JARVA for updating the base" #optional
+authors="Alexthw & BaileyHoll for base example, THE GODKING JARVA for updating the base. Cotyn_ for helping me with those darn syntax errors. and every single regular- human or buncle- in the Ars Nov discord" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Starbuncles will conquer the world.

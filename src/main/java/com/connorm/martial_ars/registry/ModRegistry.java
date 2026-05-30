@@ -39,6 +39,7 @@ public class ModRegistry {
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(1f)
+                    .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)));
 
 
