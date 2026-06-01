@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -18,6 +20,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 import static com.connorm.martial_ars.MartialArs.MODID;
@@ -31,12 +34,20 @@ public class ModRegistry {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(SOUND_EVENT, MODID);
 
     // ITEMS
-    public static final DeferredItem<Item> SourceIngot = (DeferredItem<Item>) ITEMS.register("source_ingot",
-            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<? extends Item> SourceIngot = (DeferredItem<? extends Item>) ITEMS.register("source_ingot",
+            () -> new Item(new Item.Properties()){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.martial_ars.source_ingot.tooltip"));
+                    super.appendHoverText(stack,context,tooltipComponents,tooltipFlag);
+                }
+            });
     public static final DeferredItem<Item> SourceMatrix = (DeferredItem<Item>) ITEMS.register("source_matrix",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<MushroomWandItem> MushroomWand = (DeferredItem<MushroomWandItem>) ITEMS.register("mushroom_wand",
             () -> new MushroomWandItem(new Item.Properties().stacksTo(1)));
+public static final DeferredItem<Item> EnchantersSpear = (DeferredItem<Item>) ITEMS.register("enchanters_spear",
+           () -> new Item(new Item.Properties()));
 
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
