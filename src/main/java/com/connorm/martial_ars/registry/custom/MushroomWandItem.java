@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.registry.custom;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -40,7 +41,12 @@ if (CONVERSION_MAP.containsKey(clickedBlock)) {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        if (Screen.hasShiftDown()){
+            tooltipComponents.add(Component.translatable("tooltip.martial_ars.mushroom_wand.shift"));
+        } else {
         tooltipComponents.add(Component.translatable("tooltip.martial_ars.mushroom_wand.tooltip"));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+
+        }
     }
 }

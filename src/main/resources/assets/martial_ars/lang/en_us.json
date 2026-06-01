@@ -8,5 +8,6 @@
   "block.martial_ars.sourceingot_block": "Block of Magenesium",
   "item.martial_ars.mushroom_wand": "Mushroom Wand",
   "creativetab.martial_ars.main": "Martial Ars",
-  "tooltip.martial_ars.mushroom_wand.tooltip": "Turns grass into Mycelium. Made for a really fungi. Unfortunately there isn't mushroom for the list of errors you have helped me fix. So I will have to spore you the details."
+  "tooltip.martial_ars.mushroom_wand.tooltip": "Turns grass into Mycelium.",
+  "tooltip.martial_ars.mushroom_wand.shift": "Made for a really fungi. Unfortunately there isn't mushroom for the list of errors you have helped me fix. So I will have to spore you the details."
 }
