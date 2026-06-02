@@ -1,7 +1,7 @@
 package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
-import com.connorm.martial_ars.registry.custom.MushroomWandItem;
+import com.connorm.martial_ars.item.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

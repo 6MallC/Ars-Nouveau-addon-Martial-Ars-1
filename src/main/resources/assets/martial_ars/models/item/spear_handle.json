@@ -1,0 +1,85 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "spear_handle",
+		"particle": "spear_handle"
+	},
+	"elements": [
+		{
+			"from": [-2, 0, 7],
+			"to": [26, 2, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [10, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"east": {"uv": [0, 4, 1, 5], "texture": "#1"},
+				"south": {"uv": [0, 1, 14, 2], "texture": "#1"},
+				"west": {"uv": [1, 4, 2, 5], "texture": "#1"},
+				"up": {"uv": [14, 3, 0, 2], "texture": "#1"},
+				"down": {"uv": [14, 3, 0, 4], "texture": "#1"}
+			}
+		},
+		{
+			"from": [26, 0, 7],
+			"to": [27, 1, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [25.5, -0.5, 7]},
+			"faces": {
+				"north": {"uv": [2, 4, 2.5, 4.5], "texture": "#1"},
+				"east": {"uv": [2.5, 4, 3, 4.5], "texture": "#1"},
+				"south": {"uv": [3, 4, 3.5, 4.5], "texture": "#1"},
+				"west": {"uv": [3.5, 4, 4, 4.5], "texture": "#1"},
+				"up": {"uv": [4.5, 4.5, 4, 4], "texture": "#1"},
+				"down": {"uv": [2.5, 4.5, 2, 5], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [109, -90, 9],
+			"translation": [0, 0.25, 8.25]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [101, 89, 9],
+			"translation": [0, 0.25, 8.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [38, -94, -5],
+			"translation": [1, 5.5, 4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-97, 83, 145],
+			"translation": [3.25, 5, 3.25]
+		},
+		"ground": {
+			"rotation": [0, 12, -90],
+			"translation": [7.25, 13, 1]
+		},
+		"gui": {
+			"rotation": [-180, -180, 63],
+			"translation": [6, -0.75, 93]
+		},
+		"head": {
+			"rotation": [32, 0, 0],
+			"translation": [-2, 7.75, 4]
+		},
+		"fixed": {
+			"rotation": [-1, 1, -66],
+			"translation": [6.75, 2.5, 0]
+		},
+		"on_shelf": {
+			"rotation": [-180, -3, 90],
+			"translation": [-4, 4.5, -1.75],
+			"scale": [0.66, 0.82, 0.66]
+		}
+	},
+	"groups": [
+		{
+			"name": "handle",
+			"origin": [25.5, -0.5, 7],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

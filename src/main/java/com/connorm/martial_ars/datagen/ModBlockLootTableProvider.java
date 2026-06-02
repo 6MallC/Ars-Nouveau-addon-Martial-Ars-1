@@ -20,7 +20,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-
+dropSelf(ModRegistry.sourceingot_block.get());
     }
 
     @Override
