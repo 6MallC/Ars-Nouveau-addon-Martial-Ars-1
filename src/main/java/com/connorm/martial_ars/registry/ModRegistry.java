@@ -1,7 +1,7 @@
 package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
-import com.connorm.martial_ars.item.custom.MushroomWandItem;
+import com.connorm.martial_ars.registry.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -46,9 +46,10 @@ public class ModRegistry {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<MushroomWandItem> MushroomWand = (DeferredItem<MushroomWandItem>) ITEMS.register("mushroom_wand",
             () -> new MushroomWandItem(new Item.Properties().stacksTo(1)));
-        public static final DeferredItem<Item> EnchantersSpear = (DeferredItem<Item>) ITEMS.register("enchanters_spear",
-           () -> new Item(new Item.Properties().stacksTo(1)));
-
+    public static final DeferredItem<Item> EnchantersSpear = (DeferredItem<Item>) ITEMS.register("enchanters_spear",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> SpearShaft = (DeferredItem<Item>) ITEMS.register("spear_shaft",
+            () -> new Item(new Item.Properties().stacksTo(8)));
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()

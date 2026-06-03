@@ -11,5 +11,6 @@
   "tooltip.martial_ars.mushroom_wand.tooltip": "Turns grass into Mycelium.",
   "tooltip.martial_ars.mushroom_wand.shift": "Made for a really fungi. Unfortunately there isn't mushroom for the list of errors you have helped me fix. So I will have to spore you the details.",
   "tooltip.martial_ars.source_ingot.tooltip": "Made from using source to force Iron to resonate with the trace amounts of Magenisium already present in the ingot",
-  "item.martial_ars.enchanters_spear": "Enchanter's Spear"
+  "item.martial_ars.enchanters_spear": "Enchanter's Spear",
+  "item.martial_ars.spear_shaft": "Enchanter's Spear Handle"
 }

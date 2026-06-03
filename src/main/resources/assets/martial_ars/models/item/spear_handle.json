@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "spear_handle",
-		"particle": "spear_handle"
+		"1": "martial_ars:item/spear_handle",
+		"particle": "martial_ars:item/spear_handle"
 	},
 	"elements": [
 		{
