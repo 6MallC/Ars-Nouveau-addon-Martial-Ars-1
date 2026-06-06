@@ -2,13 +2,12 @@ package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
 import com.connorm.martial_ars.glyphs.TestEffect;
+import com.connorm.martial_ars.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.EnchantingApparatusRecipe;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.GlyphRecipe;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.ImbuementRecipe;
-import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeBuilder;
-import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeProvider;
-import com.hollingsworth.arsnouveau.common.datagen.GlyphRecipeProvider;
-import com.hollingsworth.arsnouveau.common.datagen.ImbuementRecipeProvider;
+import com.hollingsworth.arsnouveau.common.datagen.*;
+import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
@@ -69,13 +68,31 @@ public class ArsProviders {
             //example of an apparatus recipe
             /*
             recipes.add(builder()
-                    .withReagent(ItemsRegistry.SOURCE_GEM)
-                    .withPedestalItem(4, Recipes.SOURCE_GEM)
-                    .withResult(ItemsRegistry.BUCKET_OF_SOURCE)
-                    .withSource(100)
+                    .withResult()
+                    .withReagent()
+                    .withPedestalItem()
+
+                    .withSourceCost()
                     .build()
             );
              */
+            recipes.add(builder()
+                    .withResult(ModRegistry.SourceMatrix)
+                    .withReagent(RecipeDatagen.SOURCE_GEM_BLOCK)
+                    .withPedestalItem(4, ModRegistry.SourceIngot)
+                    .withSourceCost(500)
+                    .build()
+            );
+            recipes.add(builder()
+                    .withResult(ModRegistry.sourceingot_block)
+                    .withReagent(Items.IRON_BLOCK)
+                    .withPedestalItem(4,RecipeDatagen.SOURCE_GEM_BLOCK)
+                    .withPedestalItem(2,RecipeDatagen.SOURCE_GEM)
+                    .withSourceCost(1000)
+                    .build()
+            );
+
+
 
             Path output = this.generator.getPackOutput().getOutputFolder();
             for (ApparatusRecipeBuilder.RecipeWrapper<? extends EnchantingApparatusRecipe> g : recipes) {
@@ -91,10 +108,7 @@ public class ArsProviders {
             return pathIn.resolve("data/" + root + "/recipe/" + str + ".json");
         }
 
-        @Override
-        public @NotNull String getName() {
-            return "Example Apparatus";
-        }
+
     }
 
     public static class ImbuementProvider extends ImbuementRecipeProvider {

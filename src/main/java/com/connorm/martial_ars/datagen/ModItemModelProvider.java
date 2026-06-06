@@ -15,7 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModRegistry.SourceIngot.get());
         basicItem(ModRegistry.SourceMatrix.get());
-
+        basicItem(ModRegistry.BlankInlay.get());
 
     }
 }

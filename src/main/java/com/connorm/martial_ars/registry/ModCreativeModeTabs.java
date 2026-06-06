@@ -24,7 +24,7 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(ModRegistry.MushroomWand);
                     output.accept(ModRegistry.EnchantersSpear);
                     output.accept(ModRegistry.SpearShaft);
-
+                    output.accept(ModRegistry.BlankInlay);
 
                 })
                 .build());

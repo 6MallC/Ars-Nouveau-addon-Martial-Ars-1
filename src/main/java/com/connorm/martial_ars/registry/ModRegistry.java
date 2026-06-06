@@ -56,7 +56,8 @@ public class ModRegistry {
                     .strength(1f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)));
-
+    public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.register("blank_inlay",
+            () -> new Item(new Item.Properties()));
 
     public static void registerRegistries(IEventBus bus) {
         BLOCKS.register(bus);
