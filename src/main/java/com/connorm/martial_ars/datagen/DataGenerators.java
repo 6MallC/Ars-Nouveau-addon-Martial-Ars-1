@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class DataGenerators {
+
+
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event){
         DataGenerator generator =  event.getGenerator();
@@ -31,6 +33,9 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)),lookupProvider));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ArsProviders.ImbuementProvider(generator));
+        generator.addProvider(event.includeServer(), new ArsProviders.GlyphProvider(generator));
+        generator.addProvider(event.includeServer(), new ArsProviders.EnchantingAppProvider(generator));
 
     }
 }

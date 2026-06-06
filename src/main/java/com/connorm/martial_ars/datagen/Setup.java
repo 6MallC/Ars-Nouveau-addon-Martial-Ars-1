@@ -21,8 +21,7 @@ public class Setup {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        provider = event.getLookupProvider();
-        output = gen.getPackOutput();
+
 
         gen.addProvider(event.includeServer(), new ArsProviders.ImbuementProvider(gen));
         gen.addProvider(event.includeServer(), new ArsProviders.GlyphProvider(gen));
