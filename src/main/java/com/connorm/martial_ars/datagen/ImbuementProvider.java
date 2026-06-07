@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.connorm.martial_ars.datagen.Setup.provider;
+import static com.connorm.martial_ars.datagen.DataGenerators.provider;
 
 public class ImbuementProvider extends ImbuementRecipeProvider {
 
@@ -35,5 +35,8 @@ public class ImbuementProvider extends ImbuementRecipeProvider {
     @Override
     public void collectJsons(CachedOutput cache) {
 
+    }
+    private static Path getRecipePath(Path pathIn, String str) {
+        return pathIn.resolve("data/ars_nouveau/recipe/imbuement_" + str + ".json");
     }
     }
