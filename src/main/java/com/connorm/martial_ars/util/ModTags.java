@@ -9,14 +9,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
-    public static class Blocks{
+    public static class Blocks {
 
-        private static TagKey<Block> createTag(String name){
+        private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, name));
 
+        }
     }
     public static class Items{
-            public static final TagKey<Item> Weapon_Handles = createTag("weapon_handles");
+        public static final TagKey<Item> Weapon_Handles = createTag("weapon_handles");
         public static final TagKey<Item> Weapon_Heads = createTag("weapon_heads");
 
         private static TagKey<Item> createTag(String name){
@@ -25,4 +26,4 @@ public class ModTags {
             }
         }
     }
-}
+

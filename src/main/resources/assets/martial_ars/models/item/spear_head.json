@@ -2,7 +2,7 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"3": "martial_ars:block/spear_head"
+		"3": "martial_ars:item/spear_head"
 	},
 	"elements": [
 		{

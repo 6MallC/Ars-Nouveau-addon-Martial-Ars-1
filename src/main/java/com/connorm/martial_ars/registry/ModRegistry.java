@@ -48,8 +48,12 @@ public class ModRegistry {
             () -> new MushroomWandItem(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> EnchantersSpear = (DeferredItem<Item>) ITEMS.register("enchanters_spear",
             () -> new Item(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> SpearShaft = (DeferredItem<Item>) ITEMS.register("spear_shaft",
+    public static final DeferredItem<Item> SpearShaft = (DeferredItem<Item>) ITEMS.register("spear_handle",
             () -> new Item(new Item.Properties().stacksTo(8)));
+    public static final DeferredItem<Item> SpearHead = (DeferredItem<Item>) ITEMS.register("spear_head",
+            () -> new Item(new Item.Properties().stacksTo(8)));
+    public static final DeferredItem<Item> EnchantersKunai = (DeferredItem<Item>) ITEMS.register("enchanters_kunai",
+            () -> new Item(new Item.Properties().stacksTo(4)));
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()

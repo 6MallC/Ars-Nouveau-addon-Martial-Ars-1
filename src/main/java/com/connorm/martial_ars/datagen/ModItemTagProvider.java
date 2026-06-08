@@ -2,12 +2,14 @@ package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
 import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.util.ModTags;
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +20,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
-
+    protected void addTags(HolderLookup.@NotNull Provider provider) {
+    tag(ModTags.Items.Weapon_Handles)
+            .add(ModRegistry.SpearShaft.get());
+    tag(ModTags.Items.Weapon_Heads);
+           // .add(ModRegistry.SpearHead)
     }
 }
