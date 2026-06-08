@@ -1,21 +1,34 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.registry.ModRegistry;
+import com.hollingsworth.arsnouveau.common.crafting.recipes.EnchantingApparatusRecipe;
+import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeBuilder;
 import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.levelgen.structure.structures.RuinedPortalStructure;
+
+import java.nio.file.Path;
 
 
 public class ApparatusProvider extends ApparatusRecipeProvider {
 
-        public ApparatusProvider(DataGenerator generatorIn) {
+        public ApparatusProvider(DataGenerator generatorIn)  {
             super(generatorIn);
         }
 
+    public void collectJsons(CachedOutput pOutput) {
+        this.addEntries();
+
+        for (ApparatusRecipeBuilder.RecipeWrapper<? extends EnchantingApparatusRecipe> recipe : this.recipes) {
+            Path path = getRecipePath(this.output, recipe.id().getPath());
+            this.saveStable(pOutput, recipe.serialize(), path);
+        }
+    }
         @Override
-        public void collectJsons(CachedOutput cache) {
+        public void addEntries() {
             recipes.add(builder()
                     .withResult(ModRegistry.SourceMatrix)
                     .withReagent(RecipeDatagen.SOURCE_GEM_BLOCK)
