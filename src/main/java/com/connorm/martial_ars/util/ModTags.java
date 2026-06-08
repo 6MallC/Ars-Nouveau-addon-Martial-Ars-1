@@ -19,7 +19,7 @@ public class ModTags {
     public static class Items{
         public static final TagKey<Item> Weapon_Handles = createTag("weapon_handles");
         public static final TagKey<Item> Weapon_Heads = createTag("weapon_heads");
-
+        public static final TagKey<Item> Inlays = createTag("inlays");
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, name));
 

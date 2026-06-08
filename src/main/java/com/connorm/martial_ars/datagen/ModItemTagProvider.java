@@ -23,7 +23,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider provider) {
     tag(ModTags.Items.Weapon_Handles)
             .add(ModRegistry.SpearShaft.get());
-    tag(ModTags.Items.Weapon_Heads);
-           // .add(ModRegistry.SpearHead)
+
+    tag(ModTags.Items.Weapon_Heads)
+            .add(ModRegistry.SpearHead.get());
+
+    tag(ModTags.Items.Inlays)
+            .add(ModRegistry.BlankInlay.get())
+            .add(ModRegistry.DelayInlay.get());
     }
+
 }

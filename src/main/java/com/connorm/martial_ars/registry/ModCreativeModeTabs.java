@@ -19,14 +19,18 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                 .title(Component.translatable("creativetab.martial_ars.main"))
                 .displayItems((itemDisplayParameters, output) -> {
                     output.accept(ModRegistry.SourceIngot);
-                    output.accept(ModRegistry.SourceMatrix);
                     output.accept(ModRegistry.sourceingot_block);
+                    output.accept(ModRegistry.SourceMatrix);
                     output.accept(ModRegistry.MushroomWand);
                     output.accept(ModRegistry.EnchantersSpear);
                     output.accept(ModRegistry.SpearShaft);
                     output.accept(ModRegistry.SpearHead);
-                    output.accept(ModRegistry.BlankInlay);
                     output.accept(ModRegistry.EnchantersKunai);
+                    output.accept(ModRegistry.BlankInlay);
+                    output.accept(ModRegistry.DelayInlay);
+
+
+                    //output.accept(ModRegistry.);
 
                 })
                 .build());

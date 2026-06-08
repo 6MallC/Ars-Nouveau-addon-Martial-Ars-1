@@ -54,6 +54,8 @@ public class ModRegistry {
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<Item> EnchantersKunai = (DeferredItem<Item>) ITEMS.register("enchanters_kunai",
             () -> new Item(new Item.Properties().stacksTo(4)));
+    public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
+            () -> new Item(new Item.Properties()));
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
