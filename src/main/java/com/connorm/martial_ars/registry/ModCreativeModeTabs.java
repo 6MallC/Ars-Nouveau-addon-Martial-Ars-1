@@ -26,11 +26,13 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(ModRegistry.SpearShaft);
                     output.accept(ModRegistry.SpearHead);
                     output.accept(ModRegistry.EnchantersKunai);
+                    output.accept(ModRegistry.KunaiHandle);
+                    output.accept(ModRegistry.KunaiBlade);
                     output.accept(ModRegistry.BlankInlay);
                     output.accept(ModRegistry.DelayInlay);
+                    output.accept(ModRegistry.LuckInlay);
 
-
-                    //output.accept(ModRegistry.);
+                    // output.accept(ModRegistry.);
 
                 })
                 .build());

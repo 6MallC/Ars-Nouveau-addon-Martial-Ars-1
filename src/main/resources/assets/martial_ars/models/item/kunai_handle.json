@@ -1,0 +1,109 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "martial_ars:item/kunai_handle",
+		"particle": "martial_ars:item/kunai_handle"
+	},
+	"elements": [
+		{
+			"name": "Outer",
+			"from": [7.2, 7.6, 10.75858],
+			"to": [8.8, 8.4, 12.35858],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 11.55858]},
+			"faces": {
+				"north": {"uv": [4, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [4, 0, 8, 2], "texture": "#0"},
+				"south": {"uv": [4, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [4, 0, 8, 2], "texture": "#0"},
+				"up": {"uv": [4, 4, 0, 0], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [4, 0, 0, 4], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "Inner",
+			"from": [8.4, 7.6, 11.15858],
+			"to": [7.6, 8.4, 11.95858],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 11.55858]},
+			"faces": {
+				"north": {"uv": [4, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [4, 0, 8, 2], "texture": "#0"},
+				"south": {"uv": [4, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [4, 0, 8, 2], "texture": "#0"},
+				"up": {"uv": [4, 8, 5, 9], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [4, 8, 5, 9], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "Handle",
+			"from": [7.5, 7.7, 9],
+			"to": [8.5, 8.3, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 7.5, 9]},
+			"faces": {
+				"north": {"uv": [4, 2, 6, 4], "texture": "#0"},
+				"east": {"uv": [4, 0, 8, 2], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [8, 2, 4, 4], "texture": "#0"},
+				"up": {"uv": [6, 0, 8, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Weird blade connector thing?",
+			"from": [7.2, 7.8, 7.8],
+			"to": [8.7, 8.2, 9.3],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 7.5, 8.5]},
+			"faces": {
+				"north": {"uv": [4, 4, 8, 6], "texture": "#0"},
+				"east": {"uv": [4, 6, 8, 8], "texture": "#0"},
+				"south": {"uv": [4, 4, 8, 6], "texture": "#0"},
+				"west": {"uv": [4, 6, 8, 8], "texture": "#0"},
+				"up": {"uv": [0, 4, 4, 8], "texture": "#0"},
+				"down": {"uv": [0, 8, 4, 4], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-180, 88, 0],
+			"translation": [-2, 0.25, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-180, 88, 0],
+			"translation": [-2, 0.25, 1]
+		},
+		"firstperson_righthand": {
+			"rotation": [74, 0, 0],
+			"translation": [0, 2.5, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [74, 0, 0],
+			"translation": [0, 2.5, 0]
+		},
+		"ground": {
+			"rotation": [90, 90, 0],
+			"translation": [-2, 0, 1.25]
+		},
+		"gui": {
+			"rotation": [90, -45, 0],
+			"translation": [3.25, 2.5, 0],
+			"scale": [2, 2, 2]
+		},
+		"fixed": {
+			"rotation": [90, 0, 0],
+			"translation": [0, 0, -0.5],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "Ring",
+			"origin": [8, 0, 11],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1]
+		},
+		2,
+		3
+	]
+}

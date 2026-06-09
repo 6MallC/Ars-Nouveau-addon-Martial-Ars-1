@@ -22,13 +22,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
     tag(ModTags.Items.Weapon_Handles)
-            .add(ModRegistry.SpearShaft.get());
+            .add(ModRegistry.SpearShaft.get())
+            .add(ModRegistry.KunaiHandle.get());
 
     tag(ModTags.Items.Weapon_Heads)
-            .add(ModRegistry.SpearHead.get());
+            .add(ModRegistry.SpearHead.get())
+            .add(ModRegistry.KunaiBlade.get());
 
     tag(ModTags.Items.Inlays)
             .add(ModRegistry.BlankInlay.get())
+            .add(ModRegistry.LuckInlay.get())
             .add(ModRegistry.DelayInlay.get());
     }
 
