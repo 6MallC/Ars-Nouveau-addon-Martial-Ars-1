@@ -43,7 +43,7 @@ public class ApparatusProvider extends ApparatusRecipeProvider {
                     .withPedestalItem(2,RecipeDatagen.SOURCE_GEM)
                     .withSourceCost(1000)
                     .build()
-            );
+            );  
         }
 
     }

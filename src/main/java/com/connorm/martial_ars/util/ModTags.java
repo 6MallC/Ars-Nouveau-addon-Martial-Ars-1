@@ -11,6 +11,9 @@ import net.minecraft.world.level.block.Block;
 public class ModTags {
     public static class Blocks {
 
+    public static final TagKey<Block> Needs_Martial_Tool = createTag("needs_martial_tool");
+        public static final TagKey<Block> Incorrect_For_Martial_Tool = createTag("incorrect_for_martial_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, name));
 
@@ -25,5 +28,6 @@ public class ModTags {
 
             }
         }
+
     }
 

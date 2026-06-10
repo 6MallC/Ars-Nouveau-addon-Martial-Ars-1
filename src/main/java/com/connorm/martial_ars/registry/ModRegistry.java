@@ -1,15 +1,13 @@
 package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
+import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -46,8 +44,6 @@ public class ModRegistry {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<MushroomWandItem> MushroomWand = (DeferredItem<MushroomWandItem>) ITEMS.register("mushroom_wand",
             () -> new MushroomWandItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> EnchantersSpear = (DeferredItem<Item>) ITEMS.register("enchanters_spear",
-            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SpearShaft = (DeferredItem<Item>) ITEMS.register("spear_handle",
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<Item> SpearHead = (DeferredItem<Item>) ITEMS.register("spear_head",
@@ -62,6 +58,12 @@ public class ModRegistry {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> KunaiBlade = (DeferredItem<Item>) ITEMS.register("kunai_blade",
             () -> new Item(new Item.Properties()));
+
+    // TOOLS
+    public static final DeferredItem<SwordItem> EnchantersSpear = (DeferredItem<SwordItem>) ITEMS.register("enchanters_spear",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -3.2f))));
+
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -85,7 +87,7 @@ public static <T extends Block> void registerBlockItem(String name, DeferredBloc
     registerBlockItem(name, toReturn);
     return toReturn;
     }
-
+// SOUNDS
 public static final DeferredHolder<Item, ? extends Item> EXAMPLE;
 //this is an example of how to register a sound. You also need to add the sound to the sound.json file, referencing your ogg files, and a texture for the button under textures/sounds.
 //this example will use one of the existing sounds randomly
