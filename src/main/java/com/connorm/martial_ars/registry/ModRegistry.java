@@ -62,7 +62,7 @@ public class ModRegistry {
     // TOOLS
     public static final DeferredItem<SwordItem> EnchantersSpear = (DeferredItem<SwordItem>) ITEMS.register("enchanters_spear",
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -3.2f))));
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -2f))));
 
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",

@@ -9,5 +9,5 @@ import net.neoforged.neoforge.common.SimpleTier;
 
 public class ModToolTiers {
     public static final Tier Martial = new SimpleTier(ModTags.Blocks.Incorrect_For_Martial_Tool,
-            2048, 10f,8f, 25, () -> Ingredient.of(ModRegistry.SourceIngot));
+            2048, 10f,5f, 25, () -> Ingredient.of(ModRegistry.SourceIngot));
 }

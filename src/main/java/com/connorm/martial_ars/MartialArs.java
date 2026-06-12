@@ -1,5 +1,6 @@
 package com.connorm.martial_ars;
 
+import com.connorm.martial_ars.component.ModDataComponents;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.common.items.ModItem;
@@ -35,6 +36,7 @@ public class MartialArs {
 
         ModCreativeModeTabs.register(modEventBus);
         ModRegistry.registerRegistries(modEventBus);
+        ModDataComponents.register(modEventBus);
     }
 
 
