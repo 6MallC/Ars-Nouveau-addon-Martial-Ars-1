@@ -4,24 +4,23 @@ import com.connorm.martial_ars.item.RangeTool;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.item.ICasterTool;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
-import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
-import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import org.jetbrains.annotations.NotNull;
 
-public class EnchantersSpear extends SwordItem implements ICasterTool, RangeTool {
-    public EnchantersSpear(Tier tier, Properties properties) {
+public class EnchantersSpearItem extends SwordItem implements ICasterTool, RangeTool {
+    public EnchantersSpearItem(Tier tier, Properties properties) {
         super(tier, properties);
     }
 
-    public EnchantersSpear(Tier iItemTier, int baseDamage, float baseAttackSpeed, Properties properties) {
+    public EnchantersSpearItem(Tier iItemTier, int baseDamage, float baseAttackSpeed, Properties properties) {
         super(iItemTier, properties.component(DataComponents.TOOL, createToolProperties())
                 .attributes(ItemAttributeModifiers.builder()
                 .add(
@@ -31,6 +30,9 @@ public class EnchantersSpear extends SwordItem implements ICasterTool, RangeTool
                 .build()));
                 //.component(DataComponentRegistry.SPELL_CASTER, new SpellCaster());
     }
-
+    @Override
+    public @NotNull ItemAttributeModifiers getDefaultAttributeModifiers(@NotNull ItemStack stack) {
+        return super.getDefaultAttributeModifiers(stack).withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(ResourceLocation.fromNamespaceAndPath("modid", "range_boost"), 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
+    }
 }
 

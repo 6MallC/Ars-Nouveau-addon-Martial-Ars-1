@@ -1,6 +1,7 @@
 package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
+import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
@@ -60,8 +61,8 @@ public class ModRegistry {
             () -> new Item(new Item.Properties()));
 
     // TOOLS
-    public static final DeferredItem<SwordItem> EnchantersSpear = (DeferredItem<SwordItem>) ITEMS.register("enchanters_spear",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+    public static final DeferredItem<EnchantersSpearItem> EnchantersSpear = (DeferredItem<EnchantersSpearItem>) ITEMS.register("enchanters_spear",
+            () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -2f))));
 
     // BLOCKS
