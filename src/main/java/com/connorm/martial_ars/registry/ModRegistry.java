@@ -8,6 +8,9 @@ import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -63,7 +66,11 @@ public class ModRegistry {
     // TOOLS
     public static final DeferredItem<EnchantersSpearItem> EnchantersSpear = (DeferredItem<EnchantersSpearItem>) ITEMS.register("enchanters_spear",
             () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -2f))));
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -2f)
+                            .withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE,
+                                    new AttributeModifier(ResourceLocation.fromNamespaceAndPath(MODID, "spear_reach"),
+                                            2.0, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))));
 
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
