@@ -4,7 +4,9 @@ import com.connorm.martial_ars.item.ExampleCosmetic;
 import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
+import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
+import com.hollingsworth.arsnouveau.ArsNouveau;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -70,6 +72,10 @@ public class ModRegistry {
                             .withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE,
                                     new AttributeModifier(ResourceLocation.fromNamespaceAndPath(MODID, "spear_reach"),
                                             2.0, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
+                                    new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
+                                            4.0f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))));
 
     // BLOCKS
