@@ -2,6 +2,7 @@ package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.item.ExampleCosmetic;
 import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
+import com.connorm.martial_ars.registry.custom.KunaiItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
@@ -54,8 +55,7 @@ public class ModRegistry {
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<Item> SpearHead = (DeferredItem<Item>) ITEMS.register("spear_head",
             () -> new Item(new Item.Properties().stacksTo(8)));
-    public static final DeferredItem<Item> EnchantersKunai = (DeferredItem<Item>) ITEMS.register("enchanters_kunai",
-            () -> new Item(new Item.Properties().stacksTo(4)));
+
     public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LuckInlay = (DeferredItem<Item>) ITEMS.register("luck_inlay",
@@ -77,6 +77,14 @@ public class ModRegistry {
                                     new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
                                             4.0f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))));
+    public static final DeferredItem<KunaiItem> EnchantersKunai = (DeferredItem<KunaiItem>) ITEMS.register("enchanters_kunai",
+            () -> new KunaiItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, -2, -1f)
+                            .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
+                                    new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
+                                            2.0f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))));
+
 
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
