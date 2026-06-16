@@ -18,5 +18,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModRegistry.BlankInlay.get());
         basicItem(ModRegistry.DelayInlay.get());
         basicItem(ModRegistry.LuckInlay.get());
+        basicItem(ModRegistry.AttackInlay.get());
     }
 }

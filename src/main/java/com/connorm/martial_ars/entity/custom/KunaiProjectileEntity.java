@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec2;
+import org.jetbrains.annotations.NotNull;
 
 public class KunaiProjectileEntity extends AbstractArrow {
     public Vec2 groundedOffset;
@@ -32,7 +33,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
         return  inGround;
     }
     @Override
-    protected void onHitEntity(EntityHitResult result) {
+    protected void onHitEntity(@NotNull EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         entity.hurt(this.damageSources().thrown(this, this.getOwner()), 5);
@@ -44,26 +45,8 @@ public class KunaiProjectileEntity extends AbstractArrow {
     }
     @Override
     protected void onHitBlock(BlockHitResult result) {
-        super.onHitBlock(result);
-
-        if (result.getDirection() == Direction.SOUTH) {
-            groundedOffset = new Vec2(215f, 180f);
-        }
-        if (result.getDirection() == Direction.NORTH) {
-            groundedOffset = new Vec2(215f, 0f);
-        }
-        if (result.getDirection() == Direction.EAST) {
-            groundedOffset = new Vec2(215f, -90f);
-        }
-        if (result.getDirection() == Direction.WEST) {
-            groundedOffset = new Vec2(215f, 90f);
-        }
-
-        if (result.getDirection() == Direction.DOWN) {
-            groundedOffset = new Vec2(115f, 180f);
-        }
-        if (result.getDirection() == Direction.UP) {
-            groundedOffset = new Vec2(285f, 180f);
+        if (!this.level().isClientSide){
+        this.discard();
         }
     }
 }

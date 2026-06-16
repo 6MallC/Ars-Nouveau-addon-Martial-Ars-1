@@ -56,13 +56,19 @@ public class ModRegistry {
     public static final DeferredItem<Item> SpearHead = (DeferredItem<Item>) ITEMS.register("spear_head",
             () -> new Item(new Item.Properties().stacksTo(8)));
 
-    public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
-            () -> new Item(new Item.Properties()));
-    public static final DeferredItem<Item> LuckInlay = (DeferredItem<Item>) ITEMS.register("luck_inlay",
-            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> KunaiHandle = (DeferredItem<Item>) ITEMS.register("kunai_handle",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> KunaiBlade = (DeferredItem<Item>) ITEMS.register("kunai_blade",
+            () -> new Item(new Item.Properties()));
+// inlays
+public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
+        () -> new Item(new Item.Properties()));
+public static final DeferredItem<Item> LuckInlay = (DeferredItem<Item>) ITEMS.register("luck_inlay",
+        () -> new Item(new Item.Properties()));
+public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.register("blank_inlay",
+        () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> AttackInlay = (DeferredItem<Item>) ITEMS.register("attack_inlay",
             () -> new Item(new Item.Properties()));
 
     // TOOLS
@@ -92,8 +98,7 @@ public class ModRegistry {
                     .strength(1f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)));
-    public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.register("blank_inlay",
-            () -> new Item(new Item.Properties()));
+
 
     public static void registerRegistries(IEventBus bus) {
         BLOCKS.register(bus);

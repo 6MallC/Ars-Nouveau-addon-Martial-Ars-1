@@ -10,11 +10,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
 public class KunaiItem extends SwordItem implements ICasterTool, RangeTool, IManaDiscountEquipment {
@@ -41,5 +44,14 @@ public class KunaiItem extends SwordItem implements ICasterTool, RangeTool, IMan
 
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
-
 }
+    /*
+    @Override
+    public InteractionResult useOn(UseOnContext context) {
+        Level level = context.getLevel();
+        if ()
+
+    }
+}
+*/
+

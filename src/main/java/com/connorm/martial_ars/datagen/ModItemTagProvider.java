@@ -32,7 +32,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
     tag(ModTags.Items.Inlays)
             .add(ModRegistry.BlankInlay.get())
             .add(ModRegistry.LuckInlay.get())
-            .add(ModRegistry.DelayInlay.get());
+            .add(ModRegistry.DelayInlay.get())
+            .add(ModRegistry.AttackInlay.get());
     }
 
 }
