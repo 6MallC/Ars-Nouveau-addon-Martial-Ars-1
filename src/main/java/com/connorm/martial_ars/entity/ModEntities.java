@@ -13,6 +13,6 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, MartialArs.MODID);
     public static final Supplier<EntityType<KunaiProjectileEntity>> KUNAI =
-            ENTITY_TYPES.register("kunai",() -> EntityType.Builder.of(KunaiProjectileEntity::new, MobCategory.MISC)
-                    .sized(0.5f,1.15).build("kunai"));
+            ENTITY_TYPES.register("kunai",() -> EntityType.Builder.<KunaiProjectileEntity>of(KunaiProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f,1.15f).build("kunai"));
 }

@@ -1,9 +1,12 @@
 package com.connorm.martial_ars;
 
 import com.connorm.martial_ars.component.ModDataComponents;
+import com.connorm.martial_ars.entity.ModEntities;
+import com.connorm.martial_ars.entity.client.KunaiProjectileRenderer;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.common.items.ModItem;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
@@ -37,6 +40,7 @@ public class MartialArs {
         ModCreativeModeTabs.register(modEventBus);
         ModRegistry.registerRegistries(modEventBus);
         ModDataComponents.register(modEventBus);
+
     }
 
 
@@ -59,7 +63,12 @@ public class MartialArs {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
-
+public static class ClientModEvents{
+        @SubscribeEvent
+        public static void onGlientSetup(FMLClientSetupEvent event){
+            EntityRenderers.register(ModEntities.KUNAI.get(), KunaiProjectileRenderer::new);
+        }
+}
 }
 
 

@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.entity.custom;
 
+import com.connorm.martial_ars.entity.ModEntities;
 import com.connorm.martial_ars.registry.ModRegistry;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +20,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
     }
 
     public KunaiProjectileEntity(LivingEntity shooter, Level level){
-        super(, shooter, level, new ItemStack(ModRegistry.EnchantersKunai.get()),null);
+        super(ModEntities.KUNAI.get(), shooter, level, new ItemStack(ModRegistry.EnchantersKunai.get()),null);
     }
 
     @Override
