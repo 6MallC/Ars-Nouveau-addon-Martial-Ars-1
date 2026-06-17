@@ -2,6 +2,7 @@ package com.connorm.martial_ars;
 
 import com.connorm.martial_ars.component.ModDataComponents;
 import com.connorm.martial_ars.entity.ModEntities;
+import com.connorm.martial_ars.entity.client.KunaiProjectileModel;
 import com.connorm.martial_ars.entity.client.KunaiProjectileRenderer;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.ModRegistry;
@@ -10,13 +11,16 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.IModBusEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -40,6 +44,7 @@ public class MartialArs {
         ModCreativeModeTabs.register(modEventBus);
         ModRegistry.registerRegistries(modEventBus);
         ModDataComponents.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
 
     }
 
@@ -63,12 +68,15 @@ public class MartialArs {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public static class ClientModEvents{
         @SubscribeEvent
         public static void onGlientSetup(FMLClientSetupEvent event){
             EntityRenderers.register(ModEntities.KUNAI.get(), KunaiProjectileRenderer::new);
         }
+        @SubscribeEvent
+        public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(KunaiProjectileModel.LAYER_LOCATION, KunaiProjectileModel::createBodyLayer);
+        }
 }
 }
-
-

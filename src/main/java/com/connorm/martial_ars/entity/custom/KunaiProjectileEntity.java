@@ -21,6 +21,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
 
     public KunaiProjectileEntity(LivingEntity shooter, Level level){
         super(ModEntities.KUNAI.get(), shooter, level, new ItemStack(ModRegistry.EnchantersKunai.get()),null);
+        this.pickup = AbstractArrow.Pickup.DISALLOWED;
     }
 
     @Override

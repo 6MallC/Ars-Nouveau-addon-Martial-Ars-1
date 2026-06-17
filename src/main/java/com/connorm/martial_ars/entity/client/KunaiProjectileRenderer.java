@@ -1,6 +1,5 @@
 package com.connorm.martial_ars.entity.client;
 
-import com.connorm.martial_ars.MartialArs;
 import com.connorm.martial_ars.entity.custom.KunaiProjectileEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -41,7 +40,6 @@ public class KunaiProjectileRenderer extends EntityRenderer<KunaiProjectileEntit
     }
     @Override
     public ResourceLocation getTextureLocation(KunaiProjectileEntity kunaiProjectileEntity) {
-        return ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, "textures/entity/enchanterskunai/enchanterskunaiEntity.png");
+        return ResourceLocation.withDefaultNamespace("textures/entity/projectiles/arrow.png");
     }
 }
-

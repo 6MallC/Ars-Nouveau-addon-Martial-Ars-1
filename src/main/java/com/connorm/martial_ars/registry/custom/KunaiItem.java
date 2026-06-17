@@ -35,8 +35,8 @@ public class KunaiItem extends SwordItem implements ICasterTool, RangeTool, IMan
         }
 
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        if (!pPlayer.getAbilities().instabuild) {
-            itemstack.shrink(1);
+        if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
+            itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
