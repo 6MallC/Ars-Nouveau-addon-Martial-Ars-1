@@ -39,7 +39,7 @@ public class KunaiItem extends SwordItem implements ICasterTool, RangeTool, IMan
             KunaiProjectileEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 0F);
             pLevel.addFreshEntity(KunaiProjectileEntity);
         }
-
+    
         pPlayer.awardStat(Stats.ITEM_USED.get(this));
         if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
             itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));

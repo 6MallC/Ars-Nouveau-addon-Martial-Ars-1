@@ -8,6 +8,8 @@ import com.connorm.martial_ars.registry.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
+import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
+import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -72,6 +74,15 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
             () -> new Item(new Item.Properties()));
 
     // TOOLS
+
+    public static final DeferredItem<KunaiItem> EnchantersKunai = (DeferredItem<KunaiItem>) ITEMS.register("enchanters_kunai",
+            () -> new KunaiItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, -2, -1f)
+                            .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
+                                    new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
+                                            2.0f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))));
+
     public static final DeferredItem<EnchantersSpearItem> EnchantersSpear = (DeferredItem<EnchantersSpearItem>) ITEMS.register("enchanters_spear",
             () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 1, -2f)
@@ -82,15 +93,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                             .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
                                     new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
                                             4.0f, AttributeModifier.Operation.ADD_VALUE),
-                                    EquipmentSlotGroup.MAINHAND))));
-    public static final DeferredItem<KunaiItem> EnchantersKunai = (DeferredItem<KunaiItem>) ITEMS.register("enchanters_kunai",
-            () -> new KunaiItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, -2, -1f)
-                            .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
-                                    new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
-                                            2.0f, AttributeModifier.Operation.ADD_VALUE),
-                                    EquipmentSlotGroup.MAINHAND))));
-
+                                    EquipmentSlotGroup.MAINHAND))
+                    .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
 
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",

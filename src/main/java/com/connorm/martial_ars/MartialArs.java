@@ -68,7 +68,7 @@ public class MartialArs {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
-@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+
 public static class ClientModEvents{
         @SubscribeEvent
         public static void onGlientSetup(FMLClientSetupEvent event){

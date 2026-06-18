@@ -34,7 +34,6 @@ import java.util.Optional;
 public class EnchantersSpearItem extends SwordItem implements ICasterTool, RangeTool, IManaDiscountEquipment {
     public EnchantersSpearItem(Tier tier, Properties properties) {
         super(tier, properties);
-                //.component(DataComponentRegistry.SPELL_CASTER, new SpellCaster());
     }
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int p_77663_4_, boolean p_77663_5_) {

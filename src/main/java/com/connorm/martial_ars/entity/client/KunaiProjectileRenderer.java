@@ -29,7 +29,7 @@ public class KunaiProjectileRenderer extends EntityRenderer<KunaiProjectileEntit
         } else {
             poseStack.mulPose(Axis.YP.rotationDegrees(pEntity.groundedOffset.y));
             poseStack.mulPose(Axis.XP.rotationDegrees(pEntity.groundedOffset.x));
-            poseStack.translate(0, -1.0f, 0);
+            poseStack.translate(0, 0.0f, 0);
         }
 
         VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(
@@ -39,7 +39,7 @@ public class KunaiProjectileRenderer extends EntityRenderer<KunaiProjectileEntit
         super.render(pEntity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }
     @Override
-    public ResourceLocation getTextureLocation(KunaiProjectileEntity kunaiProjectileEntity) {
+    public ResourceLocation getTextureLocation(KunaiProjectileEntity KunaiProjectileEntity) {
         return ResourceLocation.withDefaultNamespace("textures/entity/projectiles/arrow.png");
     }
 }
