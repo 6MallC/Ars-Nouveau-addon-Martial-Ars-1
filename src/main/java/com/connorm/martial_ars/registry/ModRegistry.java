@@ -81,7 +81,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                             .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
                                     new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
                                             2.0f, AttributeModifier.Operation.ADD_VALUE),
-                                    EquipmentSlotGroup.MAINHAND))));
+                                    EquipmentSlotGroup.MAINHAND))
+                    .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
 
     public static final DeferredItem<EnchantersSpearItem> EnchantersSpear = (DeferredItem<EnchantersSpearItem>) ITEMS.register("enchanters_spear",
             () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
