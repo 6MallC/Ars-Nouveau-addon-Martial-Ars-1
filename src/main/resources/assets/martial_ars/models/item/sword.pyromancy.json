@@ -1,0 +1,151 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "martial_ars:item/pyro"
+	},
+	"elements": [
+		{
+			"name": "blade",
+			"from": [7.5, 14, 7.5],
+			"to": [8.5, 18, 11.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [5.5, 1.5, 6, 3.5], "texture": "#1"},
+				"east": {"uv": [2.5, 0, 4.5, 2], "texture": "#1"},
+				"south": {"uv": [6, 4, 6.5, 6], "texture": "#1"},
+				"west": {"uv": [2.5, 2, 4.5, 4], "texture": "#1"},
+				"up": {"uv": [5, 8, 4.5, 6], "texture": "#1"},
+				"down": {"uv": [6.5, 6, 6, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "blade",
+			"from": [7.5, 10, 7.5],
+			"to": [8.5, 14, 12.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6.5, 0, 7, 2], "texture": "#1"},
+				"east": {"uv": [0, 0, 2.5, 2], "texture": "#1"},
+				"south": {"uv": [6.5, 2, 7, 4], "texture": "#1"},
+				"west": {"uv": [0, 2, 2.5, 4], "texture": "#1"},
+				"up": {"uv": [6.5, 4, 6, 1.5], "texture": "#1"},
+				"down": {"uv": [4.5, 6, 4, 8.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "blade",
+			"from": [7.5, 6, 7.5],
+			"to": [8.5, 10, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6.5, 4, 7, 6], "texture": "#1"},
+				"east": {"uv": [4, 4, 5, 6], "texture": "#1"},
+				"south": {"uv": [5, 6.5, 5.5, 8.5], "texture": "#1"},
+				"west": {"uv": [4.5, 0, 5.5, 2], "texture": "#1"},
+				"up": {"uv": [6, 7.5, 5.5, 6.5], "texture": "#1"},
+				"down": {"uv": [7.5, 1, 7, 2], "texture": "#1"}
+			}
+		},
+		{
+			"name": "hilt1",
+			"from": [7, 0, 7],
+			"to": [9, 6, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 4, 1, 7], "texture": "#1"},
+				"east": {"uv": [1, 4, 2, 7], "texture": "#1"},
+				"south": {"uv": [2, 4, 3, 7], "texture": "#1"},
+				"west": {"uv": [3, 4, 4, 7], "texture": "#1"},
+				"up": {"uv": [7.5, 7, 6.5, 6], "texture": "#1"},
+				"down": {"uv": [1, 7, 0, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "hilt3",
+			"from": [7, 3, 9],
+			"to": [9, 6, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [4.5, 2, 5.5, 3.5], "texture": "#1"},
+				"east": {"uv": [5, 3.5, 6, 5], "texture": "#1"},
+				"south": {"uv": [5, 5, 6, 6.5], "texture": "#1"},
+				"west": {"uv": [5.5, 0, 6.5, 1.5], "texture": "#1"},
+				"up": {"uv": [8, 1, 7, 0], "texture": "#1"},
+				"down": {"uv": [2, 7, 1, 8], "texture": "#1"}
+			}
+		}
+	],
+
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [0, 3.75, 1.5],
+      "scale": [0.81, 0.81, 0.81]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, 3.75, 1.5],
+      "scale": [0.81, 0.81, 0.81]
+    },
+    "firstperson_righthand": {
+      "rotation": [4, 0, 0],
+      "translation": [0, 4.25, 2.5],
+      "scale": [1, 0.87, 0.67]
+    },
+    "firstperson_lefthand": {
+      "rotation": [4, 0, 0],
+      "translation": [0, 4.25, 2.5],
+      "scale": [1, 0.87, 0.67]
+    },
+    "ground": {
+      "translation": [0, 4.75, 0]
+    },
+    "gui": {
+      "rotation": [62, 62, -62],
+      "translation": [-0.5, 0, 0],
+      "scale": [0.63, 0.67, 0.66]
+    },
+    "fixed": {
+      "rotation": [1, -87, 1],
+      "translation": [0.75, -0.5, 0]
+    }
+  },
+	"groups": [
+		{
+			"name": "blade",
+			"origin": [9.5, 16, 5],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2]
+		},
+		{
+			"name": "hilt",
+			"origin": [8, 0, 8],
+			"scope": 0,
+			"color": 1,
+			"children": [
+				{
+					"name": "hilt1",
+					"origin": [8, 0, 8],
+					"scope": 0,
+					"color": 2,
+					"children": [3]
+				},
+				{
+					"name": "hilt2",
+					"origin": [9.5, 29, 5],
+					"scope": 0,
+					"color": 3,
+					"children": []
+				},
+				{
+					"name": "hilt3",
+					"origin": [9.5, 29, 5],
+					"scope": 0,
+					"color": 4,
+					"children": [4]
+				}
+			]
+		}
+	]
+}

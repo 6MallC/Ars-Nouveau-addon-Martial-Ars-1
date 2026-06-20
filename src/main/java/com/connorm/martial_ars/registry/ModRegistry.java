@@ -9,6 +9,7 @@ import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
+import com.hollingsworth.arsnouveau.common.items.EnchantersSword;
 import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -98,6 +99,19 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                             4.0f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
+    public static final DeferredItem<SwordItem> GeoSword = (DeferredItem<SwordItem>) ITEMS.register("sword.geomancy",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+    public static final DeferredItem<SwordItem> AeroSword = (DeferredItem<SwordItem>) ITEMS.register("sword.aeromancy",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+    public static final DeferredItem<SwordItem> AquaSword = (DeferredItem<SwordItem>) ITEMS.register("sword.aquamancy",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+    public static final DeferredItem<SwordItem> PyroSword = (DeferredItem<SwordItem>) ITEMS.register("sword.pyromancy",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+
 
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",

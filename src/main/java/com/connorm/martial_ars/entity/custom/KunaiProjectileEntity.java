@@ -60,7 +60,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
             this.discard();
         }
     }
-
+/*
     @Override
     protected void onHit(HitResult result) {
         if (this.resolver().spell != null)
@@ -72,4 +72,6 @@ public class KunaiProjectileEntity extends AbstractArrow {
             }
         }
     }
+
+ */
 }
