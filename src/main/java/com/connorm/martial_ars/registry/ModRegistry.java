@@ -72,6 +72,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
         () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> AttackInlay = (DeferredItem<Item>) ITEMS.register("attack_inlay",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> DiscountInlay = (DeferredItem<Item>) ITEMS.register("discount_inlay",
+            () -> new Item(new Item.Properties()));
 
     // TOOLS
 

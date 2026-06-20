@@ -32,6 +32,7 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(ModRegistry.DelayInlay);
                     output.accept(ModRegistry.LuckInlay);
                     output.accept(ModRegistry.AttackInlay);
+                    output.accept(ModRegistry.DiscountInlay);
 
                     // output.accept(ModRegistry.);
 

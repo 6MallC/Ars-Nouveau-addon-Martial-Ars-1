@@ -68,7 +68,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
         HitResult.Type raytraceresult$type = result.getType();
         if (raytraceresult$type == HitResult.Type.ENTITY) {
             if (resolver().spell != null) {
-                resolver().spell.getCastMethod(Level, result);
+                resolver().spell.getCastMethod(level, result);
             }
         }
     }
