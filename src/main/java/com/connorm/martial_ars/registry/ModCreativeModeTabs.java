@@ -29,9 +29,17 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(ModRegistry.KunaiHandle);
                     output.accept(ModRegistry.KunaiBlade);
                     output.accept(ModRegistry.GeoSword);
+                    output.accept(ModRegistry.GeoBlade);
+                    output.accept(ModRegistry.GeoHilt);
                     output.accept(ModRegistry.AeroSword);
+                    output.accept(ModRegistry.AeroBlade);
+                    output.accept(ModRegistry.AeroHilt);
                     output.accept(ModRegistry.AquaSword);
+                    output.accept(ModRegistry.AquaBlade);
+                    output.accept(ModRegistry.AquaHilt);
                     output.accept(ModRegistry.PyroSword);
+                    output.accept(ModRegistry.PyroBlade);
+                    output.accept(ModRegistry.PyroHilt);
                     output.accept(ModRegistry.BlankInlay);
                     output.accept(ModRegistry.DelayInlay);
                     output.accept(ModRegistry.LuckInlay);

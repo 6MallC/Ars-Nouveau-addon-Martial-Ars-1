@@ -58,6 +58,22 @@ public class ModRegistry {
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<Item> SpearHead = (DeferredItem<Item>) ITEMS.register("spear_head",
             () -> new Item(new Item.Properties().stacksTo(8)));
+    public static final DeferredItem<SwordItem> GeoBlade = (DeferredItem<SwordItem>) ITEMS.register("geo.blade",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> GeoHilt = (DeferredItem<SwordItem>) ITEMS.register("geo.hilt",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> AeroBlade = (DeferredItem<SwordItem>) ITEMS.register("aero.blade",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> AeroHilt = (DeferredItem<SwordItem>) ITEMS.register("aero.hilt",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> PyroBlade = (DeferredItem<SwordItem>) ITEMS.register("pyro.blade",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> PyroHilt = (DeferredItem<SwordItem>) ITEMS.register("pyro.hilt",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> AquaBlade = (DeferredItem<SwordItem>) ITEMS.register("aqua.blade",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+    public static final DeferredItem<SwordItem> AquaHilt = (DeferredItem<SwordItem>) ITEMS.register("aqua.hilt",
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
 
 
     public static final DeferredItem<Item> KunaiHandle = (DeferredItem<Item>) ITEMS.register("kunai_handle",

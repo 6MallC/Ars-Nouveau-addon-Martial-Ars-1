@@ -1,6 +1,10 @@
 {
   "values": [
     "martial_ars:spear_handle",
-    "martial_ars:kunai_handle"
+    "martial_ars:kunai_handle",
+    "martial-ars:geo.hilt",
+    "martial-ars:pyro.hilt",
+    "martial-ars:aero.hilt",
+    "martial-ars:aqua.hilt"
   ]
 }

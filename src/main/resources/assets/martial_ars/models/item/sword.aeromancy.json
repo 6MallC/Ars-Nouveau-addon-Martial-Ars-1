@@ -77,39 +77,38 @@
 			}
 		}
 	],
-
-  "display": {
-    "thirdperson_righthand": {
-      "translation": [0, 3.75, 1.5],
-      "scale": [0.81, 0.81, 0.81]
-    },
-    "thirdperson_lefthand": {
-      "translation": [0, 3.75, 1.5],
-      "scale": [0.81, 0.81, 0.81]
-    },
-    "firstperson_righthand": {
-      "rotation": [4, 0, 0],
-      "translation": [0, 4.25, 2.5],
-      "scale": [1, 0.87, 0.67]
-    },
-    "firstperson_lefthand": {
-      "rotation": [4, 0, 0],
-      "translation": [0, 4.25, 2.5],
-      "scale": [1, 0.87, 0.67]
-    },
-    "ground": {
-      "translation": [0, 4.75, 0]
-    },
-    "gui": {
-      "rotation": [62, 62, -62],
-      "translation": [-0.5, 0, 0],
-      "scale": [0.63, 0.67, 0.66]
-    },
-    "fixed": {
-      "rotation": [1, -87, 1],
-      "translation": [0.75, -0.5, 0]
-    }
-  },
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3.75, 1.5],
+			"scale": [0.81, 0.81, 0.81]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3.75, 1.5],
+			"scale": [0.81, 0.81, 0.81]
+		},
+		"firstperson_righthand": {
+			"rotation": [4, 0, 0],
+			"translation": [0, 4.25, 2.5],
+			"scale": [1, 0.87, 0.67]
+		},
+		"firstperson_lefthand": {
+			"rotation": [4, 0, 0],
+			"translation": [0, 4.25, 2.5],
+			"scale": [1, 0.87, 0.67]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0]
+		},
+		"gui": {
+			"rotation": [62, 62, -62],
+			"translation": [-0.5, 0, 0],
+			"scale": [0.63, 0.67, 0.66]
+		},
+		"fixed": {
+			"rotation": [1, -87, 1],
+			"translation": [0.75, -0.5, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "blade",

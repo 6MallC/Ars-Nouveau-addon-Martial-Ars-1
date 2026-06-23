@@ -143,10 +143,7 @@ repositories {
         name = 'Forge'
         url = "https://maven.minecraftforge.net"
     }
-    maven {
-        name = "OctoStudios"
-        url = uri("https://maven.octo-studios.com/releases")
-    }
+
     maven { url 'https://jitpack.io' }
 
 }
@@ -155,7 +152,7 @@ dependencies {
 
     implementation("com.hollingsworth.ars_nouveau:ars_nouveau-${minecraft_version}:${ars_version}")
     implementation ("com.alexthw.ars_elemental:ars_elemental-${minecraft_version}:${elemental_version}") {transitive=false}
-    implementation ("com.alexthw.sauce:sauce-[MC_VERSION]:[VERSION]") {transitive=false}
+    implementation ("com.alexthw.sauce:sauce-${minecraft_version}:${sauce_version}") {transitive=false}
     compileOnly "com.hollingsworth.nuggets:nuggets-neoforge-1.21:${nuggets_version}"
 
     // only need the compileOnly, the runtime dependency is handled by Ars Nouveau
