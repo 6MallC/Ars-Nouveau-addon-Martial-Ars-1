@@ -63,8 +63,8 @@ public class KunaiProjectileEntity extends AbstractArrow {
 /*
     @Override
     protected void onHit(HitResult result) {
-        if (this.resolver().spell != null)
-            this.resolver().spell.getCastMethod(level, result);
+        if (this.resolverOn().spell != null)
+            this.resolver().spell.(level, result);
         HitResult.Type raytraceresult$type = result.getType();
         if (raytraceresult$type == HitResult.Type.ENTITY) {
             if (resolver().spell != null) {
@@ -72,6 +72,6 @@ public class KunaiProjectileEntity extends AbstractArrow {
             }
         }
     }
+*/
 
- */
 }
