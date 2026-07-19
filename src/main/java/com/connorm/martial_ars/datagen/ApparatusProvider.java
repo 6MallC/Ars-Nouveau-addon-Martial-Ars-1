@@ -1,6 +1,6 @@
 package com.connorm.martial_ars.datagen;
 
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.EnchantingApparatusRecipe;
 import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeBuilder;
 import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeProvider;
@@ -8,7 +8,6 @@ import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.levelgen.structure.structures.RuinedPortalStructure;
 
 import java.nio.file.Path;
 
@@ -30,14 +29,14 @@ public class ApparatusProvider extends ApparatusRecipeProvider {
         @Override
         public void addEntries() {
             recipes.add(builder()
-                    .withResult(ModRegistry.SourceMatrix)
+                    .withResult(MartialRegistry.SourceMatrix)
                     .withReagent(RecipeDatagen.SOURCE_GEM_BLOCK)
-                    .withPedestalItem(4, ModRegistry.SourceIngot)
+                    .withPedestalItem(4, MartialRegistry.SourceIngot)
                     .withSourceCost(500)
                     .build()
             );
             recipes.add(builder()
-                    .withResult(ModRegistry.sourceingot_block)
+                    .withResult(MartialRegistry.sourceingot_block)
                     .withReagent(Items.IRON_BLOCK)
                     .withPedestalItem(4,RecipeDatagen.SOURCE_GEM_BLOCK)
                     .withPedestalItem(2,RecipeDatagen.SOURCE_GEM)

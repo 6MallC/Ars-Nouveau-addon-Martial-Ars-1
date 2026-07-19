@@ -1,7 +1,7 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -13,12 +13,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModRegistry.SourceIngot.get());
-        basicItem(ModRegistry.SourceMatrix.get());
-        basicItem(ModRegistry.BlankInlay.get());
-        basicItem(ModRegistry.DelayInlay.get());
-        basicItem(ModRegistry.LuckInlay.get());
-        basicItem(ModRegistry.AttackInlay.get());
-        basicItem(ModRegistry.DiscountInlay.get());
+        basicItem(MartialRegistry.SourceIngot.get());
+        basicItem(MartialRegistry.SourceMatrix.get());
+        basicItem(MartialRegistry.BlankInlay.get());
+        basicItem(MartialRegistry.DelayInlay.get());
+        basicItem(MartialRegistry.LuckInlay.get());
+        basicItem(MartialRegistry.AttackInlay.get());
+        basicItem(MartialRegistry.DiscountInlay.get());
     }
 }

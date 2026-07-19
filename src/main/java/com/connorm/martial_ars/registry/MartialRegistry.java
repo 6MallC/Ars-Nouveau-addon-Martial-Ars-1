@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.registry;
 
+import com.alexthw.sauce.registry.ModRegistry;
 import com.connorm.martial_ars.item.ExampleCosmetic;
 import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
 import com.connorm.martial_ars.registry.custom.KunaiItem;
@@ -9,7 +10,6 @@ import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
-import com.hollingsworth.arsnouveau.common.items.EnchantersSword;
 import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -35,7 +35,7 @@ import static com.connorm.martial_ars.MartialArs.MODID;
 import static com.connorm.martial_ars.MartialArs.prefix;
 import static net.minecraft.core.registries.Registries.SOUND_EVENT;
 
-public class ModRegistry {
+public class MartialRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.createBlocks(MODID);
@@ -117,16 +117,52 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
     public static final DeferredItem<SwordItem> GeoSword = (DeferredItem<SwordItem>) ITEMS.register("sword.geomancy",
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
+            .withModifierAdded(com.alexthw.sauce.registry.ModRegistry.EARTH_POWER,
+                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.earth_power"),
+                            8.0f, AttributeModifier.Operation.ADD_VALUE),
+                    EquipmentSlotGroup.MAINHAND)
+                            .withModifierAdded(ModRegistry.MANA_DISCOUNT_EARTH,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.earth"),
+                                            .15f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))
+            .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
     public static final DeferredItem<SwordItem> AeroSword = (DeferredItem<SwordItem>) ITEMS.register("sword.aeromancy",
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
+                            .withModifierAdded(ModRegistry.AIR_POWER,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.air_power"),
+                                            8.0f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .withModifierAdded(ModRegistry.MANA_DISCOUNT_AIR,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.air"),
+                                            .15f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))
+                    .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
     public static final DeferredItem<SwordItem> AquaSword = (DeferredItem<SwordItem>) ITEMS.register("sword.aquamancy",
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
+                            .withModifierAdded(ModRegistry.WATER_POWER,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.aqua_power"),
+                                            8.0f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .withModifierAdded(ModRegistry.MANA_DISCOUNT_WATER,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.water"),
+                                            .15f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))
+                    .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
     public static final DeferredItem<SwordItem> PyroSword = (DeferredItem<SwordItem>) ITEMS.register("sword.pyromancy",
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f))));
+                    .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
+                            .withModifierAdded(ModRegistry.FIRE_POWER,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.fire_power"),
+                                            8.0f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .withModifierAdded(ModRegistry.MANA_DISCOUNT_WATER,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.water"),
+                                            .15f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND))
+                    .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
 
 
     // BLOCKS
@@ -156,7 +192,7 @@ public static final DeferredHolder<Item, ? extends Item> EXAMPLE;
 //this is an example of how to register a sound. You also need to add the sound to the sound.json file, referencing your ogg files, and a texture for the button under textures/sounds.
 //this example will use one of the existing sounds randomly
 public static DeferredHolder<SoundEvent, SoundEvent> EXAMPLE_FAMILY = SOUNDS.register("example_sound", () -> makeSound("example_sound"));
-public static SpellSound EXAMPLE_SPELL_SOUND = new SpellSound(ModRegistry.EXAMPLE_FAMILY, Component.literal("Example"), prefix("example_random_sound"));
+public static SpellSound EXAMPLE_SPELL_SOUND = new SpellSound(MartialRegistry.EXAMPLE_FAMILY, Component.literal("Example"), prefix("example_random_sound"));
 
 
 static {

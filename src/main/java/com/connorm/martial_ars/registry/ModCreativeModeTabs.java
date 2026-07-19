@@ -15,36 +15,36 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MartialArs.MODID);
 
 public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_TAB.register("martial_ars_main",
-        () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModRegistry.SourceIngot.get()))
+        () -> CreativeModeTab.builder().icon(() -> new ItemStack(MartialRegistry.SourceIngot.get()))
                 .title(Component.translatable("creativetab.martial_ars.main"))
                 .displayItems((itemDisplayParameters, output) -> {
-                    output.accept(ModRegistry.SourceIngot);
-                    output.accept(ModRegistry.sourceingot_block);
-                    output.accept(ModRegistry.SourceMatrix);
-                    output.accept(ModRegistry.MushroomWand);
-                    output.accept(ModRegistry.EnchantersSpear);
-                    output.accept(ModRegistry.SpearShaft);
-                    output.accept(ModRegistry.SpearHead);
-                    output.accept(ModRegistry.EnchantersKunai);
-                    output.accept(ModRegistry.KunaiHandle);
-                    output.accept(ModRegistry.KunaiBlade);
-                    output.accept(ModRegistry.GeoSword);
-                    output.accept(ModRegistry.GeoBlade);
-                    output.accept(ModRegistry.GeoHilt);
-                    output.accept(ModRegistry.AeroSword);
-                    output.accept(ModRegistry.AeroBlade);
-                    output.accept(ModRegistry.AeroHilt);
-                    output.accept(ModRegistry.AquaSword);
-                    output.accept(ModRegistry.AquaBlade);
-                    output.accept(ModRegistry.AquaHilt);
-                    output.accept(ModRegistry.PyroSword);
-                    output.accept(ModRegistry.PyroBlade);
-                    output.accept(ModRegistry.PyroHilt);
-                    output.accept(ModRegistry.BlankInlay);
-                    output.accept(ModRegistry.DelayInlay);
-                    output.accept(ModRegistry.LuckInlay);
-                    output.accept(ModRegistry.AttackInlay);
-                    output.accept(ModRegistry.DiscountInlay);
+                    output.accept(MartialRegistry.SourceIngot);
+                    output.accept(MartialRegistry.sourceingot_block);
+                    output.accept(MartialRegistry.SourceMatrix);
+                    output.accept(MartialRegistry.MushroomWand);
+                    output.accept(MartialRegistry.EnchantersSpear);
+                    output.accept(MartialRegistry.SpearShaft);
+                    output.accept(MartialRegistry.SpearHead);
+                    output.accept(MartialRegistry.EnchantersKunai);
+                    output.accept(MartialRegistry.KunaiHandle);
+                    output.accept(MartialRegistry.KunaiBlade);
+                    output.accept(MartialRegistry.GeoSword);
+                    output.accept(MartialRegistry.GeoBlade);
+                    output.accept(MartialRegistry.GeoHilt);
+                    output.accept(MartialRegistry.AeroSword);
+                    output.accept(MartialRegistry.AeroBlade);
+                    output.accept(MartialRegistry.AeroHilt);
+                    output.accept(MartialRegistry.AquaSword);
+                    output.accept(MartialRegistry.AquaBlade);
+                    output.accept(MartialRegistry.AquaHilt);
+                    output.accept(MartialRegistry.PyroSword);
+                    output.accept(MartialRegistry.PyroBlade);
+                    output.accept(MartialRegistry.PyroHilt);
+                    output.accept(MartialRegistry.BlankInlay);
+                    output.accept(MartialRegistry.DelayInlay);
+                    output.accept(MartialRegistry.LuckInlay);
+                    output.accept(MartialRegistry.AttackInlay);
+                    output.accept(MartialRegistry.DiscountInlay);
 
                     // output.accept(ModRegistry.);
 

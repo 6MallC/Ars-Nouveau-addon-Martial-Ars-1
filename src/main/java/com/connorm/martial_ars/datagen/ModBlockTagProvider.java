@@ -1,7 +1,7 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -19,6 +19,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
             tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                    .add(ModRegistry.sourceingot_block.get());
+                    .add(MartialRegistry.sourceingot_block.get());
     }
 }

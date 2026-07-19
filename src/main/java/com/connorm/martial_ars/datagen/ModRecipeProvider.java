@@ -1,7 +1,6 @@
 package com.connorm.martial_ars.datagen;
 
-import com.connorm.martial_ars.ArsNouveauRegistry;
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.core.HolderLookup;
@@ -21,32 +20,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.MushroomWand.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.MushroomWand.get())
                 .pattern("CBC")
                 .pattern(" A ")
                 .pattern(" A ")
-                .define('A',ModRegistry.SourceIngot.get())
+                .define('A', MartialRegistry.SourceIngot.get())
                 .define('B', RecipeDatagen.SOURCE_GEM)
                 .define('C', Tags.Items.MUSHROOMS)
-                .unlockedBy("has_sourceingot", has(ModRegistry.SourceIngot)).save(recipeOutput);
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.BlankInlay.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.BlankInlay.get())
                 .pattern("ABC")
                 .pattern("CDA")
                 .pattern("ABC")
-                .define('A',ModRegistry.SourceIngot.get())
+                .define('A', MartialRegistry.SourceIngot.get())
                 .define('B', RecipeDatagen.SOURCE_GEM)
                 .define('C', Tags.Items.INGOTS_GOLD)
                 .define('D', ItemsRegistry.MAGE_FIBER)
-                .unlockedBy("has_sourceingot", has(ModRegistry.SourceIngot)).save(recipeOutput);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModRegistry.SourceIngot.get(),9)
-                .requires(ModRegistry.sourceingot_block)
-                .unlockedBy("has_sourceingot_block", has(ModRegistry.sourceingot_block)).save(recipeOutput);
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MartialRegistry.SourceIngot.get(),9)
+                .requires(MartialRegistry.sourceingot_block)
+                .unlockedBy("has_sourceingot_block", has(MartialRegistry.sourceingot_block)).save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModRegistry.sourceingot_block.get())
-                .requires(ModRegistry.SourceIngot,9)
-                .unlockedBy("has_source_ingot", has(ModRegistry.SourceIngot)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MartialRegistry.sourceingot_block.get())
+                .requires(MartialRegistry.SourceIngot,9)
+                .unlockedBy("has_source_ingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
 
     }
 }

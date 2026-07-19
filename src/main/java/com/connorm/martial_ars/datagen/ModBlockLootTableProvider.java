@@ -1,14 +1,11 @@
 package com.connorm.martial_ars.datagen;
 
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import org.apache.commons.compress.compressors.lz77support.LZ77Compressor;
 
 import java.util.Set;
 
@@ -20,11 +17,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-dropSelf(ModRegistry.sourceingot_block.get());
+dropSelf(MartialRegistry.sourceingot_block.get());
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModRegistry.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return MartialRegistry.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 }

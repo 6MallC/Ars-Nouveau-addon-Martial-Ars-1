@@ -1,9 +1,8 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import com.connorm.martial_ars.util.ModTags;
-import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -22,19 +21,19 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
     tag(ModTags.Items.Weapon_Handles)
-            .add(ModRegistry.SpearShaft.get())
-            .add(ModRegistry.KunaiHandle.get());
+            .add(MartialRegistry.SpearShaft.get())
+            .add(MartialRegistry.KunaiHandle.get());
 
     tag(ModTags.Items.Weapon_Heads)
-            .add(ModRegistry.SpearHead.get())
-            .add(ModRegistry.KunaiBlade.get());
+            .add(MartialRegistry.SpearHead.get())
+            .add(MartialRegistry.KunaiBlade.get());
 
     tag(ModTags.Items.Inlays)
-            .add(ModRegistry.BlankInlay.get())
-            .add(ModRegistry.LuckInlay.get())
-            .add(ModRegistry.DelayInlay.get())
-            .add(ModRegistry.AttackInlay.get())
-            .add(ModRegistry.DiscountInlay.get());
+            .add(MartialRegistry.BlankInlay.get())
+            .add(MartialRegistry.LuckInlay.get())
+            .add(MartialRegistry.DelayInlay.get())
+            .add(MartialRegistry.AttackInlay.get())
+            .add(MartialRegistry.DiscountInlay.get());
     }
 
 }

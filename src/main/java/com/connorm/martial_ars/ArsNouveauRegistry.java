@@ -1,7 +1,7 @@
 package com.connorm.martial_ars;
 
 import com.connorm.martial_ars.glyphs.TestEffect;
-import com.connorm.martial_ars.registry.ModRegistry;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.api.registry.GlyphRegistry;
 import com.hollingsworth.arsnouveau.api.registry.SpellSoundRegistry;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
@@ -17,7 +17,7 @@ public class ArsNouveauRegistry {
         register(TestEffect.INSTANCE);
     }
     public static void registerSounds(){
-        SpellSoundRegistry.registerSpellSound(ModRegistry.EXAMPLE_SPELL_SOUND);
+        SpellSoundRegistry.registerSpellSound(MartialRegistry.EXAMPLE_SPELL_SOUND);
     }
     public static void register(AbstractSpellPart spellPart){
         GlyphRegistry.registerSpell(spellPart);

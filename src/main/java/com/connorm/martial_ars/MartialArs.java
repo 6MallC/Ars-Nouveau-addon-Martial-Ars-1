@@ -5,26 +5,20 @@ import com.connorm.martial_ars.entity.ModEntities;
 import com.connorm.martial_ars.entity.client.KunaiProjectileModel;
 import com.connorm.martial_ars.entity.client.KunaiProjectileRenderer;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
-import com.connorm.martial_ars.registry.ModRegistry;
-import com.hollingsworth.arsnouveau.common.items.ModItem;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.IModBusEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -42,7 +36,7 @@ public class MartialArs {
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register(modEventBus);
-        ModRegistry.registerRegistries(modEventBus);
+        MartialRegistry.registerRegistries(modEventBus);
         ModDataComponents.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
 
