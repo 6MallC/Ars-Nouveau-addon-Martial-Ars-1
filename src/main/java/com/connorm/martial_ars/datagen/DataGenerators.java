@@ -41,6 +41,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ImbuementProvider(generator));
         generator.addProvider(event.includeServer(), new GlyphProvider(generator));
         generator.addProvider(event.includeServer(), new ApparatusProvider(generator));
-
+        generator.addProvider(event.includeServer(), new PotionEffectTagProvider(output, provider, existingFileHelper));
     }
 }

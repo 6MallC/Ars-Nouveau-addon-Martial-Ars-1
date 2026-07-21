@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +24,7 @@ public class MushroomWandItem extends Item {
             Blocks.GRASS_BLOCK, Arrays.asList(Blocks.MYCELIUM)
     );
 
-    private static final Map<ItemTags, List<Block>> TAG_MAP = Map.of(
+    private static final Map<TagKey<Item>, List<Block>> TAG_MAP = Map.of(
             ItemTags.LOGS, Arrays.asList(Blocks.MUSHROOM_STEM)
     );
 
@@ -32,10 +33,10 @@ public class MushroomWandItem extends Item {
     }
 
     private Block getRandomBlock(List<Block> blocks, Random random) {
-        return blocks.get(random.nextInt(blocks.size());
+        return blocks.get(random.nextInt(blocks.size()));
     }
 
-    @Override
+   /* @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
@@ -46,7 +47,7 @@ public class MushroomWandItem extends Item {
                     doThingWithTarget(target);
                     return InteractionResult.SUCCESS;
                 })
-                .orElseGet(() => {
+                .orElseGet((getRandomBlock(B)) => {
                 for (Map.Entry<ItemTags, List<Block>> entry : TAG_MAP.entrySet()) {
             if (clickedBlock.is(entry.getKey())) {
                 Block target = this.getRandomBlock(entry.getValue(), (Random) level.random);
@@ -62,7 +63,7 @@ public class MushroomWandItem extends Item {
 
 
 
-    /*private static final Map<Block, Block> CONVERSION_MAP =
+    private static final Map<Block, Block> CONVERSION_MAP =
             Map.of(
                     Blocks.GRASS_BLOCK, Blocks.MYCELIUM,
                     Blocks.SHORT_GRASS, Blocks.BROWN_MUSHROOM,

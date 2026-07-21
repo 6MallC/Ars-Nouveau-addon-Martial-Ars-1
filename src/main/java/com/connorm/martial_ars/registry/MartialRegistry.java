@@ -11,17 +11,22 @@ import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
 import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.PercentageAttribute;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -163,6 +168,20 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
+
+    // ATTRIBUTES
+    public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(
+            BuiltInRegistries.ATTRIBUTE, "martial_ars");
+
+    public static final Holder<Attribute> EARTH_POTENCY = ATTRIBUTES.register("earth_potency", () -> new PercentageAttribute(
+            // The translation key to use.
+            "attributes.martial_ars.earth_potency",
+            // The default value.
+            0,
+            // Min and max values.
+            -100,
+            100
+    ));
 
 
     // BLOCKS

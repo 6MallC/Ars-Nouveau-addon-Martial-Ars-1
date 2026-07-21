@@ -1,0 +1,95 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "martial_ars:item/pyro"
+	},
+	"elements": [
+		{
+			"name": "blade",
+			"from": [7.5, 8, 7.5],
+			"to": [8.5, 12, 11.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -6, 8]},
+			"faces": {
+				"north": {"uv": [5.5, 1.5, 6, 3.5], "texture": "#1"},
+				"east": {"uv": [2.5, 0, 4.5, 2], "texture": "#1"},
+				"south": {"uv": [6, 4, 6.5, 6], "texture": "#1"},
+				"west": {"uv": [2.5, 2, 4.5, 4], "texture": "#1"},
+				"up": {"uv": [5, 8, 4.5, 6], "texture": "#1"},
+				"down": {"uv": [6.5, 6, 6, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "blade",
+			"from": [7.5, 4, 7.5],
+			"to": [8.5, 8, 12.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -6, 8]},
+			"faces": {
+				"north": {"uv": [6.5, 0, 7, 2], "texture": "#1"},
+				"east": {"uv": [0, 0, 2.5, 2], "texture": "#1"},
+				"south": {"uv": [6.5, 2, 7, 4], "texture": "#1"},
+				"west": {"uv": [0, 2, 2.5, 4], "texture": "#1"},
+				"up": {"uv": [6.5, 4, 6, 1.5], "texture": "#1"},
+				"down": {"uv": [4.5, 6, 4, 8.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "blade",
+			"from": [7.5, 0, 7.5],
+			"to": [8.5, 4, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -6, 8]},
+			"faces": {
+				"north": {"uv": [6.5, 4, 7, 6], "texture": "#1"},
+				"east": {"uv": [4, 4, 5, 6], "texture": "#1"},
+				"south": {"uv": [5, 6.5, 5.5, 8.5], "texture": "#1"},
+				"west": {"uv": [4.5, 0, 5.5, 2], "texture": "#1"},
+				"up": {"uv": [6, 7.5, 5.5, 6.5], "texture": "#1"},
+				"down": {"uv": [7.5, 1, 7, 2], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-180, -2, 90],
+			"translation": [-2, -1.5, 0.5],
+			"scale": [0.81, 0.81, 0.81]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-180, -2, 90],
+			"translation": [-2, -1.5, 0.5],
+			"scale": [0.81, 0.81, 0.81]
+		},
+		"firstperson_righthand": {
+			"rotation": [-20, 0, -90],
+			"translation": [-1.5, 2.5, 2.5],
+			"scale": [1, 0.87, 0.67]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-20, 0, -90],
+			"translation": [-1.5, 2.5, 2.5],
+			"scale": [1, 0.87, 0.67]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0]
+		},
+		"gui": {
+			"rotation": [62, 62, -62],
+			"translation": [0.25, 3.75, 0],
+			"scale": [1.2, 1.21, 1.21]
+		},
+		"fixed": {
+			"rotation": [1, -87, 1],
+			"translation": [0.75, 1.5, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "blade",
+			"origin": [9.5, 16, 5],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

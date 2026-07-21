@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "martial_ars:source_ingot"
+    },
+    "B": {
+      "tag": "c:gems/source"
+    },
+    "C": {
+      "tag": "c:mushrooms"
+    }
+  },
+  "pattern": [
+    "CBC",
+    " A ",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "martial_ars:mushroom_wand"
+  }
+}

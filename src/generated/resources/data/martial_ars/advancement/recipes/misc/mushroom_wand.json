@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sourceingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "martial_ars:source_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "martial_ars:mushroom_wand"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sourceingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "martial_ars:mushroom_wand"
+    ]
+  }
+}
