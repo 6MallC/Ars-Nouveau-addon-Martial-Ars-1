@@ -115,8 +115,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                             4.0f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
-    public static final DeferredItem<SwordItem> GeoSword = (DeferredItem<SwordItem>) ITEMS.register("sword.geomancy",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+    public static final DeferredItem<EnchantersSpearItem> GeoSword = (DeferredItem<EnchantersSpearItem>) ITEMS.register("sword.geomancy",
+            () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
             .withModifierAdded(com.alexthw.sauce.registry.ModRegistry.EARTH_POWER,
                     new AttributeModifier(ArsNouveau.prefix("sauce.perk.earth_power"),
@@ -127,8 +127,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
             .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
-    public static final DeferredItem<SwordItem> AeroSword = (DeferredItem<SwordItem>) ITEMS.register("sword.aeromancy",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+    public static final DeferredItem<EnchantersSpearItem> AeroSword = (DeferredItem<EnchantersSpearItem>) ITEMS.register("sword.aeromancy",
+            () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
                             .withModifierAdded(ModRegistry.AIR_POWER,
                                     new AttributeModifier(ArsNouveau.prefix("sauce.perk.air_power"),
@@ -139,8 +139,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
-    public static final DeferredItem<SwordItem> AquaSword = (DeferredItem<SwordItem>) ITEMS.register("sword.aquamancy",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+    public static final DeferredItem<EnchantersSpearItem> AquaSword = (DeferredItem<EnchantersSpearItem>) ITEMS.register("sword.aquamancy",
+            () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
                             .withModifierAdded(ModRegistry.WATER_POWER,
                                     new AttributeModifier(ArsNouveau.prefix("sauce.perk.aqua_power"),
@@ -151,8 +151,8 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
-    public static final DeferredItem<SwordItem> PyroSword = (DeferredItem<SwordItem>) ITEMS.register("sword.pyromancy",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()
+    public static final DeferredItem<EnchantersSpearItem> PyroSword = (DeferredItem<EnchantersSpearItem>) ITEMS.register("sword.pyromancy",
+            () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
                             .withModifierAdded(ModRegistry.FIRE_POWER,
                                     new AttributeModifier(ArsNouveau.prefix("sauce.perk.fire_power"),
