@@ -20,5 +20,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.LuckInlay.get());
         basicItem(MartialRegistry.AttackInlay.get());
         basicItem(MartialRegistry.DiscountInlay.get());
+        basicItem(MartialRegistry.EARTHBAGEL.get());
+        basicItem(MartialRegistry.AIRBAGEL.get());
+        basicItem(MartialRegistry.FIREBAGEL.get());
+        basicItem(MartialRegistry.WATERBAGEL.get());
     }
 }

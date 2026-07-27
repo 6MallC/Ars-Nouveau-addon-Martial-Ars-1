@@ -169,6 +169,18 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
 
+    // CURIOS
+    public static final DeferredItem<Item> EARTHBAGEL = (DeferredItem<Item>) ITEMS.register("earth_bagel",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> FIREBAGEL = (DeferredItem<Item>) ITEMS.register("fire_bagel",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> AIRBAGEL = (DeferredItem<Item>) ITEMS.register("air_bagel",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERBAGEL = (DeferredItem<Item>) ITEMS.register("water_bagel",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+
+
     // ATTRIBUTES
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(
             BuiltInRegistries.ATTRIBUTE, "martial_ars");
@@ -182,8 +194,12 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
             -100,
             100
     ));
-
-
+    public static final Holder<Attribute> AIR_POTENCY = ATTRIBUTES.register("air_potency", () -> new PercentageAttribute(
+            "attributes.martial_ars.air_potency", 0,-100,100));
+    public static final Holder<Attribute> WATER_POTENCY = ATTRIBUTES.register("water_potency", () -> new PercentageAttribute(
+            "attributes.martial_ars.water_potency", 0,-100,100));
+    public static final Holder<Attribute> FIRE_POTENCY = ATTRIBUTES.register("fire_potency", () -> new PercentageAttribute(
+            "attributes.martial_ars.fire_potency", 0,-100,100));
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()

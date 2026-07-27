@@ -34,5 +34,9 @@
   "item.martial_ars.geo.blade": "Earth Blade",
   "item.martial_ars.geo.hilt": "Earth Hilt",
   "item.martial_ars.pyro.blade": "Fire Blade",
-  "item.martial_ars.pyro.hilt": "File Hilt"
+  "item.martial_ars.pyro.hilt": "File Hilt",
+  "item.martial_ars.earth_bagel": "Bane of Earth",
+  "item.martial_ars.air_bagel": "Bane of Air",
+  "item.martial_ars.fire_bagel": "Bane of Fire",
+  "item.martial_ars.water_bagel": "Bane of Water"
 }

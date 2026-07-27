@@ -1,6 +1,5 @@
 package com.connorm.martial_ars.registry.custom;
 
-import com.connorm.martial_ars.item.RangeTool;
 import com.hollingsworth.arsnouveau.api.item.ICasterTool;
 import com.hollingsworth.arsnouveau.api.mana.IManaDiscountEquipment;
 import com.hollingsworth.arsnouveau.api.spell.*;
@@ -12,7 +11,6 @@ import com.hollingsworth.arsnouveau.common.perk.RepairingPerk;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.hollingsworth.arsnouveau.setup.config.Config;
-import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -31,10 +29,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class EnchantersSpearItem extends SwordItem implements ICasterTool, RangeTool, IManaDiscountEquipment {
+public class EnchantersSpearItem extends SwordItem implements ICasterTool, IManaDiscountEquipment {
     public EnchantersSpearItem(Tier tier, Properties properties) {
         super(tier, properties);
-                //.component(DataComponentRegistry.SPELL_CASTER, new SpellCaster());
     }
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int p_77663_4_, boolean p_77663_5_) {
