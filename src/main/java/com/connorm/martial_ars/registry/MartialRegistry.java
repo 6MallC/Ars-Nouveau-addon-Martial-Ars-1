@@ -185,21 +185,23 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(
             BuiltInRegistries.ATTRIBUTE, "martial_ars");
 
-    public static final Holder<Attribute> EARTH_POTENCY = ATTRIBUTES.register("earth_potency", () -> new PercentageAttribute(
+    public static final Holder<Attribute> EARTH_POTENCY = ATTRIBUTES.register("earth_potency", () -> new RangedAttribute(
             // The translation key to use.
             "attributes.martial_ars.earth_potency",
             // The default value.
             0,
             // Min and max values.
-            -100,
-            100
+            -1000,
+            1000
     ));
-    public static final Holder<Attribute> AIR_POTENCY = ATTRIBUTES.register("air_potency", () -> new PercentageAttribute(
-            "attributes.martial_ars.air_potency", 0,-100,100));
-    public static final Holder<Attribute> WATER_POTENCY = ATTRIBUTES.register("water_potency", () -> new PercentageAttribute(
-            "attributes.martial_ars.water_potency", 0,-100,100));
-    public static final Holder<Attribute> FIRE_POTENCY = ATTRIBUTES.register("fire_potency", () -> new PercentageAttribute(
-            "attributes.martial_ars.fire_potency", 0,-100,100));
+    public static final Holder<Attribute> AIR_POTENCY = ATTRIBUTES.register("air_potency", () -> new RangedAttribute(
+            "attributes.martial_ars.air_potency", 0,-1000,1000));
+    public static final Holder<Attribute> WATER_POTENCY = ATTRIBUTES.register("water_potency", () -> new RangedAttribute(
+            "attributes.martial_ars.water_potency", 0,-1000,1000));
+    public static final Holder<Attribute> FIRE_POTENCY = ATTRIBUTES.register("fire_potency", () -> new RangedAttribute(
+            "attributes.martial_ars.fire_potency", 0,-1000,1000));
+    public static final Holder<Attribute> ELEMENTAL_POTENCY = ATTRIBUTES.register("elemental_potency", () -> new RangedAttribute(
+            "attributes.martial_ars.elemental_potency", 0,-1000,1000));
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
