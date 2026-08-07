@@ -16,6 +16,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -26,7 +27,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.PercentageAttribute;
+import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -48,11 +51,11 @@ public class MartialRegistry {
 
     // ITEMS
     public static final DeferredItem<? extends Item> SourceIngot = (DeferredItem<? extends Item>) ITEMS.register("source_ingot",
-            () -> new Item(new Item.Properties()){
+            () -> new Item(new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.martial_ars.source_ingot.tooltip"));
-                    super.appendHoverText(stack,context,tooltipComponents,tooltipFlag);
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
     public static final DeferredItem<Item> SourceMatrix = (DeferredItem<Item>) ITEMS.register("source_matrix",
@@ -85,13 +88,13 @@ public class MartialRegistry {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> KunaiBlade = (DeferredItem<Item>) ITEMS.register("kunai_blade",
             () -> new Item(new Item.Properties()));
-// inlays
-public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
-        () -> new Item(new Item.Properties()));
-public static final DeferredItem<Item> LuckInlay = (DeferredItem<Item>) ITEMS.register("luck_inlay",
-        () -> new Item(new Item.Properties()));
-public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.register("blank_inlay",
-        () -> new Item(new Item.Properties()));
+    // inlays
+    public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LuckInlay = (DeferredItem<Item>) ITEMS.register("luck_inlay",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.register("blank_inlay",
+            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> AttackInlay = (DeferredItem<Item>) ITEMS.register("attack_inlay",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> DiscountInlay = (DeferredItem<Item>) ITEMS.register("discount_inlay",
@@ -123,15 +126,15 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
     public static final DeferredItem<EnchantersSpearItem> GeoSword = (DeferredItem<EnchantersSpearItem>) ITEMS.register("sword.geomancy",
             () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
-            .withModifierAdded(com.alexthw.sauce.registry.ModRegistry.EARTH_POWER,
-                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.earth_power"),
-                            8.0f, AttributeModifier.Operation.ADD_VALUE),
-                    EquipmentSlotGroup.MAINHAND)
+                            .withModifierAdded(com.alexthw.sauce.registry.ModRegistry.EARTH_POWER,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.earth_power"),
+                                            8.0f, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
                             .withModifierAdded(ModRegistry.MANA_DISCOUNT_EARTH,
                                     new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.earth"),
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
-            .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
+                    .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
     public static final DeferredItem<EnchantersSpearItem> AeroSword = (DeferredItem<EnchantersSpearItem>) ITEMS.register("sword.aeromancy",
             () -> new EnchantersSpearItem(ModToolTiers.Martial, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
@@ -180,7 +183,6 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
             () -> new Item(new Item.Properties().stacksTo(1)));
 
 
-
     // ATTRIBUTES
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(
             BuiltInRegistries.ATTRIBUTE, "martial_ars");
@@ -195,13 +197,13 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
             1000
     ));
     public static final Holder<Attribute> AIR_POTENCY = ATTRIBUTES.register("air_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.air_potency", 0,-1000,1000));
+            "attributes.martial_ars.air_potency", 0, -1000, 1000));
     public static final Holder<Attribute> WATER_POTENCY = ATTRIBUTES.register("water_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.water_potency", 0,-1000,1000));
+            "attributes.martial_ars.water_potency", 0, -1000, 1000));
     public static final Holder<Attribute> FIRE_POTENCY = ATTRIBUTES.register("fire_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.fire_potency", 0,-1000,1000));
+            "attributes.martial_ars.fire_potency", 0, -1000, 1000));
     public static final Holder<Attribute> ELEMENTAL_POTENCY = ATTRIBUTES.register("elemental_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.elemental_potency", 0,-1000,1000));
+            "attributes.martial_ars.elemental_potency", 0, -1000, 1000));
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -213,32 +215,45 @@ public static final DeferredItem<Item> BlankInlay = (DeferredItem<Item>) ITEMS.r
     public static void registerRegistries(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        ATTRIBUTES.register(bus);
         SOUNDS.register(bus);
 
     }
-public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-    ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-}
-   public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
-    DeferredBlock<T> toReturn = (DeferredBlock<T>) BLOCKS.register(name, block);
-    registerBlockItem(name, toReturn);
-    return toReturn;
+
+    public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
-// SOUNDS
-public static final DeferredHolder<Item, ? extends Item> EXAMPLE;
-//this is an example of how to register a sound. You also need to add the sound to the sound.json file, referencing your ogg files, and a texture for the button under textures/sounds.
+
+    public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = (DeferredBlock<T>) BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    // SOUNDS
+    public static final DeferredHolder<Item, ? extends Item> EXAMPLE;
+    //this is an example of how to register a sound. You also need to add the sound to the sound.json file, referencing your ogg files, and a texture for the button under textures/sounds.
 //this example will use one of the existing sounds randomly
-public static DeferredHolder<SoundEvent, SoundEvent> EXAMPLE_FAMILY = SOUNDS.register("example_sound", () -> makeSound("example_sound"));
-public static SpellSound EXAMPLE_SPELL_SOUND = new SpellSound(MartialRegistry.EXAMPLE_FAMILY, Component.literal("Example"), prefix("example_random_sound"));
+    public static DeferredHolder<SoundEvent, SoundEvent> EXAMPLE_FAMILY = SOUNDS.register("example_sound", () -> makeSound("example_sound"));
+    public static SpellSound EXAMPLE_SPELL_SOUND = new SpellSound(MartialRegistry.EXAMPLE_FAMILY, Component.literal("Example"), prefix("example_random_sound"));
 
 
-static {
-    EXAMPLE = ITEMS.register("star_hat", () -> new ExampleCosmetic(new Item.Properties()));
-}
+    static {
+        EXAMPLE = ITEMS.register("star_hat", () -> new ExampleCosmetic(new Item.Properties()));
+    }
 
-static SoundEvent makeSound(@NotNull String name) {
-    return SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MODID, name));
-}
+    static SoundEvent makeSound(@NotNull String name) {
+        return SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MODID, name));
+    }
+
+    @SubscribeEvent
+    public static void modifyEntityAttributes(EntityAttributeModificationEvent event) {
+        event.getTypes().stream().filter(e -> e == EntityType.PLAYER).forEach(e -> {
+            ATTRIBUTES.getEntries().forEach((v) -> {
+                event.add(e, v);
+            });
+        });
+    }
 }
 
 
