@@ -28,7 +28,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.common.PercentageAttribute;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -43,7 +42,7 @@ import static com.connorm.martial_ars.MartialArs.MODID;
 import static com.connorm.martial_ars.MartialArs.prefix;
 import static net.minecraft.core.registries.Registries.SOUND_EVENT;
 
-public class MartialRegistry {
+    public class MartialRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.createBlocks(MODID);
@@ -184,6 +183,7 @@ public class MartialRegistry {
 
 
     // ATTRIBUTES
+
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(
             BuiltInRegistries.ATTRIBUTE, "martial_ars");
 
@@ -195,15 +195,26 @@ public class MartialRegistry {
             // Min and max values.
             -1000,
             1000
-    ));
+            ).setSyncable(true));
     public static final Holder<Attribute> AIR_POTENCY = ATTRIBUTES.register("air_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.air_potency", 0, -1000, 1000));
+            "attributes.martial_ars.air_potency", 0, -1000, 1000).setSyncable(true));
     public static final Holder<Attribute> WATER_POTENCY = ATTRIBUTES.register("water_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.water_potency", 0, -1000, 1000));
+            "attributes.martial_ars.water_potency", 0, -1000, 1000).setSyncable(true));
     public static final Holder<Attribute> FIRE_POTENCY = ATTRIBUTES.register("fire_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.fire_potency", 0, -1000, 1000));
+            "attributes.martial_ars.fire_potency", 0, -1000, 1000).setSyncable(true));
     public static final Holder<Attribute> ELEMENTAL_POTENCY = ATTRIBUTES.register("elemental_potency", () -> new RangedAttribute(
-            "attributes.martial_ars.elemental_potency", 0, -1000, 1000));
+            "attributes.martial_ars.elemental_potency", 0, -1000, 1000).setSyncable(true));
+
+    @SubscribeEvent
+    public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {
+        event.getTypes().stream() .filter(e -> e == EntityType.PLAYER)
+                .forEach(player -> {
+                    ATTRIBUTES.getEntries().forEach(
+                            v -> {
+                                event.add(player, v);
+                            });
+                });
+    }
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -246,15 +257,8 @@ public class MartialRegistry {
         return SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(MODID, name));
     }
 
-    @SubscribeEvent
-    public static void modifyEntityAttributes(EntityAttributeModificationEvent event) {
-        event.getTypes().stream().filter(e -> e == EntityType.PLAYER).forEach(e -> {
-            ATTRIBUTES.getEntries().forEach((v) -> {
-                event.add(e, v);
-            });
-        });
-    }
 }
+
 
 
 
