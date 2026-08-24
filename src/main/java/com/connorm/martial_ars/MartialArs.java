@@ -4,6 +4,7 @@ import com.connorm.martial_ars.component.ModDataComponents;
 import com.connorm.martial_ars.entity.ModEntities;
 import com.connorm.martial_ars.entity.client.KunaiProjectileModel;
 import com.connorm.martial_ars.entity.client.KunaiProjectileRenderer;
+import com.connorm.martial_ars.event.AttributeEventHandler;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.MartialRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -34,9 +35,11 @@ public class MartialArs {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(AttributeEventHandler.class);
 
         ModCreativeModeTabs.register(modEventBus);
         MartialRegistry.registerRegistries(modEventBus);
+        modEventBus.register(MartialRegistry.class);
         ModDataComponents.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
 
