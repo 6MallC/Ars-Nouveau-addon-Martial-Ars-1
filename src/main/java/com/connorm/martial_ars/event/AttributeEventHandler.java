@@ -26,6 +26,7 @@ public class AttributeEventHandler {
         if (potencyAttribute != null)
             schoolToEffectAttribute.put(school, potencyAttribute);
     }
+
     static {
         linkSchoolToAttribute(SpellSchools.ELEMENTAL_EARTH, MartialRegistry.EARTH_POTENCY);
         linkSchoolToAttribute(SpellSchools.ELEMENTAL_WATER, MartialRegistry.WATER_POTENCY);
@@ -37,28 +38,32 @@ public class AttributeEventHandler {
     @SubscribeEvent
     public static void onPotionAdd(MobEffectEvent.Added event) {
         LivingEntity living = event.getEntity();
-        Set<SpellSchool> schools = null;
+        Set<SpellSchool> schools;
         if (living.getAttribute(MartialRegistry.ELEMENTAL_POTENCY) != null) {
             schools = new HashSet<>();
             for (Map.Entry<SpellSchool, Holder<Attribute>> entry : schoolToEffectAttribute.entrySet()) {
                 SpellSchool school = entry.getKey();
                 List<TagKey<MobEffect>> tags = MartialTags.Effects.SCHOOL_TO_EFFECT_TYPES.getOrDefault(school, List.of());
-                if (school != SpellSchools.ELEMENTAL)
-                    schools.addAll(school.getSubSchools());
+                if (tags.stream().anyMatch(tag -> )) {
+                    schools.add(school);
+                    if (school != SpellSchools.ELEMENTAL)
+                        schools.addAll(school.getSubSchools());
+                }
             }
-        }
 
-        for (SpellSchool school : schools) {
-            Holder<Attribute> attribute = schoolToEffectAttribute.get(school);
-            if (attribute != null) {
-                AttributeInstance attrInstance = living.getAttribute(attribute);
-                if (attrInstance != null) {
-                    double potency = attrInstance.getValue();
-                    if (potency != 0) {
-                        event.getEffectInstance().duration *= (float) (1 + (potency / 100.0));
-                        // reminder to check your math
+
+            for (SpellSchool school : schools) {
+                Holder<Attribute> attribute = schoolToEffectAttribute.get(school);
+                if (attribute != null) {
+                    AttributeInstance attrInstance = living.getAttribute(attribute);
+                    if (attrInstance != null) {
+                        double potency = attrInstance.getValue();
+                        if (potency != 0) {
+                            event.getEffectInstance().duration *= (int) (1 + (potency / 100.0));
+                            // reminder to check your math
+                        }
+
                     }
-
                 }
             }
         }

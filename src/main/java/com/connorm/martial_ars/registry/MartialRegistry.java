@@ -193,7 +193,7 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             // The default value.
             0,
             // Min and max values.
-            -1000,
+                    -1000,
             1000
             ).setSyncable(true));
     public static final Holder<Attribute> AIR_POTENCY = ATTRIBUTES.register("air_potency", () -> new RangedAttribute(
