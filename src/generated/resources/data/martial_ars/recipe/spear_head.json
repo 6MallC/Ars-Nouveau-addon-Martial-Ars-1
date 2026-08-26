@@ -6,22 +6,16 @@
       "item": "martial_ars:source_ingot"
     },
     "B": {
-      "tag": "c:gems/source"
-    },
-    "C": {
       "tag": "c:ingots/gold"
-    },
-    "D": {
-      "item": "ars_nouveau:magebloom_fiber"
     }
   },
   "pattern": [
-    "ABC",
-    "CDA",
-    "ABC"
+    "A  ",
+    "A A",
+    "BBB"
   ],
   "result": {
-    "count": 2,
-    "id": "martial_ars:blank_inlay"
+    "count": 1,
+    "id": "martial_ars:spear_head"
   }
 }

@@ -42,7 +42,14 @@ public class ApparatusProvider extends ApparatusRecipeProvider {
                     .withPedestalItem(2,RecipeDatagen.SOURCE_GEM)
                     .withSourceCost(1000)
                     .build()
-            );  
+            );
+            recipes.add(builder()
+                    .withResult(MartialRegistry.SourceIngot)
+                    .withReagent(Items.IRON_INGOT)
+                    .withPedestalItem(2,RecipeDatagen.SOURCE_GEM)
+                    .withSourceCost(100)
+                    .build()
+            );
         }
 
     }

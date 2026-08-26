@@ -40,6 +40,7 @@ import java.util.function.Supplier;
 
 import static com.connorm.martial_ars.MartialArs.MODID;
 import static com.connorm.martial_ars.MartialArs.prefix;
+import static net.minecraft.core.registries.Registries.MOB_EFFECT;
 import static net.minecraft.core.registries.Registries.SOUND_EVENT;
 
     public class MartialRegistry {

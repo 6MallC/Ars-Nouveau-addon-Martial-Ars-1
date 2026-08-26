@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class AttributeEventHandler {
-
+/*
     // credit to AlexThw and SauceLib as most of the raw code for the potency attributes was taken from there
     public static final Map<SpellSchool, Holder<Attribute>> schoolToEffectAttribute = new ConcurrentHashMap<>();
 
@@ -67,7 +67,7 @@ public class AttributeEventHandler {
                 }
             }
         }
-    }
+    }*/
 }
 
 

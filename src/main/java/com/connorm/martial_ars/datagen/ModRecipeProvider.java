@@ -30,7 +30,7 @@ public class  ModRecipeProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.BlankInlay.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.BlankInlay.get(), 2)
                 .pattern("ABC")
                 .pattern("CDA")
                 .pattern("ABC")
@@ -39,6 +39,7 @@ public class  ModRecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('C', Tags.Items.INGOTS_GOLD)
                 .define('D', ItemsRegistry.MAGE_FIBER)
                 .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MartialRegistry.SourceIngot.get(),9)
                 .requires(MartialRegistry.sourceingot_block)
                 .unlockedBy("has_sourceingot_block", has(MartialRegistry.sourceingot_block)).save(recipeOutput);
@@ -46,6 +47,38 @@ public class  ModRecipeProvider extends RecipeProvider implements IConditionBuil
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MartialRegistry.sourceingot_block.get())
                 .requires(MartialRegistry.SourceIngot,9)
                 .unlockedBy("has_source_ingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.SpearShaft.get())
+                .pattern("AB ")
+                .pattern("AB ")
+                .pattern("AB ")
+                .define('A', MartialRegistry.SourceIngot.get())
+                .define('B', Tags.Items.INGOTS_GOLD)
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.SpearHead.get())
+                .pattern("A  ")
+                .pattern("A A")
+                .pattern("BBB")
+                .define('A', MartialRegistry.SourceIngot.get())
+                .define('B', Tags.Items.INGOTS_GOLD)
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.KunaiBlade.get())
+                .pattern(" A ")
+                .pattern(" A ")
+                .pattern(" BB")
+                .define('A', MartialRegistry.SourceIngot.get())
+                .define('B', RecipeDatagen.SOURCE_GEM)
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.KunaiHandle.get())
+                .pattern(" A ")
+                .pattern(" B ")
+                .pattern(" B ")
+                .define('A', MartialRegistry.SourceIngot.get())
+                .define('B', Tags.Items.INGOTS_GOLD)
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
 
     }
 }
