@@ -38,5 +38,6 @@
   "item.martial_ars.earth_bagel": "Bane of Earth",
   "item.martial_ars.air_bagel": "Bane of Air",
   "item.martial_ars.fire_bagel": "Bane of Fire",
-  "item.martial_ars.water_bagel": "Bane of Water"
+  "item.martial_ars.water_bagel": "Bane of Water",
+  "effect.martial_ars.repairing": "Repairing"
 }

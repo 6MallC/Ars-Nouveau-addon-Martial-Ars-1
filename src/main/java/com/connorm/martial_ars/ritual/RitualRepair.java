@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.ritual;
 
+import com.hollingsworth.arsnouveau.api.block.IPedestalMachine;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
 import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;
@@ -15,7 +16,7 @@ import java.util.List;
 import static net.minecraft.commands.arguments.coordinates.BlockPosArgument.getBlockPos;
 import static software.bernie.geckolib.util.ClientUtil.getLevel;
 
-public class RitualRepair extends AbstractRitual {
+public class RitualRepair extends AbstractRitual implements IPedestalMachine {
     int radius = 1;
     Level level = getWorld();
 
@@ -38,17 +39,33 @@ public class RitualRepair extends AbstractRitual {
 
         if (world.isClientSide) {
             BlockPos pos = getPos();
-            ParticleUtil.spawnRitualAreaEffect(getPos(), getWorld(), rand, getCenterColor(), radius);
+            ParticleUtil.spawnRitualAreaEffect(pos, getWorld(), rand, getCenterColor(), radius);
         }
         if (!getWorld().isClientSide && world.getGameTime() % 20 == 0) {
-            getPedestalItems();
-            for ()
 
+            for (ItemStack I : getPedestalItems()) {
+                int damage = I.getDamageValue();
+                int repairAmount = Math.min(damage,1 * 10);
+                if (damage >= 0) {
+                    I.setDamageValue(damage - repairAmount);
+                    takeSourceNow();
+                }
+            }
         }
+    }
+
+    @Override
+    public int getSourceCost() {
+        return 200;
     }
 
     @Override
     public ResourceLocation getRegistryName() {
         return null;
+    }
+
+    @Override
+    public void lightPedestal(Level level) {
+
     }
 }
