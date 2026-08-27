@@ -3,7 +3,6 @@ package com.connorm.martial_ars.ritual;
 import com.hollingsworth.arsnouveau.api.block.IPedestalMachine;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
-import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;
 import com.hollingsworth.arsnouveau.common.block.tile.ArcanePedestalTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -13,7 +12,6 @@ import net.minecraft.world.level.Level;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.minecraft.commands.arguments.coordinates.BlockPosArgument.getBlockPos;
 import static software.bernie.geckolib.util.ClientUtil.getLevel;
 
 public class RitualRepair extends AbstractRitual implements IPedestalMachine {
@@ -37,6 +35,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
     protected void tick() {
         Level world = getWorld();
 
+        assert world != null;
         if (world.isClientSide) {
             BlockPos pos = getPos();
             ParticleUtil.spawnRitualAreaEffect(pos, getWorld(), rand, getCenterColor(), radius);
@@ -45,7 +44,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
 
             for (ItemStack I : getPedestalItems()) {
                 int damage = I.getDamageValue();
-                int repairAmount = Math.min(damage,1 * 10);
+                int repairAmount = Math.min(damage,1 * 20);
                 if (damage >= 0) {
                     I.setDamageValue(damage - repairAmount);
                     takeSourceNow();

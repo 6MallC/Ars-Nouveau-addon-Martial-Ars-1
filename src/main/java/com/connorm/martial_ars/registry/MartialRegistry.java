@@ -10,6 +10,7 @@ import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
+import com.hollingsworth.arsnouveau.common.items.RitualTablet;
 import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -67,28 +68,29 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
     public static final DeferredItem<Item> SpearHead = (DeferredItem<Item>) ITEMS.register("spear_head",
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> GeoBlade = (DeferredItem<SwordItem>) ITEMS.register("geo.blade",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> GeoHilt = (DeferredItem<SwordItem>) ITEMS.register("geo.hilt",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> AeroBlade = (DeferredItem<SwordItem>) ITEMS.register("aero.blade",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> AeroHilt = (DeferredItem<SwordItem>) ITEMS.register("aero.hilt",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> PyroBlade = (DeferredItem<SwordItem>) ITEMS.register("pyro.blade",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> PyroHilt = (DeferredItem<SwordItem>) ITEMS.register("pyro.hilt",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> AquaBlade = (DeferredItem<SwordItem>) ITEMS.register("aqua.blade",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> AquaHilt = (DeferredItem<SwordItem>) ITEMS.register("aqua.hilt",
-            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
 
 
     public static final DeferredItem<Item> KunaiHandle = (DeferredItem<Item>) ITEMS.register("kunai_handle",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(8)));
     public static final DeferredItem<Item> KunaiBlade = (DeferredItem<Item>) ITEMS.register("kunai_blade",
-            () -> new Item(new Item.Properties()));
-    // inlays
+            () -> new Item(new Item.Properties().stacksTo(8)));
+
+    // Inlays
     public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LuckInlay = (DeferredItem<Item>) ITEMS.register("luck_inlay",
