@@ -20,7 +20,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
     int radius = 1;
     Level level = getWorld();
 
-    public ArrayList<BlockPos> pedestalList() {
+    public List<BlockPos> pedestalList() {
         return pedestalList(getBlockPos(), radius, getLevel());
     }
 

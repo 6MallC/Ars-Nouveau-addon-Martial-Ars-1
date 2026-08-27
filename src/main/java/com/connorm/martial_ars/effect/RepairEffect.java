@@ -21,7 +21,7 @@ public class RepairEffect extends MobEffect {
 
         for (ItemStack i : entity.getAllSlots()) {
             int damage = i.getDamageValue();
-            int repairAmount = Math.min(damage,1 + amplifier * 10);
+            int repairAmount = Math.min(damage,10 + amplifier * 10);
             if (damage >= 0) {
                 i.setDamageValue(damage - repairAmount);
             }

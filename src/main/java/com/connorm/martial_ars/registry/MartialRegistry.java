@@ -166,8 +166,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                                     new AttributeModifier(ArsNouveau.prefix("sauce.perk.fire_power"),
                                             8.0f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND)
-                            .withModifierAdded(ModRegistry.MANA_DISCOUNT_WATER,
-                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.water"),
+                            .withModifierAdded(ModRegistry.MANA_DISCOUNT_FIRE,
+                                    new AttributeModifier(ArsNouveau.prefix("sauce.perk.mana_discount.fire"),
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
