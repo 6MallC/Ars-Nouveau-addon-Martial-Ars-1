@@ -1,5 +1,7 @@
 package com.connorm.martial_ars.datagen;
 
+import alexthw.ars_elemental.ArsElemental;
+import alexthw.ars_elemental.datagen.AELangDatagen;
 import com.connorm.martial_ars.MartialArs;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -42,5 +44,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new GlyphProvider(generator));
         generator.addProvider(event.includeServer(), new ApparatusProvider(generator));
         generator.addProvider(event.includeServer(), new PotionEffectTagProvider(output, provider, existingFileHelper));
+        generator.addProvider(event.includeClient(), new MELangDatagen(output, MartialArs.MODID, "en_us"));
     }
 }

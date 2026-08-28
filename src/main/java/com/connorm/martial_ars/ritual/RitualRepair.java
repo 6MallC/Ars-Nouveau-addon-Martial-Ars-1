@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.ritual;
 
+import com.connorm.martial_ars.MartialArs;
 import com.hollingsworth.arsnouveau.api.block.IPedestalMachine;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
@@ -8,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.checkerframework.checker.units.qual.Prefix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,11 +62,14 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return null;
+        return null; //Prefix(MartialArs ID);
     }
+    public static String ID = "ritual_repair";
+
 
     @Override
     public void lightPedestal(Level level) {
 
     }
+
 }
