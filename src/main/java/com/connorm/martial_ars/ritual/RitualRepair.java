@@ -9,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import org.checkerframework.checker.units.qual.Prefix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +39,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
         assert world != null;
         if (world.isClientSide) {
             BlockPos pos = getPos();
+            assert pos != null;
             ParticleUtil.spawnRitualAreaEffect(pos, getWorld(), rand, getCenterColor(), radius);
         }
         if (!getWorld().isClientSide && world.getGameTime() % 20 == 0) {
@@ -77,7 +77,6 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
                 "  (armor slots off hand and main hand) though at halved efficiency." +
                 " fire essence can be used to increase throughput consuming more source for more durability per second.";
     }
-    public static String ID = "ritual_repair";
 
 
     @Override
