@@ -33,11 +33,11 @@ public class MartialArs {
 
     public MartialArs(IEventBus modEventBus, ModContainer modContainer) {
         ArsNouveauRegistry.registerGlyphs();
+        ArsNouveauRegistry.init();
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         NeoForge.EVENT_BUS.register(this);
         //NeoForge.EVENT_BUS.register(AttributeEventHandler.class);
-
         ModCreativeModeTabs.register(modEventBus);
         MartialRegistry.registerRegistries(modEventBus);
         modEventBus.register(MartialRegistry.class);

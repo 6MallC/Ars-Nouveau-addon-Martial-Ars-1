@@ -6,7 +6,9 @@ import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
 import com.connorm.martial_ars.registry.custom.KunaiItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
+import com.connorm.martial_ars.ritual.RitualRepair;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
+import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
@@ -83,7 +85,6 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
     public static final DeferredItem<SwordItem> AquaHilt = (DeferredItem<SwordItem>) ITEMS.register("aqua.hilt",
             () -> new SwordItem(ModToolTiers.Martial, new Item.Properties().stacksTo(8)));
-
 
     public static final DeferredItem<Item> KunaiHandle = (DeferredItem<Item>) ITEMS.register("kunai_handle",
             () -> new Item(new Item.Properties().stacksTo(8)));
@@ -261,36 +262,3 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
