@@ -6,13 +6,10 @@ import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
 import com.connorm.martial_ars.registry.custom.KunaiItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
-import com.connorm.martial_ars.ritual.RitualRepair;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
-import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
-import com.hollingsworth.arsnouveau.common.items.RitualTablet;
 import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -43,7 +40,6 @@ import java.util.function.Supplier;
 
 import static com.connorm.martial_ars.MartialArs.MODID;
 import static com.connorm.martial_ars.MartialArs.prefix;
-import static net.minecraft.core.registries.Registries.MOB_EFFECT;
 import static net.minecraft.core.registries.Registries.SOUND_EVENT;
 
     public class MartialRegistry {
@@ -212,12 +208,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
     @SubscribeEvent
     public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {
         event.getTypes().stream() .filter(e -> e == EntityType.PLAYER)
-                .forEach(player -> {
-                    ATTRIBUTES.getEntries().forEach(
-                            v -> {
-                                event.add(player, v);
-                            });
-                });
+                .forEach(player -> ATTRIBUTES.getEntries().forEach(
+                        v -> event.add(player, v)));
     }
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",

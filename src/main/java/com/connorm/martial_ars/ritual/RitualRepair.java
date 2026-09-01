@@ -4,6 +4,7 @@ import com.connorm.martial_ars.MartialArs;
 import com.hollingsworth.arsnouveau.api.block.IPedestalMachine;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
+import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;
 import com.hollingsworth.arsnouveau.common.block.tile.ArcanePedestalTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -11,15 +12,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static software.bernie.geckolib.util.ClientUtil.getLevel;
 
 public class RitualRepair extends AbstractRitual implements IPedestalMachine {
     int radius = 1;
-    Level level = getWorld();
 
-    public List<BlockPos> pedestalList() {
+ /*   public List<BlockPos> pedestalList() {
         return pedestalList(this.getPos(), radius, getLevel());
     }
 
@@ -31,12 +28,12 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
                 }
             }
             return pedestalItems;
-    }
-    @Override
+    }*/
+ @Override
     protected void tick() {
         Level world = getWorld();
 
-        assert world != null;
+
         if (world.isClientSide) {
             BlockPos pos = getPos();
             assert pos != null;
@@ -44,12 +41,26 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
         }
         if (!getWorld().isClientSide && world.getGameTime() % 20 == 0) {
 
-            for (ItemStack I : getPedestalItems()) {
-                int damage = I.getDamageValue();
-                int repairAmount = Math.min(damage,1 * 20);
-                if (damage >= 0) {
-                    I.setDamageValue(damage - repairAmount);
-                    takeSourceNow();
+            ArrayList<ItemStack> posList = new ArrayList<>();
+            for (BlockPos blockPos : BlockPos.betweenClosed(getPos().offset(-radius, 0, -radius), getPos().offset(radius, 0, radius))) {
+                if (world.getBlockState(blockPos).getBlock() instanceof ArcanePedestal) {
+                    ArcanePedestalTile tile = (ArcanePedestalTile) world.getBlockEntity(blockPos);
+                    if (tile == null) {
+                        continue;
+                    }
+                    if (tile.getStack() == null){
+                        continue;
+                    }
+                    posList.add(tile.getStack());
+
+
+                    for (ItemStack I : posList) {
+                        int damage = I.getDamageValue();
+                        int repairAmount = Math.min(damage,1 * 20);
+                        if (damage > 0) {
+                            I.setDamageValue(damage - repairAmount);
+                        }
+                    }
                 }
             }
         }
