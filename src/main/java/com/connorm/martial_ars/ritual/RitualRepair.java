@@ -59,6 +59,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
                         int repairAmount = Math.min(damage,1 * 20);
                         if (damage > 0) {
                             I.setDamageValue(damage - repairAmount);
+
                         }
                     }
                 }
@@ -78,7 +79,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
 
     @Override
     public String getLangName() {
-        return "Ritual of Repairing";
+        return "Repairing";
     }
     @Override
     public String getLangDescription(){
