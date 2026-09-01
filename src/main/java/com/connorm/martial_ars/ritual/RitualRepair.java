@@ -83,7 +83,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
     @Override
     public String getLangDescription(){
         return "Uses a moderate amount of source per second to repair anything with durability" +
-                " placed on adjacent arcane pedestals, Unless you augment it with earth and air essence in which case;" +
+                " placed on adjacent arcane pedestals, Unless you augment it with earth and air essence in which case" +
                 " it will instead apply an effect in a wide area that repairs tools in equipment slots" +
                 "  (armor slots off hand and main hand) though at halved efficiency." +
                 " fire essence can be used to increase throughput consuming more source for more durability per second.";
