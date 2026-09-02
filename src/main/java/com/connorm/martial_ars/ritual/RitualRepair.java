@@ -1,38 +1,32 @@
 package com.connorm.martial_ars.ritual;
 
 import com.connorm.martial_ars.MartialArs;
-import com.hollingsworth.arsnouveau.api.block.IPedestalMachine;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
 import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;
 import com.hollingsworth.arsnouveau.common.block.tile.ArcanePedestalTile;
+import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
+import com.hollingsworth.arsnouveau.common.items.FireEssence;
+import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 
-public class RitualRepair extends AbstractRitual implements IPedestalMachine {
+public class RitualRepair extends AbstractRitual  {
     int radius = 1;
+    public int amp = 1;
 
- /*   public List<BlockPos> pedestalList() {
-        return pedestalList(this.getPos(), radius, getLevel());
-    }
 
-        List<ItemStack> getPedestalItems() {
-            ArrayList<ItemStack> pedestalItems = new ArrayList<>();
-            for (BlockPos Stack : pedestalList()) {
-                if (level.getBlockEntity(Stack) instanceof ArcanePedestalTile tile && tile.getStack() != null && !tile.getStack().isEmpty()) {
-                    pedestalItems.add(tile.getStack());
-                }
-            }
-            return pedestalItems;
-    }*/
+
  @Override
     protected void tick() {
         Level world = getWorld();
-
 
         if (world.isClientSide) {
             BlockPos pos = getPos();
@@ -45,21 +39,16 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
             for (BlockPos blockPos : BlockPos.betweenClosed(getPos().offset(-radius, 0, -radius), getPos().offset(radius, 0, radius))) {
                 if (world.getBlockState(blockPos).getBlock() instanceof ArcanePedestal) {
                     ArcanePedestalTile tile = (ArcanePedestalTile) world.getBlockEntity(blockPos);
-                    if (tile == null) {
-                        continue;
-                    }
-                    if (tile.getStack() == null){
-                        continue;
-                    }
+                    // (the good practice is using an ItemStack.EMPTY as placeholder/default)
+                    if (tile == null || tile.isEmpty()) {continue;}
                     posList.add(tile.getStack());
 
 
                     for (ItemStack I : posList) {
                         int damage = I.getDamageValue();
-                        int repairAmount = Math.min(damage,1 * 20);
+                        int repairAmount = Math.min(damage,amp * 20);
                         if (damage > 0) {
-                            I.setDamageValue(damage - repairAmount);
-
+                             I.setDamageValue(damage - repairAmount);
                         }
                     }
                 }
@@ -72,6 +61,10 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
         return 200;
     }
 
+    @Override
+    public boolean canConsumeItem(ItemStack stack) {
+        return stack.getItem() instanceof FireEssence && itemConsumedCount(i -> i.getItem() == ItemsRegistry.FIRE_ESSENCE) <= 10 ;
+    }
     @Override
     public ResourceLocation getRegistryName() {
         return MartialArs.prefix("ritual_repair");
@@ -91,9 +84,7 @@ public class RitualRepair extends AbstractRitual implements IPedestalMachine {
     }
 
 
-    @Override
-    public void lightPedestal(Level level) {
 
-    }
 
 }
+
