@@ -49,6 +49,7 @@ public class RitualRepair extends AbstractRitual  {
                         int repairAmount = Math.min(damage,amp * 20);
                         if (damage > 0) {
                              I.setDamageValue(damage - repairAmount);
+                             takeSourceNow();
                         }
                     }
                 }
