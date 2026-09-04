@@ -6,11 +6,14 @@ import com.hollingsworth.arsnouveau.api.spell.SpellSchools;
 import net.minecraft.core.Holder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+
+import javax.xml.datatype.Duration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +21,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class AttributeEventHandler {
-/*
+
     // credit to AlexThw and SauceLib as most of the raw code for the potency attributes was taken from there
     public static final Map<SpellSchool, Holder<Attribute>> schoolToEffectAttribute = new ConcurrentHashMap<>();
 
@@ -35,7 +38,7 @@ public class AttributeEventHandler {
         linkSchoolToAttribute(SpellSchools.ELEMENTAL, MartialRegistry.ELEMENTAL_POTENCY);
     }
 
-    @SubscribeEvent
+   /* @SubscribeEvent
     public static void onPotionAdd(MobEffectEvent.Added event) {
         LivingEntity living = event.getEntity();
         Set<SpellSchool> schools;
@@ -44,30 +47,53 @@ public class AttributeEventHandler {
             for (Map.Entry<SpellSchool, Holder<Attribute>> entry : schoolToEffectAttribute.entrySet()) {
                 SpellSchool school = entry.getKey();
                 List<TagKey<MobEffect>> tags = MartialTags.Effects.SCHOOL_TO_EFFECT_TYPES.getOrDefault(school, List.of());
-                if (tags.stream().anyMatch(tag -> )) {
+                if (tags.stream().anyMatch(tag -> MartialTags.Effects.)) {
                     schools.add(school);
                     if (school != SpellSchools.ELEMENTAL)
                         schools.addAll(school.getSubSchools());
                 }
-            }
+            }*/
+   @SubscribeEvent
+   public static void onPotionAdd(MobEffectEvent.Added event) {
+       LivingEntity living = event.getEntity();
+       Set<SpellSchool> schools;
 
+       if (living.getAttribute(MartialRegistry.ELEMENTAL_POTENCY) != null) {
+           schools = new HashSet<>();
+           for (Map.Entry<SpellSchool, Holder<Attribute>> entry : schoolToEffectAttribute.entrySet()) {
+               SpellSchool school = entry.getKey();
+               List<TagKey<MobEffect>> tags = MartialTags.Effects.SCHOOL_TO_EFFECT_TYPES.getOrDefault(school, List.of());
+               if (tags.stream().anyMatch(tag -> event.getEffectInstance().getEffect().is(tag))) {
+                   schools.add(school);
+                   if (school != SpellSchools.ELEMENTAL)
+                       schools.addAll(school.getSubSchools());
+               }
+           }
+           for (SpellSchool school : schools) {
+               Holder<Attribute> attribute = schoolToEffectAttribute.get(school);
+               if (attribute != null) {
+                   AttributeInstance attrInstance = living.getAttribute(attribute);
+                   if (attrInstance != null) {
+                       double potency = attrInstance.getValue();
+                       if (potency != 0) {
+                           MobEffectInstance instance = event.getEffectInstance();
 
-            for (SpellSchool school : schools) {
-                Holder<Attribute> attribute = schoolToEffectAttribute.get(school);
-                if (attribute != null) {
-                    AttributeInstance attrInstance = living.getAttribute(attribute);
-                    if (attrInstance != null) {
-                        double potency = attrInstance.getValue();
-                        if (potency != 0) {
-                            event.getEffectInstance().duration *= (int) (1 + (potency / 100.0));
-                            // reminder to check your math
-                        }
-
-                    }
-                }
-            }
-        }
-    }*/
+                           if (instance.getDuration() > 0) {
+                               event.getEffectInstance().duration *= (int) (1 + (potency / 100.0));
+                               int newDuration = Math.max(1, (int) Math.round(instance.getDuration()));
+                               instance.duration = newDuration;
+                               // reminder to check your math
+                           }
+                       }
+                   }
+               }
+           }
+       }
+   }
 }
+
+
+
+
 
 

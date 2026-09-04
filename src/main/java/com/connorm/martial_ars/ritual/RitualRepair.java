@@ -8,13 +8,13 @@ import com.hollingsworth.arsnouveau.common.block.tile.ArcanePedestalTile;
 import com.hollingsworth.arsnouveau.common.items.FireEssence;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
 
 public class RitualRepair extends AbstractRitual  {
     int radius = 1;
@@ -99,9 +99,21 @@ public class RitualRepair extends AbstractRitual  {
                 "  (armor slots off hand and main hand) though at halved efficiency." +
                 " fire essence can be used to increase throughput consuming more source for more durability per second.";
     }
+    @Override
+    public void read(HolderLookup.Provider provider, CompoundTag tag) {
+        super.read(provider, tag);
+        amp = tag.getInt("amp");
 
+    }
 
-
-
+    @Override
+    public void write(HolderLookup.Provider provider, CompoundTag tag) {
+        super.write(provider, tag);
+        tag.putInt("amp", amp);
+    }
 }
+
+
+
+
 
