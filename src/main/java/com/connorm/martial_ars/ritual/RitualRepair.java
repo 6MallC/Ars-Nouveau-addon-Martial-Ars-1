@@ -5,17 +5,15 @@ import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
 import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;
 import com.hollingsworth.arsnouveau.common.block.tile.ArcanePedestalTile;
-import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import com.hollingsworth.arsnouveau.common.items.FireEssence;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 
 public class RitualRepair extends AbstractRitual  {
@@ -26,46 +24,64 @@ public class RitualRepair extends AbstractRitual  {
 
  @Override
     protected void tick() {
-        Level world = getWorld();
-
-        if (world.isClientSide) {
+     Level world = getWorld();
+     if (world.isClientSide) {
             BlockPos pos = getPos();
             assert pos != null;
             ParticleUtil.spawnRitualAreaEffect(pos, getWorld(), rand, getCenterColor(), radius);
         }
-        if (!getWorld().isClientSide && world.getGameTime() % 20 == 0) {
+        if (!world.isClientSide && world.getGameTime() % 20 == 0) {
+            boolean anyRepaired = false;
 
-            ArrayList<ItemStack> posList = new ArrayList<>();
             for (BlockPos blockPos : BlockPos.betweenClosed(getPos().offset(-radius, 0, -radius), getPos().offset(radius, 0, radius))) {
                 if (world.getBlockState(blockPos).getBlock() instanceof ArcanePedestal) {
                     ArcanePedestalTile tile = (ArcanePedestalTile) world.getBlockEntity(blockPos);
                     // (the good practice is using an ItemStack.EMPTY as placeholder/default)
                     if (tile == null || tile.isEmpty()) {continue;}
-                    posList.add(tile.getStack());
+
+                    ItemStack stack = tile.getStack();
+                    int damage = stack.getDamageValue();
 
 
-                    for (ItemStack I : posList) {
-                        int damage = I.getDamageValue();
-                        int repairAmount = Math.min(damage,amp * 20);
                         if (damage > 0) {
-                             I.setDamageValue(damage - repairAmount);
-                             takeSourceNow();
+                            int repairAmount = Math.min(damage,amp * 20);
+                             stack.setDamageValue(damage - repairAmount);
+                                tile.setChanged();
+                             anyRepaired = true;
+
                         }
-                    }
+
                 }
+            }
+            if (anyRepaired){
+                takeSourceNow();
             }
         }
     }
 
     @Override
     public int getSourceCost() {
-        return 200;
+        return 200 * amp;
     }
 
     @Override
     public boolean canConsumeItem(ItemStack stack) {
-        return stack.getItem() instanceof FireEssence && itemConsumedCount(i -> i.getItem() == ItemsRegistry.FIRE_ESSENCE) <= 10 ;
+        return stack.getItem() instanceof FireEssence && itemConsumedCount(i -> i.getItem() == ItemsRegistry.FIRE_ESSENCE.get()) <= 10;
     }
+
+    @Override
+    public void onStart(@Nullable Player player) {
+        super.onStart(player);
+        if (getWorld().isClientSide) {
+            return;
+        }
+        for (ItemStack i : getConsumedItems()) {
+            if (i.is(ItemsRegistry.FIRE_ESSENCE.get())) {
+                amp += i.getCount();
+            }
+        }
+    }
+
     @Override
     public ResourceLocation getRegistryName() {
         return MartialArs.prefix("ritual_repair");
