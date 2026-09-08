@@ -37,7 +37,7 @@ public class MartialArs {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         NeoForge.EVENT_BUS.register(this);
-        //NeoForge.EVENT_BUS.register(AttributeEventHandler.class);
+        NeoForge.EVENT_BUS.register(AttributeEventHandler.class);
         ModCreativeModeTabs.register(modEventBus);
         MartialRegistry.registerRegistries(modEventBus);
         modEventBus.register(MartialRegistry.class);
@@ -70,7 +70,7 @@ public class MartialArs {
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public static class ClientModEvents{
         @SubscribeEvent
-        public static void onGlientSetup(FMLClientSetupEvent event){
+        public static void onClientSetup(FMLClientSetupEvent event){
             EntityRenderers.register(ModEntities.KUNAI.get(), KunaiProjectileRenderer::new);
         }
         @SubscribeEvent
