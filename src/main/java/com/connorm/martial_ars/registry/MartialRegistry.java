@@ -1,7 +1,10 @@
 package com.connorm.martial_ars.registry;
-
 import com.alexthw.sauce.registry.ModRegistry;
 import com.connorm.martial_ars.item.ExampleCosmetic;
+import com.connorm.martial_ars.item.bangles.AirBagles;
+import com.connorm.martial_ars.item.bangles.EarthBagles;
+import com.connorm.martial_ars.item.bangles.FireBagles;
+import com.connorm.martial_ars.item.bangles.WaterBagles;
 import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
 import com.connorm.martial_ars.registry.custom.KunaiItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
@@ -172,14 +175,14 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
 
     // CURIOS
-    public static final DeferredItem<Item> EARTHBAGEL = (DeferredItem<Item>) ITEMS.register("earth_bagel",
-            () -> new Item(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> FIREBAGEL = (DeferredItem<Item>) ITEMS.register("fire_bagel",
-            () -> new Item(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> AIRBAGEL = (DeferredItem<Item>) ITEMS.register("air_bagel",
-            () -> new Item(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> WATERBAGEL = (DeferredItem<Item>) ITEMS.register("water_bagel",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<EarthBagles> EARTHBAGEL = (DeferredItem<EarthBagles>) ITEMS.register("earth_bagel",
+            () -> new EarthBagles(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<FireBagles> FIREBAGEL = (DeferredItem<FireBagles>) ITEMS.register("fire_bagel",
+            () -> new FireBagles(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<AirBagles> AIRBAGEL = (DeferredItem<AirBagles>) ITEMS.register("air_bagel",
+            () -> new AirBagles(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<WaterBagles> WATERBAGEL = (DeferredItem<WaterBagles>) ITEMS.register("water_bagel",
+            () -> new WaterBagles(new Item.Properties().stacksTo(1)));
 
 
     // ATTRIBUTES

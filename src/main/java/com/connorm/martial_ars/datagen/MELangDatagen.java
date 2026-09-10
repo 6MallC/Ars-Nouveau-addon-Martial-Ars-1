@@ -1,17 +1,10 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
-import com.hollingsworth.arsnouveau.client.jei.AliasProvider;
 import com.hollingsworth.arsnouveau.common.items.RitualTablet;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import net.neoforged.neoforge.registries.DeferredHolder;
-
-import java.util.Map;
-import java.util.TreeMap;
 
 public class MELangDatagen  extends LanguageProvider {
 
@@ -58,6 +51,7 @@ public class MELangDatagen  extends LanguageProvider {
         add("item.martial_ars.fire_bagel", "Bane of Fire");
         add("item.martial_ars.water_bagel", "Bane of Water");
         add("effect.martial_ars.repairing", "Repairing");
+        add("attribute.martial_ars.earth_potency","Earth Potency");
 
             for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
                 if (i.ritual.getRegistryName().getNamespace().equals(MartialArs.MODID)) {

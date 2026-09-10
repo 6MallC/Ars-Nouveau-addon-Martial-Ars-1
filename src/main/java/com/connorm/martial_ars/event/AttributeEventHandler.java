@@ -62,10 +62,8 @@ public class AttributeEventHandler {
                        double potency = attrInstance.getValue();
                        if (potency != 0) {
                            MobEffectInstance instance = event.getEffectInstance();
-
                            if (instance.getDuration() != 0) {
                                instance.duration *= (1.0 + (potency / 100.0));
-                               // reminder to check your math
                            }
                            return;
                        }

@@ -1,10 +1,13 @@
 package com.connorm.martial_ars.datagen;
 
+import alexthw.ars_elemental.registry.ModItems;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.ImbuementRecipe;
 import com.hollingsworth.arsnouveau.common.datagen.ImbuementRecipeProvider;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Path;
@@ -34,7 +37,11 @@ public class ImbuementProvider extends ImbuementRecipeProvider {
     }
     @Override
     public void collectJsons(CachedOutput cache) {
-
+      /* recipes.add(new ImbuementRecipe("bane_of_earth_imbue", Ingredient.of(ModItems.EARTH_BANGLE), MartialRegistry.EARTHBAGEL.get(), 2500))
+               .withPedestalItem(MartialRegistry.SourceIngot)
+                .withPedestalItem(MartialRegistry.SourceIngot)
+                .withPedestalItem(MartialRegistry.SourceIngot)
+                .withPedestalItem(MartialRegistry.SourceIngot);*/
     }
     private static Path getRecipePath(Path pathIn, String str) {
         return pathIn.resolve("data/ars_nouveau/recipe/imbuement_" + str + ".json");

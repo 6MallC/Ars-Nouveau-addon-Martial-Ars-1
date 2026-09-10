@@ -35,6 +35,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.AttackInlay.get())
             .add(MartialRegistry.DiscountInlay.get());
 
+
     }
 
 }
