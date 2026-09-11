@@ -1,0 +1,25 @@
+{
+  "type": "ars_nouveau:imbuement",
+  "input": {
+    "item": "ars_elemental:water_bangle"
+  },
+  "output": {
+    "count": 1,
+    "id": "martial_ars:water_bagel"
+  },
+  "pedestalItems": [
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    }
+  ],
+  "source": 2500
+}

@@ -1,0 +1,25 @@
+{
+  "type": "ars_nouveau:imbuement",
+  "input": {
+    "item": "ars_elemental:air_bangle"
+  },
+  "output": {
+    "count": 1,
+    "id": "martial_ars:air_bagel"
+  },
+  "pedestalItems": [
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    }
+  ],
+  "source": 2500
+}

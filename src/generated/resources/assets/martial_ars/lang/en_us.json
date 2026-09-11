@@ -1,5 +1,8 @@
 {
-  "attribute.martial_ars.earth_potency": "Earth Potency",
+  "attributes.martial_ars.air_potency": "Air Potency",
+  "attributes.martial_ars.earth_potency": "Earth Potency",
+  "attributes.martial_ars.fire_potency": "Fire Potency",
+  "attributes.martial_ars.water_potency": "Water Potency",
   "block.martial_ars.sourceingot_block": "Block of Magenesium",
   "creativetab.martial_ars.main": "Martial Ars",
   "effect.martial_ars.repairing": "Repairing",

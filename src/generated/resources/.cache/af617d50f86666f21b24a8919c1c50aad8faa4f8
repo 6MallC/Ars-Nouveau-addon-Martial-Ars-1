@@ -1,1 +1,5 @@
-// 1.21.1	2026-06-08T12:15:56.6925777	Imbuement
+// 1.21.1	2026-09-11T11:54:10.8796765	Imbuement
+b8a0b8df1a4eddd6c3523a9846175d026d3d745b data/ars_nouveau/recipe/imbuement_bane_of_air_imbue.json
+dc0c8376c6626055d8ab4e0bbc3adce8109b5712 data/ars_nouveau/recipe/imbuement_bane_of_earth_imbue.json
+e72284e25e4fb7abfd2484d5356c2bc87f12fd14 data/ars_nouveau/recipe/imbuement_bane_of_fire_imbue.json
+7d1f480c8b49c8287991819fbbd0471d151007a9 data/ars_nouveau/recipe/imbuement_bane_of_water_imbue.json

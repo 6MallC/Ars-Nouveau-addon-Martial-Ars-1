@@ -51,7 +51,10 @@ public class MELangDatagen  extends LanguageProvider {
         add("item.martial_ars.fire_bagel", "Bane of Fire");
         add("item.martial_ars.water_bagel", "Bane of Water");
         add("effect.martial_ars.repairing", "Repairing");
-        add("attribute.martial_ars.earth_potency","Earth Potency");
+        add("attributes.martial_ars.earth_potency","Earth Potency");
+        add("attributes.martial_ars.air_potency","Air Potency");
+        add("attributes.martial_ars.water_potency","Water Potency");
+        add("attributes.martial_ars.fire_potency","Fire Potency");
 
             for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
                 if (i.ritual.getRegistryName().getNamespace().equals(MartialArs.MODID)) {

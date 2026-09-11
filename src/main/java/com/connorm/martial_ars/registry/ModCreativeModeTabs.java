@@ -45,8 +45,12 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(MartialRegistry.LuckInlay);
                     output.accept(MartialRegistry.AttackInlay);
                     output.accept(MartialRegistry.DiscountInlay);
+                    output.accept(MartialRegistry.EARTHBAGEL);
+                    output.accept(MartialRegistry.AIRBAGEL);
+                    output.accept(MartialRegistry.WATERBAGEL);
+                    output.accept(MartialRegistry.FIREBAGEL);
 
-                    // output.accept(ModRegistry.);
+                    // output.accept(MartialRegistry.);
 
                 })
                 .build());
