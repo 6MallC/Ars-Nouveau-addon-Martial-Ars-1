@@ -47,7 +47,7 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
                 SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
         if (!pLevel.isClientSide) {
             KunaiProjectileEntity KunaiProjectileEntity = new KunaiProjectileEntity(pPlayer, pLevel);
-            KunaiProjectileEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 0F);
+            KunaiProjectileEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.1F, 1.5F, 0F);
             pLevel.addFreshEntity(KunaiProjectileEntity);
         }
 
