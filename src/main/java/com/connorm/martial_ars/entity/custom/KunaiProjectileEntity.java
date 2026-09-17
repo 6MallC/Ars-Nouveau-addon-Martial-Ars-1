@@ -29,7 +29,7 @@ import net.neoforged.neoforge.event.EventHooks;
 
 public class KunaiProjectileEntity extends AbstractArrow {
     BlockPos lastPosHit;
-    public Vec2 groundedOffset = Vec2.ZERO;
+
     public static final EntityDataAccessor<SpellResolver> SPELL_RESOLVER = SynchedEntityData.defineId(KunaiProjectileEntity.class, DataSerializers.SPELL_RESOLVER.get());
 
 
@@ -68,11 +68,6 @@ public class KunaiProjectileEntity extends AbstractArrow {
         double d5 = vec3.x;
         double d6 = vec3.y;
         double d1 = vec3.z;
-        if (this.isCritArrow()) {
-            for (int i = 0; i < 4; ++i) {
-                this.level().addParticle(ParticleTypes.CRIT, this.getX() + d5 * (double) i / (double) 4.0F, this.getY() + d6 * (double) i / (double) 4.0F, this.getZ() + d1 * (double) i / (double) 4.0F, -d5, -d6 + 0.2, -d1);
-            }
-        }
 
         double d7 = this.getX() + d5;
         double d2 = this.getY() + d6;
@@ -123,20 +118,23 @@ public class KunaiProjectileEntity extends AbstractArrow {
                 if (entity.noPhysics) {
                     hitresult = null;
                     entityraytraceresult = null;
+                    break;
                 } else if (entity instanceof Player player1 && entity1 instanceof Player player2 && !player2.canHarmPlayer(player1)) {
                     hitresult = null;
                     entityraytraceresult = null;
+                    break;
                 }
             }
             if (hitresult != null && hitresult.getType() != HitResult.Type.MISS && !isNoClip) {
                 if (EventHooks.onProjectileImpact(this, hitresult)) {
                     break;
                 }
-            }
-            ProjectileDeflection projectiledeflection = this.hitTargetOrDeflectSelf(hitresult);
-            this.hasImpulse = true;
-            if (projectiledeflection != ProjectileDeflection.NONE) {
-                break;
+
+                ProjectileDeflection projectiledeflection = this.hitTargetOrDeflectSelf(hitresult);
+                this.hasImpulse = true;
+                if (projectiledeflection != ProjectileDeflection.NONE) {
+                    break;
+                }
             }
             if (entityraytraceresult == null) {
                 break;
@@ -160,8 +158,10 @@ public class KunaiProjectileEntity extends AbstractArrow {
     }
 
     protected void attemptRemoval() {
-        if (level.isClientSide)
+        if (level.isClientSide) {return;}
+            this.level.broadcastEntityEvent(this, (byte) 3);
             this.remove(RemovalReason.DISCARDED);
+
     }
 
     @Override
@@ -184,6 +184,12 @@ public class KunaiProjectileEntity extends AbstractArrow {
     protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
         super.defineSynchedData(pBuilder);
         pBuilder.define(SPELL_RESOLVER, new SpellResolver(new SpellContext(level, new Spell(), null, null)));
+    }
+
+    @Override
+    protected void doPostHurtEffects(LivingEntity living) {
+        super.doPostHurtEffects(living);
+        this.playResolve();
     }
 
     @Override

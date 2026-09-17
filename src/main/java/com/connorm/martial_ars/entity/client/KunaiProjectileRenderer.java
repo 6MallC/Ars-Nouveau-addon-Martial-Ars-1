@@ -27,14 +27,18 @@ public class KunaiProjectileRenderer extends EntityRenderer<KunaiProjectileEntit
         poseStack.pushPose();
 
         if (!pEntity.isGrounded()) {
-            poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, pEntity.yRotO, pEntity.getYRot())));
+            float lerpYaw = Mth.lerp(partialTicks, pEntity.yRotO, pEntity.getYRot());
+            poseStack.mulPose(Axis.YP.rotationDegrees(lerpYaw));
 
+            float lerpPitch = Mth.lerp(partialTicks, pEntity.xRotO, pEntity.getXRot());
+            poseStack.mulPose(Axis.ZP.rotationDegrees(lerpPitch));
+        }
             VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(
                     buffer, this.model.renderType(this.getTextureLocation(pEntity)), false, false);
             this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY);
             poseStack.popPose();
             super.render(pEntity, entityYaw, partialTicks, poseStack, buffer, packedLight);
-        }
+
     }
         @Override
         public ResourceLocation getTextureLocation (KunaiProjectileEntity kunaiProjectileEntity){

@@ -10,7 +10,6 @@ import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.PlayerCaster;
 import com.hollingsworth.arsnouveau.client.gui.SpellTooltip;
 import com.hollingsworth.arsnouveau.common.perk.RepairingPerk;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodProjectile;
-import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.hollingsworth.arsnouveau.setup.config.Config;
 import net.minecraft.client.gui.screens.Screen;
@@ -43,22 +42,27 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
+
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         AbstractCaster<?> caster = getSpellCaster(pPlayer.getItemInHand(pUsedHand));
-        pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
-                SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
-        if (!pLevel.isClientSide) {
-            KunaiProjectileEntity KunaiProjectileEntity = new KunaiProjectileEntity(pPlayer, pLevel);
-            KunaiProjectileEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.1F, 1.5F, 0F);
-            pLevel.addFreshEntity(KunaiProjectileEntity);
-        }
+        //
+        if (itemstack.getDamageValue() >= itemstack.getMaxDamage() / 10 || (caster.getSpell().isValid() && new SpellResolver(new SpellContext(pLevel, caster.getSpell(), pPlayer, new PlayerCaster(pPlayer), itemstack)).withSilent(true).canCast(pPlayer))) {
+            pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
+                    SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
+            if (!pLevel.isClientSide) {
+                //  SpellResolver resolver = new SpellResolver(new SpellContext(pLevel, caster.modifySpellBeforeCasting((ServerLevel) pLevel, entityLiving, InteractionHand.MAIN_HAND, caster.getSpell()), pPlayer, new PlayerCaster(pPlayer), itemstack));
+                KunaiProjectileEntity KunaiProjectileEntity = new KunaiProjectileEntity(pPlayer, pLevel);
+                KunaiProjectileEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.1F, 1.5F, 0F);
+                pLevel.addFreshEntity(KunaiProjectileEntity);
+            }
 
-        pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
-            itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));
+            pPlayer.awardStat(Stats.ITEM_USED.get(this));
+            if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
+                itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));
+            }
         }
+            return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
 
-        return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int p_77663_4_, boolean p_77663_5_) {
