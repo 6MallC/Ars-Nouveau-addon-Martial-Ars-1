@@ -40,8 +40,57 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
 
     }
 
+
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
+        AbstractCaster<?> caster = getSpellCaster(itemstack);
+
+        boolean hasEnoughDurability = itemstack.getDamageValue() >= itemstack.getMaxDamage() / 10;
+        boolean canCastSpell = caster.getSpell().isValid() &&
+                new SpellResolver(new SpellContext(pLevel, caster.getSpell(), pPlayer, new PlayerCaster(pPlayer), itemstack))
+                        .withSilent(true)
+                        .canCast(pPlayer);
+
+        if (hasEnoughDurability || canCastSpell) {
+
+            if (!pLevel.isClientSide) {
+                ServerLevel serverLevel = (ServerLevel) pLevel;
+                SpellResolver resolver = new SpellResolver(new SpellContext(serverLevel, caster.modifySpellBeforeCasting(serverLevel, pPlayer, pUsedHand, caster.getSpell()), pPlayer, new PlayerCaster(pPlayer), itemstack));
+
+
+                if (!resolver.canCast(pPlayer)) {
+                    return InteractionResultHolder.fail(itemstack);
+                }
+
+
+                resolver.expendMana();
+
+
+                KunaiProjectileEntity kunaiProjectile = new KunaiProjectileEntity(pPlayer, pLevel);
+                kunaiProjectile.setResolver(resolver);
+                kunaiProjectile.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.1F, 1.5F, 0F);
+                pLevel.addFreshEntity(kunaiProjectile);
+            }
+
+            pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
+                    SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
+
+            pPlayer.awardStat(Stats.ITEM_USED.get(this));
+
+            if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
+                itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));
+            }
+
+            return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
+        }
+
+        return InteractionResultHolder.fail(itemstack);
+    }
+
+
+  /*  @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
 
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         AbstractCaster<?> caster = getSpellCaster(pPlayer.getItemInHand(pUsedHand));
@@ -50,8 +99,14 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
             pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
                     SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
             if (!pLevel.isClientSide) {
-                //  SpellResolver resolver = new SpellResolver(new SpellContext(pLevel, caster.modifySpellBeforeCasting((ServerLevel) pLevel, entityLiving, InteractionHand.MAIN_HAND, caster.getSpell()), pPlayer, new PlayerCaster(pPlayer), itemstack));
-                KunaiProjectileEntity KunaiProjectileEntity = new KunaiProjectileEntity(pPlayer, pLevel);
+                SpellResolver resolver = new SpellResolver(new SpellContext(pLevel, caster.modifySpellBeforeCasting((ServerLevel) pLevel, pPlayer, InteractionHand.MAIN_HAND, caster.getSpell()), pPlayer, new PlayerCaster(pPlayer), itemstack));
+                if (!(resolver.canCast(pPlayer))) {
+                    return;
+                } else if (resolver.canCast(pPlayer)) {
+                    resolver.expendMana();
+
+                }
+                    KunaiProjectileEntity KunaiProjectileEntity = new KunaiProjectileEntity(pPlayer, pLevel);
                 KunaiProjectileEntity.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.1F, 1.5F, 0F);
                 pLevel.addFreshEntity(KunaiProjectileEntity);
             }
@@ -60,10 +115,15 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
             if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
                 itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));
             }
+
+        }else {
+            return InteractionResultHolder.fail(itemstack);
         }
-            return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
+        return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
 
     }
+
+   */
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int p_77663_4_, boolean p_77663_5_) {
         super.inventoryTick(stack, world, entity, p_77663_4_, p_77663_5_);

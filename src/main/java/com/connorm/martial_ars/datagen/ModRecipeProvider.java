@@ -1,6 +1,7 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.registry.MartialRegistry;
+import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
 import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.core.HolderLookup;
@@ -8,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,7 +20,7 @@ public class  ModRecipeProvider extends RecipeProvider implements IConditionBuil
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput recipeOutput) {
+    protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MartialRegistry.MushroomWand.get())
                 .pattern("CBC")
@@ -79,6 +81,8 @@ public class  ModRecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('A', MartialRegistry.SourceIngot.get())
                 .define('B', Tags.Items.INGOTS_GOLD)
                 .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
+
+
 
     }
 }

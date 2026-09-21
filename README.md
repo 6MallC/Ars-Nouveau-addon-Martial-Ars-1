@@ -1,15 +1,13 @@
-# Ars-Nouveau-Example-Addon
+# Ars-Nouveau-Addon-Martial-Ars
+## Funny spell imbueable weapons defence against the modular arts and shit
 
-An example repository for making an addon for Ars Nouveau! See the wiki for more info.
+Hi, if you are reading this you are likely trying to help me with something- thank you.
+anyways this mod still isnt out of even beta so for now Im just going to be informal.
 
-**Getting Started**
+I have a roadmap here:
 
-* Fork this repo for a ready to build work space.
-* Join the Ars Nouveau discord to ask questions, get help, or get ideas.
+https://docs.google.com/document/d/1aJr5HIO7Ga9Nhj-FlKHB_uMROhewkBhXqIBJvDe85Sg/edit?usp=sharing
 
-Some useful links for beginners:
-* https://mcforge.readthedocs.io/en/latest/
-* https://forge.gemwire.uk/wiki/
-* https://wiki.mcjty.eu/modding/index.php?title=Main_Page
-* https://github.com/baileyholl/Ars-Nouveau/tree/1.18.x/src/main/java/com/hollingsworth/arsnouveau/api (Full API documentation)
-* https://github.com/bernie-g/geckolib/wiki (Animation library used by Ars Nouveau, optional)
+(the checklist tab)
+
+Welp see ya when i actually make this normal
