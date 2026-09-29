@@ -1,11 +1,15 @@
 package com.connorm.martial_ars;
 
+import com.connorm.martial_ars.client.curio.MagesShadesRenderer;
 import com.connorm.martial_ars.component.ModDataComponents;
 import com.connorm.martial_ars.effect.MartialEffects;
 import com.connorm.martial_ars.entity.ModEntities;
 import com.connorm.martial_ars.entity.client.KunaiProjectileModel;
 import com.connorm.martial_ars.entity.client.KunaiProjectileRenderer;
+import com.connorm.martial_ars.entity.client.MagesShadesModel;
 import com.connorm.martial_ars.event.AttributeEventHandler;
+import com.connorm.martial_ars.item.head.MagesShadesItem;
+import com.connorm.martial_ars.registry.ArsNouveauRegistry;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.MartialRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -23,6 +27,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MartialArs.MODID)
@@ -44,8 +49,14 @@ public class MartialArs {
         ModDataComponents.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         MartialEffects.register(modEventBus);
+        modEventBus.addListener(this::clientSetup);
 
     }
+    private void clientSetup(final FMLClientSetupEvent evt) {
+        CuriosRendererRegistry.register(MartialRegistry.MAGESSHADES.get(), MagesShadesRenderer::new);
+        EntityRenderers.register(ModEntities.KUNAI.get(), KunaiProjectileRenderer::new);
+    }
+
 
 
     public static ResourceLocation prefix(String path) {
@@ -71,11 +82,13 @@ public class MartialArs {
 public static class ClientModEvents{
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
-            EntityRenderers.register(ModEntities.KUNAI.get(), KunaiProjectileRenderer::new);
+
+
         }
         @SubscribeEvent
         public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(KunaiProjectileModel.LAYER_LOCATION, KunaiProjectileModel::createBodyLayer);
+            event.registerLayerDefinition(MagesShadesModel.LAYER_LOCATION, MagesShadesModel::createBodyLayer);
         }
 }
 }

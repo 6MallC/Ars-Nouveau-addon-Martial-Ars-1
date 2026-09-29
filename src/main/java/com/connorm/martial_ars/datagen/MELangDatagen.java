@@ -55,6 +55,7 @@ public class MELangDatagen  extends LanguageProvider {
         add("attributes.martial_ars.air_potency","Air Potency");
         add("attributes.martial_ars.water_potency","Water Potency");
         add("attributes.martial_ars.fire_potency","Fire Potency");
+        add("item.martial_ars.mages_shades_item", "Mage's Shades");
 
             for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
                 if (i.ritual.getRegistryName().getNamespace().equals(MartialArs.MODID)) {

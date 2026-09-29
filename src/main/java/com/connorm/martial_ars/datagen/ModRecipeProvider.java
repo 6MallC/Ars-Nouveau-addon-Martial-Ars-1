@@ -1,17 +1,23 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.registry.MartialRegistry;
+import com.connorm.martial_ars.ritual.RitualRepair;
 import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
 import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
 import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
+
+import static com.connorm.martial_ars.MartialArs.prefix;
 
 public class  ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
@@ -82,7 +88,18 @@ public class  ModRecipeProvider extends RecipeProvider implements IConditionBuil
                 .define('B', Tags.Items.INGOTS_GOLD)
                 .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot)).save(recipeOutput);
 
-
-
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,getRitualItem(prefix(RitualRepair.ID)))
+                .define('A', Items.ANVIL)
+                .define('N', Items.NETHERITE_BLOCK)
+                .define('M', MartialRegistry.sourceingot_block)
+                .define('D', Items.DIAMOND)
+                .pattern("DMD")
+                .pattern("ANA")
+                .pattern("DMD")
+                .unlockedBy("has_sourceingot", has(MartialRegistry.SourceIngot))
+                .save(recipeOutput, prefix(RitualRepair.ID));
+    }
+    public Item getRitualItem(ResourceLocation id) {
+        return RitualRegistry.getRitualItemMap().get(id);
     }
 }

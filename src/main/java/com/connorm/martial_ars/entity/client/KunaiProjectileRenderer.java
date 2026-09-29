@@ -41,7 +41,7 @@ public class KunaiProjectileRenderer extends EntityRenderer<KunaiProjectileEntit
 
     }
         @Override
-        public ResourceLocation getTextureLocation (KunaiProjectileEntity kunaiProjectileEntity){
+        public  ResourceLocation getTextureLocation (KunaiProjectileEntity kunaiProjectileEntity){
             return ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, "textures/entity/enchanterskunai/kunaientity.png");
         }
     }

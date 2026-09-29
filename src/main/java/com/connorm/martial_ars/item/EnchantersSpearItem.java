@@ -1,6 +1,5 @@
-package com.connorm.martial_ars.registry.custom;
+package com.connorm.martial_ars.item;
 
-import com.connorm.martial_ars.entity.custom.KunaiProjectileEntity;
 import com.hollingsworth.arsnouveau.api.item.ICasterTool;
 import com.hollingsworth.arsnouveau.api.mana.IManaDiscountEquipment;
 import com.hollingsworth.arsnouveau.api.spell.*;
@@ -9,17 +8,13 @@ import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.LivingCaster;
 import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.PlayerCaster;
 import com.hollingsworth.arsnouveau.client.gui.SpellTooltip;
 import com.hollingsworth.arsnouveau.common.perk.RepairingPerk;
-import com.hollingsworth.arsnouveau.common.spell.method.MethodProjectile;
+import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.hollingsworth.arsnouveau.setup.config.Config;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -34,62 +29,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEquipment {
-    public KunaiItem(Tier tier, Properties properties) {
+public class EnchantersSpearItem extends SwordItem implements ICasterTool, IManaDiscountEquipment {
+    public EnchantersSpearItem(Tier tier, Properties properties) {
         super(tier, properties);
-
     }
-
-
-    @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
-        ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
-        AbstractCaster<?> caster = getSpellCaster(itemstack);
-
-        boolean hasEnoughDurability = itemstack.getDamageValue() >= itemstack.getMaxDamage() / 10;
-        boolean canCastSpell = caster.getSpell().isValid() &&
-                new SpellResolver(new SpellContext(pLevel, caster.getSpell(), pPlayer, new PlayerCaster(pPlayer), itemstack))
-                        .withSilent(true)
-                        .canCast(pPlayer);
-
-        if (hasEnoughDurability || canCastSpell) {
-
-            if (!pLevel.isClientSide) {
-                ServerLevel serverLevel = (ServerLevel) pLevel;
-                SpellResolver resolver = new SpellResolver(new SpellContext(serverLevel, caster.modifySpellBeforeCasting(serverLevel, pPlayer, pUsedHand, caster.getSpell()), pPlayer, new PlayerCaster(pPlayer), itemstack));
-
-
-                if (!resolver.canCast(pPlayer)) {
-                    return InteractionResultHolder.fail(itemstack);
-                }
-
-
-                resolver.expendMana();
-
-
-                KunaiProjectileEntity kunaiProjectile = new KunaiProjectileEntity(pPlayer, pLevel);
-                kunaiProjectile.setResolver(resolver);
-                kunaiProjectile.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.1F, 1.5F, 0F);
-                pLevel.addFreshEntity(kunaiProjectile);
-            }
-
-            pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
-                    SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
-
-            pPlayer.awardStat(Stats.ITEM_USED.get(this));
-
-            if (!pPlayer.getAbilities().instabuild && !pLevel.isClientSide) {
-                itemstack.setDamageValue(itemstack.getDamageValue() + Math.max(1, itemstack.getMaxDamage() / 10));
-            }
-
-            return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
-        }
-
-        return InteractionResultHolder.fail(itemstack);
-    }
-
-
-
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int p_77663_4_, boolean p_77663_5_) {
         super.inventoryTick(stack, world, entity, p_77663_4_, p_77663_5_);
@@ -107,7 +50,7 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
     @Override
     public void scribeModifiedSpell(AbstractCaster<?> caster, Player player, InteractionHand hand, ItemStack stack, Spell.Mutable spell) {
         ArrayList<AbstractSpellPart> recipe = new ArrayList<>();
-        recipe.add(MethodProjectile.INSTANCE);
+        recipe.add(MethodTouch.INSTANCE);
         recipe.addAll(spell.recipe);
         spell.recipe = recipe;
     }
@@ -129,6 +72,3 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
         return Optional.empty();
     }
 }
-
-
-

@@ -1,7 +1,6 @@
-package com.connorm.martial_ars;
+package com.connorm.martial_ars.registry;
 
 import com.connorm.martial_ars.glyphs.TestEffect;
-import com.connorm.martial_ars.registry.MartialRegistry;
 import com.connorm.martial_ars.ritual.RitualRepair;
 import com.hollingsworth.arsnouveau.api.registry.GlyphRegistry;
 import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
@@ -11,8 +10,6 @@ import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static alexthw.ars_elemental.ArsNouveauRegistry.registerRituals;
 
 public class ArsNouveauRegistry {
 

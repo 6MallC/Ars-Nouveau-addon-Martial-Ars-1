@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:anvil"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "martial_ars:sourceingot_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "pattern": [
+    "DMD",
+    "ANA",
+    "DMD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "martial_ars:ritual_repair"
+  }
+}

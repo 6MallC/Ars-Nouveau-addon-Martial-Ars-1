@@ -16,6 +16,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
+import static com.connorm.martial_ars.MartialArs.prefix;
+
 public class RitualRepair extends AbstractRitual  {
     int radius = 1;
     public int amp = 1;
@@ -84,9 +86,9 @@ public class RitualRepair extends AbstractRitual  {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return MartialArs.prefix("ritual_repair");
+        return prefix(ID);
     }
-
+    public static String ID = "ritual_repair";
     @Override
     public String getLangName() {
         return "Repairing";

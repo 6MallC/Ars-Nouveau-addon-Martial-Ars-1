@@ -49,6 +49,7 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(MartialRegistry.AIRBAGEL);
                     output.accept(MartialRegistry.WATERBAGEL);
                     output.accept(MartialRegistry.FIREBAGEL);
+                    output.accept(MartialRegistry.MAGESSHADES);
 
                     // output.accept(MartialRegistry.);
 

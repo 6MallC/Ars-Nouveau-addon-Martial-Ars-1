@@ -24,5 +24,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.AIRBAGEL.get());
         basicItem(MartialRegistry.FIREBAGEL.get());
         basicItem(MartialRegistry.WATERBAGEL.get());
+        basicItem(MartialRegistry.MAGESSHADES.get());
     }
 }

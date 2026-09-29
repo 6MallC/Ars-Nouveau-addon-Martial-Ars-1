@@ -5,8 +5,9 @@ import com.connorm.martial_ars.item.bangles.AirBagles;
 import com.connorm.martial_ars.item.bangles.EarthBagles;
 import com.connorm.martial_ars.item.bangles.FireBagles;
 import com.connorm.martial_ars.item.bangles.WaterBagles;
-import com.connorm.martial_ars.registry.custom.EnchantersSpearItem;
-import com.connorm.martial_ars.registry.custom.KunaiItem;
+import com.connorm.martial_ars.item.EnchantersSpearItem;
+import com.connorm.martial_ars.item.KunaiItem;
+import com.connorm.martial_ars.item.head.MagesShadesItem;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
 import com.connorm.martial_ars.registry.custom.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
@@ -183,6 +184,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             () -> new AirBagles(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<WaterBagles> WATERBAGEL = (DeferredItem<WaterBagles>) ITEMS.register("water_bagel",
             () -> new WaterBagles(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<MagesShadesItem> MAGESSHADES = (DeferredItem<MagesShadesItem>) ITEMS.register("mages_shades_item",
+            () -> new MagesShadesItem(new Item.Properties().stacksTo(1)));
 
 
     // ATTRIBUTES

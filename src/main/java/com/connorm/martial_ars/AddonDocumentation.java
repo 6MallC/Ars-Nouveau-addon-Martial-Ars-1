@@ -1,4 +1,5 @@
 package com.connorm.martial_ars;
+import com.connorm.martial_ars.registry.ArsNouveauRegistry;
 import com.hollingsworth.arsnouveau.api.documentation.DocCategory;
 import com.hollingsworth.arsnouveau.api.documentation.ReloadDocumentationEvent;
 import com.hollingsworth.arsnouveau.api.documentation.builder.DocEntryBuilder;
