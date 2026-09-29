@@ -12,6 +12,7 @@ import com.connorm.martial_ars.item.head.MagesShadesItem;
 import com.connorm.martial_ars.registry.ArsNouveauRegistry;
 import com.connorm.martial_ars.registry.ModCreativeModeTabs;
 import com.connorm.martial_ars.registry.MartialRegistry;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
@@ -88,7 +89,7 @@ public static class ClientModEvents{
         @SubscribeEvent
         public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(KunaiProjectileModel.LAYER_LOCATION, KunaiProjectileModel::createBodyLayer);
-            event.registerLayerDefinition(MagesShadesModel.LAYER_LOCATION, MagesShadesModel::createBodyLayer);
+            event.registerLayerDefinition(MagesShadesRenderer.LAYER, () -> LayerDefinition.create(MagesShadesRenderer.mesh(), 1, 1));
         }
 }
 }
