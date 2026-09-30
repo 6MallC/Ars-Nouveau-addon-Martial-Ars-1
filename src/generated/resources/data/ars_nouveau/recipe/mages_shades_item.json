@@ -1,0 +1,38 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "pedestalItems": [
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    },
+    {
+      "item": "martial_ars:source_ingot"
+    }
+  ],
+  "reagent": {
+    "item": "ars_nouveau:starbuncle_shades"
+  },
+  "result": {
+    "count": 1,
+    "id": "martial_ars:mages_shades_item"
+  },
+  "sourceCost": 0
+}

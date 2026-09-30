@@ -1,10 +1,12 @@
 package com.connorm.martial_ars.datagen;
 
+import com.connorm.martial_ars.registry.ArsNouveauRegistry;
 import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.EnchantingApparatusRecipe;
 import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeBuilder;
 import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen;
+import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Items;
@@ -48,6 +50,12 @@ public class ApparatusProvider extends ApparatusRecipeProvider {
                     .withReagent(Items.IRON_INGOT)
                     .withPedestalItem(2,RecipeDatagen.SOURCE_GEM)
                     .withSourceCost(100)
+                    .build()
+            );
+            recipes.add(builder()
+                    .withResult(MartialRegistry.MAGESSHADES)
+                    .withReagent(ItemsRegistry.STARBUNCLE_SHADES.get())
+                    .withPedestalItem(8,MartialRegistry.SourceIngot)
                     .build()
             );
         }
