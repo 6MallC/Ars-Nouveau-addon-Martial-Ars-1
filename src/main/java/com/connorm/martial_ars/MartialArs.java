@@ -89,7 +89,7 @@ public static class ClientModEvents{
         @SubscribeEvent
         public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(KunaiProjectileModel.LAYER_LOCATION, KunaiProjectileModel::createBodyLayer);
-            event.registerLayerDefinition(MagesShadesRenderer.LAYER, () -> LayerDefinition.create(MagesShadesRenderer.mesh(), 1, 1));
+            event.registerLayerDefinition(MagesShadesModel.LAYER_LOCATION, MagesShadesModel::createBodyLayer);
         }
 }
 }
