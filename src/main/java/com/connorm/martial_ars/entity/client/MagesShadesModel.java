@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class MagesShadesModel extends Model {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, "magesshadesentity"), "magesshadesentity");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, "mages_shades"), "magesshadesentity");
 	private final ModelPart bb_main;
 
 	public MagesShadesModel(ModelPart root) {
@@ -29,7 +29,7 @@ public class MagesShadesModel extends Model {
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create()
-                .texOffs(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+                .texOffs(0, 0).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 8, 8);
 	}
