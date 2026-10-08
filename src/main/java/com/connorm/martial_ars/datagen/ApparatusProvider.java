@@ -1,6 +1,5 @@
 package com.connorm.martial_ars.datagen;
 
-import com.connorm.martial_ars.registry.ArsNouveauRegistry;
 import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.EnchantingApparatusRecipe;
 import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeBuilder;

@@ -1,7 +1,5 @@
 package com.connorm.martial_ars.datagen;
 
-import alexthw.ars_elemental.ArsElemental;
-import alexthw.ars_elemental.datagen.AELangDatagen;
 import com.connorm.martial_ars.MartialArs;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;

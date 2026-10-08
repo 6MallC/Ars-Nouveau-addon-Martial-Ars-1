@@ -58,14 +58,11 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
                 ServerLevel serverLevel = (ServerLevel) pLevel;
                 SpellResolver resolver = new SpellResolver(new SpellContext(serverLevel, caster.modifySpellBeforeCasting(serverLevel, pPlayer, pUsedHand, caster.getSpell()), pPlayer, new PlayerCaster(pPlayer), itemstack));
 
-
                 if (!resolver.canCast(pPlayer)) {
                     return InteractionResultHolder.fail(itemstack);
                 }
 
-
                 resolver.expendMana();
-
 
                 KunaiProjectileEntity kunaiProjectile = new KunaiProjectileEntity(pPlayer, pLevel);
                 kunaiProjectile.setResolver(resolver);
