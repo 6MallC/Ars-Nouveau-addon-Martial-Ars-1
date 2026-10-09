@@ -30,18 +30,19 @@ public class DataGenerators {
         output = packOutput;
 
 
-        BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
+        BlockTagsProvider blockTagsProvider = new MABlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput,lookupProvider,blockTagsProvider.contentsGetter(), existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput,lookupProvider));
+        generator.addProvider(event.includeServer(), new MAItemTagProvider(packOutput,lookupProvider,blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new MARecipeProvider(packOutput,lookupProvider));
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)),lookupProvider));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+                List.of(new LootTableProvider.SubProviderEntry(MABlockLootTableProvider::new, LootContextParamSets.BLOCK)),lookupProvider));
+        generator.addProvider(event.includeClient(), new MAItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeServer(), new ImbuementProvider(generator));
         generator.addProvider(event.includeServer(), new GlyphProvider(generator));
         generator.addProvider(event.includeServer(), new ApparatusProvider(generator));
         generator.addProvider(event.includeServer(), new PotionEffectTagProvider(output, provider, existingFileHelper));
-        generator.addProvider(event.includeClient(), new MELangDatagen(output, MartialArs.MODID, "en_us"));
+        generator.addProvider(event.includeClient(), new MALangDatagen(output, MartialArs.MODID, "en_us"));
+        generator.addProvider(event.includeServer(), new MACasterTomeProvider(generator));
     }
 }

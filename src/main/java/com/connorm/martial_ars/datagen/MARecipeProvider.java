@@ -19,9 +19,9 @@ import java.util.concurrent.CompletableFuture;
 
 import static com.connorm.martial_ars.MartialArs.prefix;
 
-public class  ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public class MARecipeProvider extends RecipeProvider implements IConditionBuilder {
 
-    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+    public MARecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
     }
 

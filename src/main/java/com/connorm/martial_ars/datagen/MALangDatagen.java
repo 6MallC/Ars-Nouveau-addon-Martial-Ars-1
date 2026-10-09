@@ -6,9 +6,9 @@ import com.hollingsworth.arsnouveau.common.items.RitualTablet;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-public class MELangDatagen  extends LanguageProvider {
+public class MALangDatagen extends LanguageProvider {
 
-    public MELangDatagen(PackOutput output, String modid, String locale) {
+    public MALangDatagen(PackOutput output, String modid, String locale) {
         super(output, modid, locale);
     }
 

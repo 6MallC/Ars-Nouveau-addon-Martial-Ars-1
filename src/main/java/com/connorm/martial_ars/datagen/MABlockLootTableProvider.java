@@ -9,9 +9,9 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.Set;
 
-public class ModBlockLootTableProvider extends BlockLootSubProvider {
+public class MABlockLootTableProvider extends BlockLootSubProvider {
 
-    protected ModBlockLootTableProvider( HolderLookup.Provider registries) {
+    protected MABlockLootTableProvider(HolderLookup.Provider registries) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
