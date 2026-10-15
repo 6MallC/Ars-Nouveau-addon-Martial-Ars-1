@@ -1,8 +1,10 @@
 package com.connorm.martial_ars.component;
 
 import com.connorm.martial_ars.MartialArs;
+import com.hollingsworth.arsnouveau.common.items.CasterTome;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -25,4 +27,6 @@ public class ModDataComponents {
     public static void register (IEventBus eventBus) {
         DATA_COMPONENT_TYPES.register(eventBus);
     }
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BladeCasterTomeData>> BLADE_TOME_CASTER = DATA_COMPONENT_TYPES.register("blade_tome_caster",
+            () -> DataComponentType.<BladeCasterTomeData>builder().persistent(BladeCasterTomeData.CODEC.codec()).networkSynchronized(BladeCasterTomeData.STREAM_CODEC).build());
 }

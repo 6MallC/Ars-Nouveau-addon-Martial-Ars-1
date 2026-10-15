@@ -43,6 +43,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ApparatusProvider(generator));
         generator.addProvider(event.includeServer(), new PotionEffectTagProvider(output, provider, existingFileHelper));
         generator.addProvider(event.includeClient(), new MALangDatagen(output, MartialArs.MODID, "en_us"));
-        generator.addProvider(event.includeServer(), new MACasterTomeProvider(generator));
+        generator.addProvider(event.includeServer(), new MABladeCasterTomeProvider(generator));
     }
 }

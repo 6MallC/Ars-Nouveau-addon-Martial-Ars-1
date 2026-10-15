@@ -1,0 +1,34 @@
+{
+  "type": "ars_nouveau:caster_tome",
+  "color": {
+    "b": 180,
+    "g": 25,
+    "id": "ars_nouveau:constant",
+    "r": 255
+  },
+  "flavour_text": "hope this works",
+  "name": "test",
+  "sound": {},
+  "spell": [
+    "ars_nouveau:glyph_touch",
+    "ars_nouveau:glyph_delay",
+    "ars_nouveau:glyph_harm"
+  ],
+  "spellData": {
+    "color": {
+      "b": 180,
+      "g": 25,
+      "id": "ars_nouveau:constant",
+      "r": 255
+    },
+    "name": "test",
+    "particleTimeline": {},
+    "recipe": [
+      "ars_nouveau:glyph_touch",
+      "ars_nouveau:glyph_delay",
+      "ars_nouveau:glyph_harm"
+    ],
+    "sound": {}
+  },
+  "tome_type": "martial_ars:archmage.armament"
+}

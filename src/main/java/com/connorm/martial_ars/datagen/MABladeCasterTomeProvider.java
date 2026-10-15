@@ -1,36 +1,33 @@
 package com.connorm.martial_ars.datagen;
 
+import com.connorm.martial_ars.component.BladeCasterTomeData;
+import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.api.sound.ConfiguredSpellSound;
 import com.hollingsworth.arsnouveau.api.spell.Spell;
 import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.CasterTomeData;
 import com.hollingsworth.arsnouveau.common.datagen.CasterTomeProvider;
-import com.hollingsworth.arsnouveau.common.items.CasterTome;
-import com.hollingsworth.arsnouveau.common.spell.augment.*;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectBurst;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectDelay;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectLeap;
-import com.hollingsworth.arsnouveau.common.spell.effect.EffectPhantomBlock;
-import com.hollingsworth.arsnouveau.common.spell.method.MethodPantomime;
+import com.hollingsworth.arsnouveau.common.spell.effect.*;
+import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.mojang.serialization.JsonOps;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Path;
 
-import static alexthw.ars_elemental.registry.ModItems.SHAPERS_CTOME;
 import static com.connorm.martial_ars.MartialArs.prefix;
+import static com.connorm.martial_ars.component.ModDataComponents.BLADE_TOME_CASTER;
 
-public class MACasterTomeProvider extends CasterTomeProvider {
-    public MACasterTomeProvider(DataGenerator generatorIn) {
+public class MABladeCasterTomeProvider extends CasterTomeProvider {
+    public MABladeCasterTomeProvider(DataGenerator generatorIn) {
         super(generatorIn);
     }
     @Override
     public void collectJsons(CachedOutput cache) {
-        tomes.add(buildTome(SHAPERS_CTOME,"thefunnytest","Mageblock Minigun",new Spell().add(MethodPantomime.INSTANCE)
+      /*  tomes.add(buildTome(SHAPERS_CTOME,"thefunnytest","Mageblock Minigun",new Spell().add(MethodPantomime.INSTANCE)
                 .add(EffectBurst.INSTANCE)
                     .add(AugmentAOE.INSTANCE, 2)
                     .add(AugmentSensitive.INSTANCE)
@@ -44,6 +41,12 @@ public class MACasterTomeProvider extends CasterTomeProvider {
                     .add(AugmentAmplify.INSTANCE,3)
             ,"The sound of an A10 Warthog Minigun: BVRRRRRRRRRRRRRRRRRRT!", ParticleColor.GRAY));
 
+       */
+
+        tomes.add(buildTome(BLADE_TOME_CASTER,"bladetest","test",new Spell().add(MethodTouch.INSTANCE)
+                .add(EffectDelay.INSTANCE)
+                .add(EffectHarm.INSTANCE)
+            ,"hope this works", ParticleColor.DEFAULT));
 
 
 
@@ -54,11 +57,15 @@ public class MACasterTomeProvider extends CasterTomeProvider {
         }
     }
 
-    public CasterRecipeWrapper buildTome(DeferredHolder<Item, ? extends CasterTome> item, String id, String name, Spell spell, String flavorText, ParticleColor particleColor) {
+
+
+
+
+    public CasterRecipeWrapper buildTome(DeferredHolder<DataComponentType<?>, DataComponentType<BladeCasterTomeData>> item, String id, String name, Spell spell, String flavorText, ParticleColor particleColor) {
         return new CasterRecipeWrapper(prefix(id + "_tome"),
                 name,
                 spell.serializeRecipe(),
-                item.getId(),
+                MartialRegistry.ARMAMENT.getId(),
                 flavorText,
                 particleColor.serialize(), ConfiguredSpellSound.DEFAULT);
     }

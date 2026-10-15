@@ -25,5 +25,7 @@ public class MAItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.FIREBAGEL.get());
         basicItem(MartialRegistry.WATERBAGEL.get());
         basicItem(MartialRegistry.MAGESSHADES.get());
+        basicItem(MartialRegistry.ARMAMENT.get());
+
     }
 }

@@ -58,6 +58,7 @@ public class MALangDatagen extends LanguageProvider {
         add("item.martial_ars.mages_shades_item", "Mage's Shades");
         add("tooltip.martial_ars.mages_shades.base", "Shades for one of great endurance. These give Mage Sight when worn.");
         add("tooltip.martial_ars.mages_shades.shift", "Made for Odinshi.");
+        add("item.martial_ars.archmage.armament", "Archmage Armament");
 
             for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
                 if (i.ritual.getRegistryName().getNamespace().equals(MartialArs.MODID)) {
