@@ -1,0 +1,46 @@
+{
+  "type": "ars_nouveau:caster_tome",
+  "color": {
+    "b": 255,
+    "g": 50,
+    "id": "ars_nouveau:constant",
+    "r": 50
+  },
+  "flavour_text": "Cuts with this weapon seem to carry the inexorable might of ancient frost...",
+  "name": "Ice Flume",
+  "sound": {},
+  "spell": [
+    "ars_nouveau:glyph_touch",
+    "ars_elemental:glyph_slip_feet",
+    "ars_nouveau:glyph_gust",
+    "ars_nouveau:glyph_freeze",
+    "ars_nouveau:glyph_cold_snap",
+    "ars_nouveau:glyph_aoe",
+    "ars_nouveau:glyph_amplify",
+    "ars_nouveau:glyph_gust",
+    "ars_nouveau:glyph_dampen"
+  ],
+  "spellData": {
+    "color": {
+      "b": 255,
+      "g": 50,
+      "id": "ars_nouveau:constant",
+      "r": 50
+    },
+    "name": "Ice Flume",
+    "particleTimeline": {},
+    "recipe": [
+      "ars_nouveau:glyph_touch",
+      "ars_elemental:glyph_slip_feet",
+      "ars_nouveau:glyph_gust",
+      "ars_nouveau:glyph_freeze",
+      "ars_nouveau:glyph_cold_snap",
+      "ars_nouveau:glyph_aoe",
+      "ars_nouveau:glyph_amplify",
+      "ars_nouveau:glyph_gust",
+      "ars_nouveau:glyph_dampen"
+    ],
+    "sound": {}
+  },
+  "tome_type": "martial_ars:archmage.armament"
+}

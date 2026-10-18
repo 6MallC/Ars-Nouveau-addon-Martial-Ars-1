@@ -1,0 +1,50 @@
+{
+  "type": "ars_nouveau:caster_tome",
+  "color": {
+    "b": 180,
+    "g": 25,
+    "id": "ars_nouveau:constant",
+    "r": 255
+  },
+  "flavour_text": "Original by Lyrellion. Why yes this IS just every debilitating effect at once why do you ask?",
+  "name": "THE Elemental Affliction",
+  "sound": {},
+  "spell": [
+    "ars_nouveau:glyph_touch",
+    "ars_nouveau:glyph_hex",
+    "ars_nouveau:glyph_ignite",
+    "ars_nouveau:glyph_freeze",
+    "ars_elemental:glyph_envenom",
+    "ars_elemental:glyph_envenom",
+    "ars_nouveau:glyph_wither",
+    "ars_elemental:glyph_spark",
+    "ars_nouveau:glyph_snare",
+    "ars_elemental:glyph_oxidize",
+    "ars_elemental:glyph_watery_grave"
+  ],
+  "spellData": {
+    "color": {
+      "b": 180,
+      "g": 25,
+      "id": "ars_nouveau:constant",
+      "r": 255
+    },
+    "name": "THE Elemental Affliction",
+    "particleTimeline": {},
+    "recipe": [
+      "ars_nouveau:glyph_touch",
+      "ars_nouveau:glyph_hex",
+      "ars_nouveau:glyph_ignite",
+      "ars_nouveau:glyph_freeze",
+      "ars_elemental:glyph_envenom",
+      "ars_elemental:glyph_envenom",
+      "ars_nouveau:glyph_wither",
+      "ars_elemental:glyph_spark",
+      "ars_nouveau:glyph_snare",
+      "ars_elemental:glyph_oxidize",
+      "ars_elemental:glyph_watery_grave"
+    ],
+    "sound": {}
+  },
+  "tome_type": "martial_ars:archmage.armament"
+}

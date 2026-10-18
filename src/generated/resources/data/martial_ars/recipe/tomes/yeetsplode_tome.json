@@ -1,0 +1,50 @@
+{
+  "type": "ars_nouveau:caster_tome",
+  "color": {
+    "b": 180,
+    "g": 25,
+    "id": "ars_nouveau:constant",
+    "r": 255
+  },
+  "flavour_text": "When your personal space bubble needs to also include the upper atmosphere. Just don't use it against Knockback resistant creatures OK?",
+  "name": "Yeetsplode",
+  "sound": {},
+  "spell": [
+    "ars_nouveau:glyph_touch",
+    "ars_nouveau:glyph_gust",
+    "ars_nouveau:glyph_amplify",
+    "ars_nouveau:glyph_amplify",
+    "ars_nouveau:glyph_amplify",
+    "ars_nouveau:glyph_amplify",
+    "ars_nouveau:glyph_delay",
+    "ars_nouveau:glyph_burst",
+    "ars_nouveau:glyph_sensitive",
+    "ars_nouveau:glyph_wind_burst",
+    "ars_nouveau:glyph_aoe"
+  ],
+  "spellData": {
+    "color": {
+      "b": 180,
+      "g": 25,
+      "id": "ars_nouveau:constant",
+      "r": 255
+    },
+    "name": "Yeetsplode",
+    "particleTimeline": {},
+    "recipe": [
+      "ars_nouveau:glyph_touch",
+      "ars_nouveau:glyph_gust",
+      "ars_nouveau:glyph_amplify",
+      "ars_nouveau:glyph_amplify",
+      "ars_nouveau:glyph_amplify",
+      "ars_nouveau:glyph_amplify",
+      "ars_nouveau:glyph_delay",
+      "ars_nouveau:glyph_burst",
+      "ars_nouveau:glyph_sensitive",
+      "ars_nouveau:glyph_wind_burst",
+      "ars_nouveau:glyph_aoe"
+    ],
+    "sound": {}
+  },
+  "tome_type": "martial_ars:archmage.armament"
+}
