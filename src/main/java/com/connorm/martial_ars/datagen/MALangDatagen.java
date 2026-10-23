@@ -59,6 +59,9 @@ public class MALangDatagen extends LanguageProvider {
         add("tooltip.martial_ars.mages_shades.base", "Shades for one of great endurance. These give Mage Sight when worn.");
         add("tooltip.martial_ars.mages_shades.shift", "Made for Odinshi.");
         add("item.martial_ars.archmage.armament", "Archmage Armament");
+        add("effect.martial_ars.mana_decay", "Mana Decay");
+        add("item.martial_ars.mistbreaker", "Mistbreaker");
+        add("tooltip.martial_ars.mistbreaker.base", "Commonly worn by the Mistkin. This ring conceals and empowers you while you are within the embrace of a mist cloud. Offering Speed and Strength.");
 
             for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
                 if (i.ritual.getRegistryName().getNamespace().equals(MartialArs.MODID)) {

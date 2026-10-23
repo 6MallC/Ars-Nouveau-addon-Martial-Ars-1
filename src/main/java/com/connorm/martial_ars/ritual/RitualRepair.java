@@ -52,7 +52,6 @@ public class RitualRepair extends AbstractRitual  {
                              anyRepaired = true;
 
                         }
-
                 }
             }
             if (anyRepaired){

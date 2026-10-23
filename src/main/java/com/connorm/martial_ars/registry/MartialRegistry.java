@@ -9,8 +9,9 @@ import com.connorm.martial_ars.item.bangles.WaterBagles;
 import com.connorm.martial_ars.item.EnchantersSpearItem;
 import com.connorm.martial_ars.item.KunaiItem;
 import com.connorm.martial_ars.item.head.MagesShadesItem;
+import com.connorm.martial_ars.item.rings.Mistbreaker;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
-import com.connorm.martial_ars.registry.custom.MushroomWandItem;
+import com.connorm.martial_ars.item.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
@@ -195,6 +196,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             () -> new WaterBagles(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<MagesShadesItem> MAGESSHADES = (DeferredItem<MagesShadesItem>) ITEMS.register("mages_shades_item",
             () -> new MagesShadesItem(new Item.Properties().stacksTo(1)));
+        public static final DeferredItem<Mistbreaker> MISTBREAKER = (DeferredItem<Mistbreaker>) ITEMS.register("mistbreaker",
+                () -> new Mistbreaker(new Item.Properties().stacksTo(1)));
 
 
     // ATTRIBUTES

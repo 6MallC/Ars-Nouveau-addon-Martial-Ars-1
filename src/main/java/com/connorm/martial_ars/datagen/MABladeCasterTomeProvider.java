@@ -85,6 +85,31 @@ public class MABladeCasterTomeProvider extends CasterTomeProvider {
                 .add(EffectWaterGrave.INSTANCE)
             ,"Original by Lyrellion. Why yes this IS just every debilitating effect at once why do you ask?", ParticleColor.DEFAULT));
 
+        /*tomes.add(buildTome(BLADE_TOME_CASTER,"californiangeyser", "Infernal Harvester",new Spell().add(MethodTouch.INSTANCE)
+                .add(EffectHex.INSTANCE)
+                .add(EffectWither.INSTANCE)
+                .add(EffectDelay.INSTANCE)
+                .add(EffectDelay.INSTANCE)
+                */
+        tomes.add(buildTome(BLADE_TOME_CASTER,"triplegeyser", "Steaming Reconciliation",new Spell().add(MethodTouch.INSTANCE)
+                .add(EffectKnockback.INSTANCE)
+                .add(EffectGeyser.INSTANCE)
+                    .add(AugmentAOE.INSTANCE,1)
+                    .add(AugmentAmplify.INSTANCE,1)
+                .add(EffectDelay.INSTANCE)
+                .add(EffectKnockback.INSTANCE)
+                .add(EffectGeyser.INSTANCE)
+                    .add(AugmentAOE.INSTANCE,2)
+                    .add(AugmentAmplify.INSTANCE,3)
+                .add(EffectDelay.INSTANCE)
+                .add(EffectGeyser.INSTANCE)
+                    .add(AugmentAOE.INSTANCE,3)
+                    .add(AugmentAmplify.INSTANCE,6)
+                ,"Placeholder lol", ParticleColor.BLUE));
+
+
+
+
         Path output = this.generator.getPackOutput().getOutputFolder();
         for (CasterRecipeWrapper g : tomes) {
             Path path = getRecipePath(output, g.id().getPath());

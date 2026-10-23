@@ -40,7 +40,7 @@ public class AttributeEventHandler {
 
    @SubscribeEvent
    public static void onPotionAdd(MobEffectEvent.Added event) {
-
+// note lyrellion if you are reading this and want to make bagels for elemancy. I ask you keep the double schools to 37.5 and the quad school to 25 for balancing reasons
        LivingEntity living = event.getEntity();
        Set<SpellSchool> schools;
        if (living.getAttribute(MartialRegistry.ELEMENTAL_POTENCY) != null) {

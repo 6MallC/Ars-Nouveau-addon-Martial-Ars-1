@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -35,6 +36,22 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.AttackInlay.get())
             .add(MartialRegistry.DiscountInlay.get());
 
+    tag(CuriosTags.RING)
+            .add(MartialRegistry.MISTBREAKER.get())
+
+    ;
+
+    tag(CuriosTags.BRACELET)
+            .add(MartialRegistry.EARTHBAGEL.get())
+            .add(MartialRegistry.AIRBAGEL.get())
+            .add(MartialRegistry.FIREBAGEL.get())
+            .add(MartialRegistry.WATERBAGEL.get())
+    ;
+
+    tag(CuriosTags.HEAD)
+            .add(MartialRegistry.MAGESSHADES.get())
+
+    ;
 
     }
 

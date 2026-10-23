@@ -5,6 +5,7 @@
   "attributes.martial_ars.water_potency": "Water Potency",
   "block.martial_ars.sourceingot_block": "Block of Magenesium",
   "creativetab.martial_ars.main": "Martial Ars",
+  "effect.martial_ars.mana_decay": "Mana Decay",
   "effect.martial_ars.repairing": "Repairing",
   "item.martial_ars.aero.blade": "Air Blade",
   "item.martial_ars.aero.hilt": "Air Hilt",
@@ -26,6 +27,7 @@
   "item.martial_ars.kunai_handle": "Enchanter's Kunai Handle",
   "item.martial_ars.luck_inlay": "Luck Inlay",
   "item.martial_ars.mages_shades_item": "Mage's Shades",
+  "item.martial_ars.mistbreaker": "Mistbreaker",
   "item.martial_ars.mushroom_wand": "Mushroom Wand",
   "item.martial_ars.pyro.blade": "Fire Blade",
   "item.martial_ars.pyro.hilt": "File Hilt",
@@ -43,6 +45,7 @@
   "martial_ars.spear.invalid": "Hey uh, take the form glyph off your spell and try again.",
   "tooltip.martial_ars.mages_shades.base": "Shades for one of great endurance. These give Mage Sight when worn.",
   "tooltip.martial_ars.mages_shades.shift": "Made for Odinshi.",
+  "tooltip.martial_ars.mistbreaker.base": "Commonly worn by the Mistkin. This ring conceals and empowers you while you are within the embrace of a mist cloud. Offering Speed and Strength.",
   "tooltip.martial_ars.mushroom_wand.shift": "Made for a really fungi. Unfortunately there isn't mushroom for the list of errors you have helped me fix. So I will have to spore you the details.",
   "tooltip.martial_ars.mushroom_wand.tooltip": "Turns grass into Mycelium.",
   "tooltip.martial_ars.source_ingot.tooltip": "Made from using source to force Iron to resonate with the trace amounts of Magenisium already present in the ingot."
