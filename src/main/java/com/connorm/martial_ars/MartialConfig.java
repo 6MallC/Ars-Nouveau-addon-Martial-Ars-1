@@ -2,11 +2,10 @@ package com.connorm.martial_ars;
 
 
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.config.ModConfigEvent;
 
 
-public class ExampleConfig {
+public class MartialConfig {
 
     @SubscribeEvent
     public static void onLoad(final ModConfigEvent.Loading configEvent) {
