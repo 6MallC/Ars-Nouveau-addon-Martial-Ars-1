@@ -26,6 +26,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import net.neoforged.neoforge.event.EventHooks;
+import org.jetbrains.annotations.NotNull;
 
 public class KunaiProjectileEntity extends AbstractArrow {
     BlockPos lastPosHit;
@@ -187,7 +188,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
     }
 
     @Override
-    protected void doPostHurtEffects(LivingEntity living) {
+    protected void doPostHurtEffects(@NotNull LivingEntity living) {
         super.doPostHurtEffects(living);
         this.playResolve();
     }
@@ -243,7 +244,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
 
     }
 
-    protected void onHitBlock(BlockHitResult result) {
+    protected void onHitBlock(@NotNull BlockHitResult result) {
         if (resolver() != null) {
             resolver().onResolveEffect(level, result);
         }
