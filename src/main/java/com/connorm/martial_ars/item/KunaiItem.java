@@ -47,6 +47,7 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
         AbstractCaster<?> caster = getSpellCaster(itemstack);
 
         boolean hasEnoughDurability = (itemstack.getMaxDamage() -itemstack.getDamageValue()) >= itemstack.getMaxDamage() / 10;
+        assert caster != null;
         boolean canCastSpell = caster.getSpell().isValid() &&
                 new SpellResolver(new SpellContext(pLevel, caster.getSpell(), pPlayer, new PlayerCaster(pPlayer), itemstack))
                         .withSilent(true)
@@ -112,6 +113,7 @@ public class KunaiItem extends SwordItem implements ICasterTool, IManaDiscountEq
     public boolean hurtEnemy(@NotNull ItemStack stack, LivingEntity target, @NotNull LivingEntity entity) {
         AbstractCaster<?> caster = getSpellCaster(stack);
         IWrappedCaster wrappedCaster = entity instanceof  Player player ? new PlayerCaster(player) : new LivingCaster(entity);
+        assert caster != null;
         SpellContext context = new SpellContext(entity.level(), caster.modifySpellBeforeCasting((ServerLevel) target.level(), entity, InteractionHand.MAIN_HAND, caster.getSpell()), entity, wrappedCaster, stack);
         SpellResolver resolver = entity instanceof Player ? new SpellResolver(context) : new EntitySpellResolver(context);
         EntityHitResult entityRes = new EntityHitResult(target);

@@ -2,9 +2,9 @@
   "values": [
     "martial_ars:spear_head",
     "martial_ars:kunai_blade",
-    "martial-ars:geo.blade",
-    "martial-ars:aero.blade",
-    "martial-ars:pyro.blade",
-    "martial-ars:aqua.blade"
+    "martial_ars:geo.blade",
+    "martial_ars:aero.blade",
+    "martial_ars:aqua.blade",
+    "martial_ars:pyro.blade"
   ]
 }

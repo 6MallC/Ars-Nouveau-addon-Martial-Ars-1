@@ -1,6 +1,5 @@
 package com.connorm.martial_ars.ritual;
 
-import com.connorm.martial_ars.MartialArs;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleUtil;
 import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;

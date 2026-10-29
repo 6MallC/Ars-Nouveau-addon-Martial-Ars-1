@@ -1,7 +1,8 @@
-// 1.21.1	2026-10-23T13:23:58.176321	Tags for minecraft:item mod id martial_ars
+// 1.21.1	2026-10-29T17:13:38.1007051	Tags for minecraft:item mod id martial_ars
 5603a533e638427232610b8778a562de4353bea7 data/curios/tags/item/bracelet.json
 c98dd410cec960c82670e0fbab423be5d82d83cd data/curios/tags/item/head.json
 03d1cfdf07bca9c2a78dd0648d33f072259065ef data/curios/tags/item/ring.json
 ed4b4ace5cb5e810cfdc847f989b74b287ca7c6e data/martial_ars/tags/item/inlays.json
-cf3282ccf9142bfd85fd8eafef7e5db64c15a7cf data/martial_ars/tags/item/weapon_handles.json
-cf97a3f8d6e08b1fa6a9f4c8abf728fdc0e29819 data/martial_ars/tags/item/weapon_heads.json
+92e63ee54711a4a6c7b4c37cbcd7ef0485cc3268 data/martial_ars/tags/item/martial_weapons.json
+a2d7dd04f51d6e981c996eea1868ba46413bdea8 data/martial_ars/tags/item/weapon_handles.json
+fa6a9d1be023a0959d87c57bcf8d9f037d9fed6e data/martial_ars/tags/item/weapon_heads.json

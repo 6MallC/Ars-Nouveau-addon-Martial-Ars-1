@@ -32,11 +32,10 @@ public class MartialTags {
         public static final TagKey<Item> Weapon_Handles = createTag("weapon_handles");
         public static final TagKey<Item> Weapon_Heads = createTag("weapon_heads");
         public static final TagKey<Item> Inlays = createTag("inlays");
-
+        public static final TagKey<Item> Martial_Weapons = createTag("martial_weapons");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MartialArs.MODID, name));
-
         }
     }
 
@@ -58,10 +57,6 @@ public class MartialTags {
                 SpellSchools.ELEMENTAL_AIR, List.of(AIR_EFFECTS),
                 SpellSchools.ELEMENTAL, List.of(FIRE_EFFECTS, AQUA_EFFECTS, EARTH_EFFECTS, AIR_EFFECTS)
         ));
-        public static class Curios {
-
-        }
     }
-
-    }
+}
 

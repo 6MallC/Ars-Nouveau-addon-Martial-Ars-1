@@ -113,6 +113,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
                 hitresult = entityraytraceresult;
             }
 
+/*          Apparently this is causing a crash
             if (hitresult instanceof EntityHitResult entityHitResult) {
                 Entity entity = entityHitResult.getEntity();
                 Entity entity1 = this.getOwner();
@@ -126,6 +127,8 @@ public class KunaiProjectileEntity extends AbstractArrow {
                     break;
                 }
             }
+ */
+
             if (hitresult != null && hitresult.getType() != HitResult.Type.MISS && !isNoClip) {
                 if (EventHooks.onProjectileImpact(this, hitresult)) {
                     break;
@@ -196,16 +199,18 @@ public class KunaiProjectileEntity extends AbstractArrow {
     @Override
     protected void onHit(HitResult result) {
         HitResult.Type raytraceresult$type = result.getType();
-        if (raytraceresult$type == HitResult.Type.ENTITY) {
-            if (resolver() != null) {
-                resolver().onResolveEffect(level, result);
+        if (!this.level().isClientSide) {
+            if (raytraceresult$type == HitResult.Type.ENTITY) {
+                if (resolver() != null) {
+                    resolver().onResolveEffect(level, result);
+                }
+                this.onHitEntity((EntityHitResult) result);
+                attemptRemoval();
+            } else if (result instanceof BlockHitResult blockHitResult && !(blockHitResult.getBlockPos().equals(lastPosHit))) {
+                this.onHitBlock(blockHitResult);
+                lastPosHit = blockHitResult.getBlockPos().immutable();
+                attemptRemoval();
             }
-            this.onHitEntity((EntityHitResult) result);
-            attemptRemoval();
-        } else if (result instanceof BlockHitResult blockHitResult && !(blockHitResult.getBlockPos().equals(lastPosHit))) {
-            this.onHitBlock(blockHitResult);
-            lastPosHit = blockHitResult.getBlockPos().immutable();
-            attemptRemoval();
         }
 
 

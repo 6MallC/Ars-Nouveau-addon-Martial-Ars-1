@@ -23,18 +23,42 @@ public class MAItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider provider) {
     tag(MartialTags.Items.Weapon_Handles)
             .add(MartialRegistry.SpearShaft.get())
-            .add(MartialRegistry.KunaiHandle.get());
+            .add(MartialRegistry.KunaiHandle.get())
+            .add(MartialRegistry.AeroHilt.get())
+            .add(MartialRegistry.GeoHilt.get())
+            .add(MartialRegistry.AquaHilt.get())
+            .add(MartialRegistry.PyroHilt.get())
+
+        ;
 
     tag(MartialTags.Items.Weapon_Heads)
             .add(MartialRegistry.SpearHead.get())
-            .add(MartialRegistry.KunaiBlade.get());
+            .add(MartialRegistry.KunaiBlade.get())
+            .add(MartialRegistry.GeoBlade.get())
+            .add(MartialRegistry.AeroBlade.get())
+            .add(MartialRegistry.AquaBlade.get())
+            .add(MartialRegistry.PyroBlade.get())
+
+        ;
+
+    tag(MartialTags.Items.Martial_Weapons)
+            .add(MartialRegistry.EnchantersSpear.get())
+            .add(MartialRegistry.EnchantersKunai.get())
+            .add(MartialRegistry.GeoSword.get())
+            .add(MartialRegistry.AeroSword.get())
+            .add(MartialRegistry.AquaSword.get())
+            .add(MartialRegistry.PyroSword.get())
+
+        ;
 
     tag(MartialTags.Items.Inlays)
             .add(MartialRegistry.BlankInlay.get())
             .add(MartialRegistry.LuckInlay.get())
             .add(MartialRegistry.DelayInlay.get())
             .add(MartialRegistry.AttackInlay.get())
-            .add(MartialRegistry.DiscountInlay.get());
+            .add(MartialRegistry.DiscountInlay.get())
+
+    ;
 
     tag(CuriosTags.RING)
             .add(MartialRegistry.MISTBREAKER.get())
@@ -46,6 +70,7 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.AIRBAGEL.get())
             .add(MartialRegistry.FIREBAGEL.get())
             .add(MartialRegistry.WATERBAGEL.get())
+
     ;
 
     tag(CuriosTags.HEAD)
@@ -54,5 +79,4 @@ public class MAItemTagProvider extends ItemTagsProvider {
     ;
 
     }
-
 }
