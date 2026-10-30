@@ -6,7 +6,9 @@ import com.connorm.martial_ars.util.MartialTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +23,8 @@ public class MAItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
+        // .add(MartialRegistry..get())
+        // MARTIAL TAGS
     tag(MartialTags.Items.Weapon_Handles)
             .add(MartialRegistry.SpearShaft.get())
             .add(MartialRegistry.KunaiHandle.get())
@@ -59,7 +63,7 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.DiscountInlay.get())
 
     ;
-
+    // CURIO TAGS
     tag(CuriosTags.RING)
             .add(MartialRegistry.MISTBREAKER.get())
 
@@ -78,5 +82,83 @@ public class MAItemTagProvider extends ItemTagsProvider {
 
     ;
 
+    // MINECRAFT TAGS
+
+
+    this.tag(Tags.Items.INGOTS)
+                .add(MartialRegistry.SourceIngot.get());
+
+    tag(ItemTags.BREAKS_DECORATED_POTS)
+            .add(MartialRegistry.EnchantersSpear.get())
+            .add(MartialRegistry.EnchantersKunai.get())
+            .add(MartialRegistry.GeoSword.get())
+            .add(MartialRegistry.AeroSword.get())
+            .add(MartialRegistry.AquaSword.get())
+            .add(MartialRegistry.PyroSword.get())
+            .add(MartialRegistry.ARMAMENT.get())
+            .add(MartialRegistry.ABJURANTMACE.get())
+
+    ;
+
+        tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+                .add(MartialRegistry.EnchantersSpear.get())
+                .add(MartialRegistry.EnchantersKunai.get())
+                .add(MartialRegistry.GeoSword.get())
+                .add(MartialRegistry.AeroSword.get())
+                .add(MartialRegistry.AquaSword.get())
+                .add(MartialRegistry.PyroSword.get())
+                .add(MartialRegistry.ARMAMENT.get())
+
+        ;
+
+        tag(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+                .add(MartialRegistry.EnchantersSpear.get())
+                .add(MartialRegistry.EnchantersKunai.get())
+                .add(MartialRegistry.GeoSword.get())
+                .add(MartialRegistry.AeroSword.get())
+                .add(MartialRegistry.AquaSword.get())
+                .add(MartialRegistry.PyroSword.get())
+                .add(MartialRegistry.ARMAMENT.get())
+                .add(MartialRegistry.ABJURANTMACE.get())
+
+        ;
+
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(MartialRegistry.EnchantersSpear.get())
+                .add(MartialRegistry.EnchantersKunai.get())
+                .add(MartialRegistry.GeoSword.get())
+                .add(MartialRegistry.AeroSword.get())
+                .add(MartialRegistry.AquaSword.get())
+                .add(MartialRegistry.PyroSword.get())
+                .add(MartialRegistry.ARMAMENT.get())
+                .add(MartialRegistry.ABJURANTMACE.get())
+
+        ;
+
+        tag(ItemTags.SWORDS)
+            .add(MartialRegistry.EnchantersSpear.get())
+            .add(MartialRegistry.EnchantersKunai.get())
+            .add(MartialRegistry.GeoSword.get())
+            .add(MartialRegistry.AeroSword.get())
+            .add(MartialRegistry.AquaSword.get())
+            .add(MartialRegistry.PyroSword.get())
+            .add(MartialRegistry.ARMAMENT.get())
+
+    ;
+
+    tag(ItemTags.WEAPON_ENCHANTABLE)
+            .add(MartialRegistry.EnchantersSpear.get())
+            .add(MartialRegistry.EnchantersKunai.get())
+            .add(MartialRegistry.GeoSword.get())
+            .add(MartialRegistry.AeroSword.get())
+            .add(MartialRegistry.AquaSword.get())
+            .add(MartialRegistry.PyroSword.get())
+            .add(MartialRegistry.ARMAMENT.get())
+            .add(MartialRegistry.ABJURANTMACE.get())
+
+    ;
+
+    tag(ItemTags.MACE_ENCHANTABLE)
+            .add(MartialRegistry.ABJURANTMACE.get());
     }
 }

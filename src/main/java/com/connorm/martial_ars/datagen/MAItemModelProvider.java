@@ -13,6 +13,7 @@ public class MAItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Basic
         basicItem(MartialRegistry.SourceIngot.get());
         basicItem(MartialRegistry.SourceMatrix.get());
         basicItem(MartialRegistry.BlankInlay.get());
@@ -25,8 +26,10 @@ public class MAItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.FIREBAGEL.get());
         basicItem(MartialRegistry.WATERBAGEL.get());
         basicItem(MartialRegistry.MAGESSHADES.get());
-        basicItem(MartialRegistry.ARMAMENT.get());
         basicItem(MartialRegistry.MISTBREAKER.get());
+        // Handheld
+        handheldItem(MartialRegistry.ARMAMENT.get());
+        handheldItem(MartialRegistry.ABJURANTMACE.get());
 
     }
 }

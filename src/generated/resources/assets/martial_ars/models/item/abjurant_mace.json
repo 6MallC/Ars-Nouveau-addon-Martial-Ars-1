@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "martial_ars:item/abjurant_mace"
+  }
+}

@@ -21,8 +21,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class BladeCasterTome extends CasterTome {
-    public BladeCasterTome(Properties properties) {
+public class BladeCasterTomeItem extends CasterTome {
+    public BladeCasterTomeItem(Properties properties) {
         super(properties.component(ModDataComponents.BLADE_TOME_CASTER, new BladeCasterTomeData()));
     }
     @Override

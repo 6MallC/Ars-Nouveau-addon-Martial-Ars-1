@@ -1,17 +1,13 @@
 package com.connorm.martial_ars.registry;
 import com.alexthw.sauce.registry.ModRegistry;
-import com.connorm.martial_ars.item.BladeCasterTome;
-import com.connorm.martial_ars.item.ExampleCosmetic;
+import com.connorm.martial_ars.item.*;
 import com.connorm.martial_ars.item.bangles.AirBagles;
 import com.connorm.martial_ars.item.bangles.EarthBagles;
 import com.connorm.martial_ars.item.bangles.FireBagles;
 import com.connorm.martial_ars.item.bangles.WaterBagles;
-import com.connorm.martial_ars.item.EnchantersSpearItem;
-import com.connorm.martial_ars.item.KunaiItem;
 import com.connorm.martial_ars.item.head.MagesShadesItem;
 import com.connorm.martial_ars.item.rings.Mistbreaker;
 import com.connorm.martial_ars.registry.custom.ModToolTiers;
-import com.connorm.martial_ars.item.MushroomWandItem;
 import com.hollingsworth.arsnouveau.api.perk.PerkAttributes;
 import com.hollingsworth.arsnouveau.api.sound.SpellSound;
 import com.hollingsworth.arsnouveau.ArsNouveau;
@@ -176,14 +172,22 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                                             .15f, AttributeModifier.Operation.ADD_VALUE),
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
-    public static final DeferredHolder<Item,BladeCasterTome> ARMAMENT = ITEMS.register("archmage.armament",
-            () -> new BladeCasterTome(new Item.Properties()
+    public static final DeferredHolder<Item, BladeCasterTomeItem> ARMAMENT = ITEMS.register("archmage.armament",
+            () -> new BladeCasterTomeItem(new Item.Properties()
                 .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
                         .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
                                 new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
                                         10.0f, AttributeModifier.Operation.ADD_VALUE),
                                 EquipmentSlotGroup.MAINHAND))
                 .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
+        public static final DeferredHolder<Item, AbjurantMaceItem> ABJURANTMACE = ITEMS.register("abjurant_mace",
+                () -> new AbjurantMaceItem(new Item.Properties()
+                        .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -3f)
+                                .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
+                                        new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
+                                                4.0f, AttributeModifier.Operation.ADD_VALUE),
+                                        EquipmentSlotGroup.MAINHAND))
+                        .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
 
     // CURIOS
     public static final DeferredItem<EarthBagles> EARTHBAGEL = (DeferredItem<EarthBagles>) ITEMS.register("earth_bagel",

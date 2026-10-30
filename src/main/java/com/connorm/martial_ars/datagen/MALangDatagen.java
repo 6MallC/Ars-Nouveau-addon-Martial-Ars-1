@@ -20,7 +20,7 @@ public class MALangDatagen extends LanguageProvider {
         add("item.martial_ars.mushroom_wand", "Mushroom Wand");
         add("creativetab.martial_ars.main", "Martial Ars");
         add("tooltip.martial_ars.mushroom_wand.tooltip", "Turns grass into Mycelium.");
-        add("tooltip.martial_ars.mushroom_wand.shift", "Made for a really fungi. Unfortunately there isn't mushroom for the list of errors you have helped me fix. So I will have to spore you the details.");
+        add("tooltip.martial_ars.mushroom_wand.shift", "Made for a really fungi (Coytn) who has also released the mod Mycomancy and yes, you ARE being compelled to check it out. Unfortunately there isn't mushroom for the list of errors you have helped me fix. So I will have to spore you the details.");
         add("tooltip.martial_ars.source_ingot.tooltip", "Made from using source to force Iron to resonate with the trace amounts of Magenisium already present in the ingot.");
         add("item.martial_ars.enchanters_spear", "Enchanter's Spear");
         add("item.martial_ars.spear_handle", "Enchanter's Spear Handle");
@@ -62,6 +62,9 @@ public class MALangDatagen extends LanguageProvider {
         add("effect.martial_ars.mana_decay", "Mana Decay");
         add("item.martial_ars.mistbreaker", "Mistbreaker");
         add("tooltip.martial_ars.mistbreaker.base", "Commonly worn by the Mistkin. This ring conceals and empowers you while you are within the embrace of a mist cloud. Offering Speed and Strength.");
+        add("item.martial_ars.abjurant_mace", "Abjurant Mace");
+
+        // add("", "");
 
             for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
                 if (i.ritual.getRegistryName().getNamespace().equals(MartialArs.MODID)) {
