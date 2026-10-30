@@ -182,7 +182,7 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                 .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
         public static final DeferredHolder<Item, AbjurantMaceItem> ABJURANTMACE = ITEMS.register("abjurant_mace",
                 () -> new AbjurantMaceItem(new Item.Properties()
-                        .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -3f)
+                        .attributes(SwordItem.createAttributes(ModToolTiers.Martial, -1, -3.4f)
                                 .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
                                         new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
                                                 4.0f, AttributeModifier.Operation.ADD_VALUE),
