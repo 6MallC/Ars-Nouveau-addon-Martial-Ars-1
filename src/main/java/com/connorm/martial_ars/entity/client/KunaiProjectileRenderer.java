@@ -31,7 +31,7 @@ public class KunaiProjectileRenderer extends EntityRenderer<KunaiProjectileEntit
             poseStack.mulPose(Axis.YP.rotationDegrees(lerpYaw));
 
             float lerpPitch = Mth.lerp(partialTicks, pEntity.xRotO, pEntity.getXRot());
-            poseStack.mulPose(Axis.ZP.rotationDegrees(lerpPitch));
+            poseStack.mulPose(Axis.XP.rotationDegrees(lerpPitch));
         }
             VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(
                     buffer, this.model.renderType(this.getTextureLocation(pEntity)), false, false);
