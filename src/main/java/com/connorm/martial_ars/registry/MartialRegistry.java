@@ -174,7 +174,7 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                                     EquipmentSlotGroup.MAINHAND))
                     .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
     public static final DeferredHolder<Item, BladeCasterTomeItem> ARMAMENT = ITEMS.register("archmage.armament",
-            () -> new BladeCasterTomeItem(new Item.Properties()
+            () -> new BladeCasterTomeItem(new Item.Properties().stacksTo(1)
                 .attributes(SwordItem.createAttributes(ModToolTiers.Martial, 2, -2.4f)
                         .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
                                 new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
@@ -182,7 +182,7 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                                 EquipmentSlotGroup.MAINHAND))
                 .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster())));
         public static final DeferredHolder<Item, AbjurantMaceItem> ABJURANTMACE = ITEMS.register("abjurant_mace",
-                () -> new AbjurantMaceItem(new Item.Properties()
+                () -> new AbjurantMaceItem(new Item.Properties().stacksTo(1)
                         .attributes(SwordItem.createAttributes(ModToolTiers.Martial, -1, -3.4f)
                                 .withModifierAdded(PerkAttributes.SPELL_DAMAGE_BONUS,
                                         new AttributeModifier(ArsNouveau.prefix("sword_spell_bonus"),
