@@ -1,7 +1,7 @@
-package com.connorm.martial_ars.entity.client;
+package com.connorm.martial_ars.item.entity.client;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.entity.custom.KunaiProjectileEntity;
+import com.connorm.martial_ars.item.entity.custom.KunaiProjectileEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;

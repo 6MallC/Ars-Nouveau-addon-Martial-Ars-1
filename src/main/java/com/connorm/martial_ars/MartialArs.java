@@ -1,12 +1,13 @@
 package com.connorm.martial_ars;
 
+import com.connorm.martial_ars.block.entity.MartialBlockEntities;
 import com.connorm.martial_ars.client.curio.MagesShadesRenderer;
 import com.connorm.martial_ars.component.ModDataComponents;
 import com.connorm.martial_ars.effect.MartialEffects;
-import com.connorm.martial_ars.entity.ModEntities;
-import com.connorm.martial_ars.entity.client.KunaiProjectileModel;
-import com.connorm.martial_ars.entity.client.KunaiProjectileRenderer;
-import com.connorm.martial_ars.entity.client.MagesShadesModel;
+import com.connorm.martial_ars.item.entity.MartialItemEntities;
+import com.connorm.martial_ars.item.entity.client.KunaiProjectileModel;
+import com.connorm.martial_ars.item.entity.client.KunaiProjectileRenderer;
+import com.connorm.martial_ars.item.entity.client.MagesShadesModel;
 import com.connorm.martial_ars.event.AttributeEventHandler;
 import com.connorm.martial_ars.event.EffectEvents;
 import com.connorm.martial_ars.registry.ArsNouveauRegistry;
@@ -48,14 +49,15 @@ public class MartialArs {
         MartialRegistry.registerRegistries(modEventBus);
         modEventBus.register(MartialRegistry.class);
         ModDataComponents.register(modEventBus);
-        ModEntities.ENTITY_TYPES.register(modEventBus);
+        MartialItemEntities.ENTITY_TYPES.register(modEventBus);
         MartialEffects.register(modEventBus);
         modEventBus.addListener(this::clientSetup);
+        MartialBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
     }
     private void clientSetup(final FMLClientSetupEvent evt) {
         CuriosRendererRegistry.register(MartialRegistry.MAGESSHADES.get(), MagesShadesRenderer::new);
-        EntityRenderers.register(ModEntities.KUNAI.get(), KunaiProjectileRenderer::new);
+        EntityRenderers.register(MartialItemEntities.KUNAI.get(), KunaiProjectileRenderer::new);
     }
 
 

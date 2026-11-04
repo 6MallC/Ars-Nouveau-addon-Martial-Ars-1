@@ -22,6 +22,7 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(MartialRegistry.SourceIngot);
                     output.accept(MartialRegistry.sourceingot_block);
                     output.accept(MartialRegistry.SourceMatrix);
+                    output.accept(MartialRegistry.ARCANEFORGE);
                     output.accept(MartialRegistry.MushroomWand);
                     output.accept(MartialRegistry.EnchantersSpear);
                     output.accept(MartialRegistry.SpearShaft);

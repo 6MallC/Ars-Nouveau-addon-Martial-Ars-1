@@ -17,7 +17,8 @@ public class MABlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-dropSelf(MartialRegistry.sourceingot_block.get());
+        dropSelf(MartialRegistry.sourceingot_block.get());
+        dropSelf(MartialRegistry.ARCANEFORGE.get());
     }
 
     @Override

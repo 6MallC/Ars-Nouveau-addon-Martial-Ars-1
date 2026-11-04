@@ -1,10 +1,10 @@
-package com.connorm.martial_ars.entity.client;// Made with Blockbench 5.1.5
+package com.connorm.martial_ars.item.entity.client;// Made with Blockbench 5.1.5
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.entity.custom.KunaiProjectileEntity;
+import com.connorm.martial_ars.item.entity.custom.KunaiProjectileEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;

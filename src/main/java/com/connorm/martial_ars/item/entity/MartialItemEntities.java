@@ -1,7 +1,7 @@
-package com.connorm.martial_ars.entity;
+package com.connorm.martial_ars.item.entity;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.entity.custom.KunaiProjectileEntity;
+import com.connorm.martial_ars.item.entity.custom.KunaiProjectileEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ModEntities {
+public class MartialItemEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, MartialArs.MODID);
     public static final Supplier<EntityType<KunaiProjectileEntity>> KUNAI =

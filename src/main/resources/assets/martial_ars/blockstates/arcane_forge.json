@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "martial_ars:block/arcane_forge"
+    },
+    "facing=south": {
+      "model": "martial_ars:block/arcane_forge",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "martial_ars:block/arcane_forge",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "martial_ars:block/arcane_forge",
+      "y": 270
+    }
+  }
+}

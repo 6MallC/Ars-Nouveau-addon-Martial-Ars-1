@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.registry;
 import com.alexthw.sauce.registry.ModRegistry;
+import com.connorm.martial_ars.block.ArcaneForgeBlock;
 import com.connorm.martial_ars.item.*;
 import com.connorm.martial_ars.item.bangles.AirBagles;
 import com.connorm.martial_ars.item.bangles.EarthBagles;
@@ -240,6 +241,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)));
 
+    public static final DeferredBlock<Block> ARCANEFORGE = registerBlock("arcane_forge",
+            () -> new ArcaneForgeBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     public static void registerRegistries(IEventBus bus) {
         BLOCKS.register(bus);

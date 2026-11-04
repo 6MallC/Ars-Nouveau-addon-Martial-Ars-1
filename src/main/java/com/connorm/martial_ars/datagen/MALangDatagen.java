@@ -63,6 +63,7 @@ public class MALangDatagen extends LanguageProvider {
         add("item.martial_ars.mistbreaker", "Mistbreaker");
         add("tooltip.martial_ars.mistbreaker.base", "Commonly worn by the Mistkin. This ring conceals and empowers you while you are within the embrace of a mist cloud. Offering Speed and Strength.");
         add("item.martial_ars.abjurant_mace", "Abjurant Mace");
+        add("block.martial_ars.arcane_forge", "Arcane Forge");
 
         // add("", "");
 

@@ -1,6 +1,6 @@
 package com.connorm.martial_ars.event;
 
-import com.connorm.martial_ars.entity.client.KunaiProjectileModel;
+import com.connorm.martial_ars.item.entity.client.KunaiProjectileModel;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 

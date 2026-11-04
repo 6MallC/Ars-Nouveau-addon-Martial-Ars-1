@@ -1,6 +1,6 @@
-package com.connorm.martial_ars.entity.custom;
+package com.connorm.martial_ars.item.entity.custom;
 
-import com.connorm.martial_ars.entity.ModEntities;
+import com.connorm.martial_ars.item.entity.MartialItemEntities;
 import com.connorm.martial_ars.registry.MartialRegistry;
 import com.hollingsworth.arsnouveau.api.spell.Spell;
 import com.hollingsworth.arsnouveau.api.spell.SpellContext;
@@ -50,7 +50,7 @@ public class KunaiProjectileEntity extends AbstractArrow {
     }
 
     public KunaiProjectileEntity(LivingEntity shooter, Level level) {
-        super(ModEntities.KUNAI.get(), shooter, level, new ItemStack(MartialRegistry.EnchantersKunai.get()), null);
+        super(MartialItemEntities.KUNAI.get(), shooter, level, new ItemStack(MartialRegistry.EnchantersKunai.get()), null);
         this.pickup = AbstractArrow.Pickup.DISALLOWED;
     }
 

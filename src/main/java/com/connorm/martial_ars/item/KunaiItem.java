@@ -1,6 +1,6 @@
 package com.connorm.martial_ars.item;
 
-import com.connorm.martial_ars.entity.custom.KunaiProjectileEntity;
+import com.connorm.martial_ars.item.entity.custom.KunaiProjectileEntity;
 import com.hollingsworth.arsnouveau.api.item.ICasterTool;
 import com.hollingsworth.arsnouveau.api.mana.IManaDiscountEquipment;
 import com.hollingsworth.arsnouveau.api.spell.*;
