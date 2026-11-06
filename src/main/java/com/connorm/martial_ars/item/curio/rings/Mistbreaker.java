@@ -1,4 +1,4 @@
-package com.connorm.martial_ars.item.rings;
+package com.connorm.martial_ars.item.curio.rings;
 
 import alexthw.ars_elemental.registry.ModPotions;
 import com.connorm.martial_ars.api.IMartialRing;

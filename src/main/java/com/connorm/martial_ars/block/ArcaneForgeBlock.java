@@ -4,10 +4,11 @@ import com.connorm.martial_ars.block.entity.ArcaneForgeEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -77,19 +78,13 @@ protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockSt
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if(level.getBlockEntity(pos) instanceof ArcaneForgeEntity forge) {
-            if(forge.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
-                forge.inventory.insertItem(0, stack.copy(), false);
-                stack.shrink(1);
-                level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
-            } else if(stack.isEmpty()) {
-                ItemStack stackOnPedestal = forge.inventory.extractItem(0, 1, false);
-                player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPedestal);
-                forge.clearContents();
-                level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
+        if (level.getBlockEntity(pos) instanceof ArcaneForgeEntity forge) {
+            if (!level.isClientSide()) {
+                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(forge, Component.literal("arcaneforge")), pos);
+                return ItemInteractionResult.SUCCESS;
             }
-        }
 
+        }
         return ItemInteractionResult.SUCCESS;
     }
 }

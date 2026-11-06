@@ -31,6 +31,7 @@ public class MartialTags {
     public static class Items {
         public static final TagKey<Item> Weapon_Handles = createTag("weapon_handles");
         public static final TagKey<Item> Weapon_Heads = createTag("weapon_heads");
+        public static final TagKey<Item> Matrices = createTag("matrices");
         public static final TagKey<Item> Inlays = createTag("inlays");
         public static final TagKey<Item> Martial_Weapons = createTag("martial_weapons");
 

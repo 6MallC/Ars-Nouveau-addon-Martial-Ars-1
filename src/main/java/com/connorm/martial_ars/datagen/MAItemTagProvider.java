@@ -52,6 +52,7 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.AeroSword.get())
             .add(MartialRegistry.AquaSword.get())
             .add(MartialRegistry.PyroSword.get())
+            .add(MartialRegistry.ABJURANTMACE.get())
 
         ;
 
@@ -61,6 +62,10 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.DelayInlay.get())
             .add(MartialRegistry.AttackInlay.get())
             .add(MartialRegistry.DiscountInlay.get())
+
+    ;
+    tag(MartialTags.Items.Matrices)
+            .add(MartialRegistry.SourceMatrix.get())
 
     ;
     // CURIO TAGS

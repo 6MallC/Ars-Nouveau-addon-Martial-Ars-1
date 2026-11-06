@@ -1,4 +1,4 @@
-package com.connorm.martial_ars.item.head;
+package com.connorm.martial_ars.item.curio.head;
 
 import com.connorm.martial_ars.item.MartialCurio;
 import net.minecraft.client.gui.screens.Screen;

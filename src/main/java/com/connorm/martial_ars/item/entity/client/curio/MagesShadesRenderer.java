@@ -1,7 +1,6 @@
-package com.connorm.martial_ars.client.curio;
+package com.connorm.martial_ars.item.entity.client.curio;
 
 import com.connorm.martial_ars.MartialArs;
-import com.connorm.martial_ars.item.entity.client.MagesShadesModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;

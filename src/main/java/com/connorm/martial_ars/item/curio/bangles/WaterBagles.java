@@ -1,4 +1,4 @@
-package com.connorm.martial_ars.item.bangles;
+package com.connorm.martial_ars.item.curio.bangles;
 
 import com.alexthw.sauce.registry.ModRegistry;
 import com.connorm.martial_ars.item.MartialCurio;
