@@ -4,9 +4,12 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -29,8 +32,8 @@ public class MushroomWandItem extends Item {
     private Block getRandomBlock(List<Block> blocks, Random random) {
         return blocks.get(random.nextInt(blocks.size()));
     }
-
-   /* @Override
+/*
+    @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
@@ -43,7 +46,7 @@ public class MushroomWandItem extends Item {
                 })
                 .orElseGet((getRandomBlock(B)) => {
                 for (Map.Entry<ItemTags, List<Block>> entry : TAG_MAP.entrySet()) {
-            if (clickedBlock.is(entry.getKey())) {
+            if (clickedBlock instanceof  (entry.getKey())) {
                 Block target = this.getRandomBlock(entry.getValue(), (Random) level.random);
                 doThingWithTarget(target);
                 return InteractionResult.SUCCESS;

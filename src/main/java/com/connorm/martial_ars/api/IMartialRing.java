@@ -1,7 +1,7 @@
 package com.connorm.martial_ars.api;
 
 import com.alexthw.sauce.util.CompatUtils;
-import com.connorm.martial_ars.item.rings.Mistbreaker;
+import com.connorm.martial_ars.item.curio.rings.Mistbreaker;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;

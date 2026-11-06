@@ -1,4 +1,4 @@
-package com.connorm.martial_ars.item.entity.client;// Made with Blockbench 5.2.1
+package com.connorm.martial_ars.item.entity.client.curio;// Made with Blockbench 5.2.1
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 

@@ -20,6 +20,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -32,6 +34,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Optional;
+
+import static net.minecraft.world.effect.MobEffects.JUMP;
 
 public class AbjurantMaceItem extends MaceItem implements ICasterTool, IManaDiscountEquipment {
     public AbjurantMaceItem(Properties properties) {
@@ -77,7 +81,15 @@ public class AbjurantMaceItem extends MaceItem implements ICasterTool, IManaDisc
 
         return true;
     }
+@Override
+public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand){
+    ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
 
+       pPlayer.addEffect(new MobEffectInstance(JUMP, 40,0,true,false));
+       pPlayer.getCooldowns().addCooldown(this,40);
+        //SpellContext.getCaster().expendMana(100);
+       return InteractionResultHolder.sidedSuccess(itemstack,pLevel.isClientSide());
+}
 
 
 

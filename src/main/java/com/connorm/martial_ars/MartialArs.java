@@ -1,13 +1,15 @@
 package com.connorm.martial_ars;
 
 import com.connorm.martial_ars.block.entity.MartialBlockEntities;
-import com.connorm.martial_ars.client.curio.MagesShadesRenderer;
+import com.connorm.martial_ars.item.entity.client.curio.MagesShadesRenderer;
 import com.connorm.martial_ars.component.ModDataComponents;
 import com.connorm.martial_ars.effect.MartialEffects;
+import com.connorm.martial_ars.gui.MartialMenuTypes;
+import com.connorm.martial_ars.gui.custom.ForgeScreen;
 import com.connorm.martial_ars.item.entity.MartialItemEntities;
 import com.connorm.martial_ars.item.entity.client.KunaiProjectileModel;
 import com.connorm.martial_ars.item.entity.client.KunaiProjectileRenderer;
-import com.connorm.martial_ars.item.entity.client.MagesShadesModel;
+import com.connorm.martial_ars.item.entity.client.curio.MagesShadesModel;
 import com.connorm.martial_ars.event.AttributeEventHandler;
 import com.connorm.martial_ars.event.EffectEvents;
 import com.connorm.martial_ars.registry.ArsNouveauRegistry;
@@ -24,6 +26,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
@@ -53,6 +56,7 @@ public class MartialArs {
         MartialEffects.register(modEventBus);
         modEventBus.addListener(this::clientSetup);
         MartialBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        MartialMenuTypes.MENUS.register(modEventBus);
 
     }
     private void clientSetup(final FMLClientSetupEvent evt) {
@@ -93,5 +97,9 @@ public static class ClientModEvents{
             event.registerLayerDefinition(KunaiProjectileModel.LAYER_LOCATION, KunaiProjectileModel::createBodyLayer);
             event.registerLayerDefinition(MagesShadesModel.LAYER_LOCATION, MagesShadesModel::createBodyLayer);
         }
-}
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+         event.register(MartialMenuTypes.FORGE_MENU.get(), ForgeScreen::new);
+        }
+    }
 }
