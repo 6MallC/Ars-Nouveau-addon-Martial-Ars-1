@@ -29,7 +29,6 @@ public class MAItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.MISTBREAKER.get());
         // Handheld
         handheldItem(MartialRegistry.ARMAMENT.get());
-        handheldItem(MartialRegistry.ABJURANTMACE.get());
 
     }
 }

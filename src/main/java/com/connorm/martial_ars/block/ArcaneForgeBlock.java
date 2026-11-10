@@ -5,7 +5,6 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
@@ -80,7 +79,7 @@ protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockSt
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof ArcaneForgeEntity forge) {
             if (!level.isClientSide()) {
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(forge, Component.literal("arcaneforge")), pos);
+                 player.openMenu(new SimpleMenuProvider(forge, Component.literal("arcaneforge")), pos);
                 return ItemInteractionResult.SUCCESS;
             }
 
