@@ -10,6 +10,7 @@ import com.connorm.martial_ars.item.entity.MartialItemEntities;
 import com.connorm.martial_ars.item.entity.client.KunaiProjectileModel;
 import com.connorm.martial_ars.item.entity.client.KunaiProjectileRenderer;
 import com.connorm.martial_ars.item.entity.client.curio.MagesShadesModel;
+import com.connorm.martial_ars.event.PotencyAttributeEventHandler;
 import com.connorm.martial_ars.event.AttributeEventHandler;
 import com.connorm.martial_ars.event.EffectEvents;
 import com.connorm.martial_ars.registry.ArsNouveauRegistry;
@@ -46,6 +47,7 @@ public class MartialArs {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(PotencyAttributeEventHandler.class);
         NeoForge.EVENT_BUS.register(AttributeEventHandler.class);
         NeoForge.EVENT_BUS.register(EffectEvents.class);
         ModCreativeModeTabs.register(modEventBus);

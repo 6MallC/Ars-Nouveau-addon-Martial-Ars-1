@@ -27,6 +27,19 @@ public class MAItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.WATERBAGEL.get());
         basicItem(MartialRegistry.MAGESSHADES.get());
         basicItem(MartialRegistry.MISTBREAKER.get());
+        basicItem(MartialRegistry.OriginWixie.get());
+        basicItem(MartialRegistry.OriginWhirli.get());
+        basicItem(MartialRegistry.OriginDrygmy.get());
+        basicItem(MartialRegistry.OriginBuncle.get());
+        basicItem(MartialRegistry.OriginRegen.get());
+        basicItem(MartialRegistry.OriginSpellPower.get());
+        basicItem(MartialRegistry.OriginGolem.get());
+        basicItem(MartialRegistry.OriginWarding.get());
+        basicItem(MartialRegistry.OriginBlank.get());
+
+
+
+
         // Handheld
         handheldItem(MartialRegistry.ARMAMENT.get());
 

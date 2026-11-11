@@ -90,6 +90,11 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
     public static final DeferredItem<Item> KunaiBlade = (DeferredItem<Item>) ITEMS.register("kunai_blade",
             () -> new Item(new Item.Properties().stacksTo(8)));
 
+        public static final DeferredItem<Item> AbjurantHead = (DeferredItem<Item>) ITEMS.register("abjurant_head",
+                () -> new Item(new Item.Properties().stacksTo(8)));
+        public static final DeferredItem<Item> AbjurantHandle = (DeferredItem<Item>) ITEMS.register("abjurant_handle",
+                () -> new Item(new Item.Properties().stacksTo(8)));
+
     // Inlays
     public static final DeferredItem<Item> DelayInlay = (DeferredItem<Item>) ITEMS.register("delay_inlay",
             () -> new Item(new Item.Properties()));
@@ -101,7 +106,25 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> DiscountInlay = (DeferredItem<Item>) ITEMS.register("discount_inlay",
             () -> new Item(new Item.Properties()));
-
+    // Threads
+    public static final DeferredItem<Item> OriginWixie = (DeferredItem<Item>) ITEMS.register("origin_thread_wixie",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginBuncle = (DeferredItem<Item>) ITEMS.register("origin_thread_buncle",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginDrygmy = (DeferredItem<Item>) ITEMS.register("origin_thread_drygmy",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginRegen = (DeferredItem<Item>) ITEMS.register("origin_thread_regen",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginGolem = (DeferredItem<Item>) ITEMS.register("origin_thread_golem",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginSpellPower = (DeferredItem<Item>) ITEMS.register("origin_thread_spellpower",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginWarding = (DeferredItem<Item>) ITEMS.register("origin_thread_warding",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OriginWhirli = (DeferredItem<Item>) ITEMS.register("origin_thread_whirli",
+            () -> new Item(new Item.Properties()));
+        public static final DeferredItem<Item> OriginBlank = (DeferredItem<Item>) ITEMS.register("origin_thread_blank",
+                () -> new Item(new Item.Properties()));
     // TOOLS
 
     public static final DeferredItem<KunaiItem> EnchantersKunai = (DeferredItem<KunaiItem>) ITEMS.register("enchanters_kunai",
@@ -227,6 +250,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             "attributes.martial_ars.fire_potency", 0, -1000, 1000).setSyncable(true));
     public static final Holder<Attribute> ELEMENTAL_POTENCY = ATTRIBUTES.register("elemental_potency", () -> new RangedAttribute(
             "attributes.martial_ars.elemental_potency", 0, -1000, 1000).setSyncable(true));
+        public static final Holder<Attribute> AilmentDuration = ATTRIBUTES.register("ailment_duration", () -> new RangedAttribute(
+                "attributes.martial_ars.ailment_duration", 1, -0, 100).setSyncable(true));
 
     @SubscribeEvent
     public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {

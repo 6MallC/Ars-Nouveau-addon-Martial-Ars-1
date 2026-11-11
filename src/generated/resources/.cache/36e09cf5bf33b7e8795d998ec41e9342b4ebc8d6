@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-09T23:01:21.6765953	Item Models: martial_ars
+// 1.21.1	2026-11-11T01:50:15.0988697	Item Models: martial_ars
 1909b9936a5362416837336535e4155ab809735b assets/martial_ars/models/item/air_bagel.json
 c2d93964fb6c6fc948a9381002caeddfd5a6abec assets/martial_ars/models/item/archmage.armament.json
 571c57483fc378ac3a8ae6f57016df102fbbfcea assets/martial_ars/models/item/attack_inlay.json
@@ -10,6 +10,15 @@ dda66b872af97da98bb5355ef6680e3617cc4f55 assets/martial_ars/models/item/fire_bag
 7d252db23ebf76bd78f41ed766e67a60f1be7b57 assets/martial_ars/models/item/luck_inlay.json
 259dfbbaf24026602a1e1a31de489132b11bb9f4 assets/martial_ars/models/item/mages_shades_item.json
 18475e3aa388058b8c8e1aba647204e0bce72252 assets/martial_ars/models/item/mistbreaker.json
+0f6f34f0c643eb144b52c56e8a66084617526d04 assets/martial_ars/models/item/origin_thread_blank.json
+5f26228abc37783f615da2a7c78be840aba26f82 assets/martial_ars/models/item/origin_thread_buncle.json
+388a0e35270e9d260e6c95e0acc8221cfd97bb23 assets/martial_ars/models/item/origin_thread_drygmy.json
+12523f3c374882a75c5511d79d74e2316e397233 assets/martial_ars/models/item/origin_thread_golem.json
+ad2014dc06ff418afc53699edcf5216289774c89 assets/martial_ars/models/item/origin_thread_regen.json
+c6606ba6561be38d07cb8308da9067ef8f328f7f assets/martial_ars/models/item/origin_thread_spellpower.json
+9907c24aa225a4482f10d84b568736b3265ce9e2 assets/martial_ars/models/item/origin_thread_warding.json
+dfa22a8722d8136cfc9a6a254dcd9f7f9481d3b6 assets/martial_ars/models/item/origin_thread_whirli.json
+564590311c839716f840fca46b85f9e4b3b7dd0f assets/martial_ars/models/item/origin_thread_wixie.json
 5e57fdcaeba4a8b43ecf219fe20bc5501847c791 assets/martial_ars/models/item/source_ingot.json
 7afae59f7d81739a9206b3a3b3172e9c8540790a assets/martial_ars/models/item/source_matrix.json
 13793a562d9ad8224acc8fd4b459a996e1035fdc assets/martial_ars/models/item/water_bagel.json

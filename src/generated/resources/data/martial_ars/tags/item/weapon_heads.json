@@ -5,6 +5,7 @@
     "martial_ars:geo.blade",
     "martial_ars:aero.blade",
     "martial_ars:aqua.blade",
-    "martial_ars:pyro.blade"
+    "martial_ars:pyro.blade",
+    "martial_ars:abjurant_head"
   ]
 }

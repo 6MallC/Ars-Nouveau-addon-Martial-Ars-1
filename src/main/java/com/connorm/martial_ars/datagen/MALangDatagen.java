@@ -1,7 +1,9 @@
 package com.connorm.martial_ars.datagen;
 
 import com.connorm.martial_ars.MartialArs;
+import com.hollingsworth.arsnouveau.api.registry.PerkRegistry;
 import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
+import com.hollingsworth.arsnouveau.common.items.PerkItem;
 import com.hollingsworth.arsnouveau.common.items.RitualTablet;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -65,6 +67,12 @@ public class MALangDatagen extends LanguageProvider {
         add("item.martial_ars.abjurant_mace", "Abjurant Mace");
         add("block.martial_ars.arcane_forge", "Arcane Forge");
         add("arcaneforge","Arcane Forge");
+        add("item.martial_ars.abjurant_head", "Abjurant Head");
+        add("item.martial_ars.abjurant_handle", "Abjurant Handle");
+        add("martial_ars.thread_of", "Thread of %s");
+        add("item.martial_ars.origin_thread_blank", "Blank Origin Thread");
+        add("attributes.martial_ars.ailment_duration","Ailment Duration");
+
 
         // add("", "");
 
@@ -74,6 +82,12 @@ public class MALangDatagen extends LanguageProvider {
                     add("item.martial_ars." + i.ritual.getRegistryName().getPath(), i.ritual.getLangName());
                 }
             }
+        for (PerkItem i : PerkRegistry.getPerkItemMap().values()) {
+            if (i.perk.getRegistryName().getNamespace().equals(MartialArs.MODID) && !i.perk.getRegistryName().getPath().equals("blank_thread")) {
+                add("martial_ars.perk_desc." + i.perk.getRegistryName().getPath(), i.perk.getLangDescription());
+                add("item.martial_ars." + i.perk.getRegistryName().getPath(), i.perk.getLangName());
+            }
+        }
         }
     }
 
