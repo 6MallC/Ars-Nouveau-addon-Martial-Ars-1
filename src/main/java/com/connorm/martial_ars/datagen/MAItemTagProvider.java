@@ -24,7 +24,7 @@ public class MAItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         // .add(MartialRegistry..get())
-        // MARTIAL TAGS
+        // MARTIAL (my) TAGS
     tag(MartialTags.Items.Weapon_Handles)
             .add(MartialRegistry.SpearShaft.get())
             .add(MartialRegistry.KunaiHandle.get())
@@ -32,6 +32,7 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.GeoHilt.get())
             .add(MartialRegistry.AquaHilt.get())
             .add(MartialRegistry.PyroHilt.get())
+            .add(MartialRegistry.AbjurantHandle.get())
 
         ;
 
@@ -42,6 +43,7 @@ public class MAItemTagProvider extends ItemTagsProvider {
             .add(MartialRegistry.AeroBlade.get())
             .add(MartialRegistry.AquaBlade.get())
             .add(MartialRegistry.PyroBlade.get())
+            .add(MartialRegistry.AbjurantHead.get())
 
         ;
 

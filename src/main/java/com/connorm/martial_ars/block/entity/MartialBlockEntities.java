@@ -14,7 +14,7 @@ public class MartialBlockEntities {
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, MartialArs.MODID);
 
     public static final Supplier<BlockEntityType<ArcaneForgeEntity>> FORGE_BE =
-            BLOCK_ENTITIES.register("pedestal_be", () -> BlockEntityType.Builder.of(
+            BLOCK_ENTITIES.register("forge_be", () -> BlockEntityType.Builder.of(
                     ArcaneForgeEntity::new, MartialRegistry.ARCANEFORGE.get()).build(null));
 
     public static void register(IEventBus eventBus) {

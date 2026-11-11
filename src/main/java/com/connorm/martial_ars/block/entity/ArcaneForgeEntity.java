@@ -16,14 +16,12 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.util.Arrays;
 
 public class ArcaneForgeEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler inventory = new ItemStackHandler(4) {
@@ -41,13 +39,9 @@ public class ArcaneForgeEntity extends BlockEntity implements MenuProvider {
         /*
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack){
-            Arrays.asList(MartialTags.Items.Weapon_Handles);
             switch (slot){
                 case 0:
-                    if( stack == hasData(MartialTags<MartialTags.Items.>)){
-                    return true;
-                    }
-
+                    return true; //stack.getTags() == MartialTags.Items.Weapon_Handles;
             }
             return false;
         }*/

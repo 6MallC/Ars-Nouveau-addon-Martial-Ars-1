@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-05T00:19:07.7770357	Tags for minecraft:item mod id martial_ars
+// 1.21.1	2026-11-10T15:34:05.400322	Tags for minecraft:item mod id martial_ars
 5603a533e638427232610b8778a562de4353bea7 data/curios/tags/item/bracelet.json
 c98dd410cec960c82670e0fbab423be5d82d83cd data/curios/tags/item/head.json
 03d1cfdf07bca9c2a78dd0648d33f072259065ef data/curios/tags/item/ring.json
@@ -6,8 +6,8 @@ c98dd410cec960c82670e0fbab423be5d82d83cd data/curios/tags/item/head.json
 ed4b4ace5cb5e810cfdc847f989b74b287ca7c6e data/martial_ars/tags/item/inlays.json
 6e15f2b7414be7ae6c3193c863238fd69fe592b9 data/martial_ars/tags/item/martial_weapons.json
 b9c8c24f62909fc8e09f90e8efe5fa42bd0b0cfc data/martial_ars/tags/item/matrices.json
-a2d7dd04f51d6e981c996eea1868ba46413bdea8 data/martial_ars/tags/item/weapon_handles.json
-fa6a9d1be023a0959d87c57bcf8d9f037d9fed6e data/martial_ars/tags/item/weapon_heads.json
+8a7aa3062a39f737e0ed7f0819efea15cc6f7b9d data/martial_ars/tags/item/weapon_handles.json
+300152fd08dde6b181b4d13bc6ef3719291f5a20 data/martial_ars/tags/item/weapon_heads.json
 cf0e56eba60cb939991ab94552e7ef289dad80df data/minecraft/tags/item/breaks_decorated_pots.json
 cf0e56eba60cb939991ab94552e7ef289dad80df data/minecraft/tags/item/enchantable/durability.json
 cf0e56eba60cb939991ab94552e7ef289dad80df data/minecraft/tags/item/enchantable/fire_aspect.json

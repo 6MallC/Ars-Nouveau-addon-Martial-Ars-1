@@ -43,6 +43,8 @@ public static final Supplier<CreativeModeTab> Martial_Ars_Main = CREATIVE_MODE_T
                     output.accept(MartialRegistry.PyroBlade);
                     output.accept(MartialRegistry.PyroHilt);
                     output.accept((ItemLike) MartialRegistry.ABJURANTMACE);
+                    output.accept(MartialRegistry.AbjurantHead);
+                    output.accept(MartialRegistry.AbjurantHandle);
                     output.accept(MartialRegistry.BlankInlay);
                     output.accept(MartialRegistry.DelayInlay);
                     output.accept(MartialRegistry.LuckInlay);
