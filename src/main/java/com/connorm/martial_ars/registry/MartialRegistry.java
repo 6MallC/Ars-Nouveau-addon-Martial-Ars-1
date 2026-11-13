@@ -252,6 +252,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             "attributes.martial_ars.elemental_potency", 0, -1000, 1000).setSyncable(true));
         public static final Holder<Attribute> AilmentDuration = ATTRIBUTES.register("ailment_duration", () -> new RangedAttribute(
                 "attributes.martial_ars.ailment_duration", 1, -0, 100).setSyncable(true));
+        public static final Holder<Attribute> WhirliHealing = ATTRIBUTES.register("whirli_healing", () -> new RangedAttribute(
+                "attributes.martial_ars.whirli_heal", 1, -0, 100).setSyncable(true));
 
     @SubscribeEvent
     public static void modifyEntityAttributes(@NotNull EntityAttributeModificationEvent event) {

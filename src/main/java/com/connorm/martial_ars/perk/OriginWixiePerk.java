@@ -22,7 +22,7 @@ public class OriginWixiePerk extends Perk {
 
     @Override
     public String getLangName() {
-        return "Origin: Wixie";
+        return "Origin: The Wixie";
     }
 
     @Override

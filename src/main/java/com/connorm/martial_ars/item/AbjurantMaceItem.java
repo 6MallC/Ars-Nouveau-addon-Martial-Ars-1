@@ -49,7 +49,7 @@ public class AbjurantMaceItem extends MaceItem implements ICasterTool, IManaDisc
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (attacker instanceof ServerPlayer serverplayer) {
             AbstractCaster<?> caster = getSpellCaster(stack);
-            IWrappedCaster wrappedCaster = attacker instanceof  Player player ? new PlayerCaster(player) : new LivingCaster(attacker);
+            IWrappedCaster wrappedCaster = attacker instanceof Player player ? new PlayerCaster(player) : new LivingCaster(attacker);
             SpellContext context = new SpellContext(attacker.level(), caster.modifySpellBeforeCasting((ServerLevel) target.level(), attacker, InteractionHand.MAIN_HAND, caster.getSpell()), attacker, wrappedCaster, stack);
             SpellResolver resolver = attacker instanceof Player ? new SpellResolver(context) : new EntitySpellResolver(context);
             EntityHitResult entityRes = new EntityHitResult(target);

@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class PotencyAttributeEventHandler {
+public class PotencyEventHandler {
 
     // credit to AlexThw and SauceLib as most of the raw code for the potency attributes was taken from there
     public static final Map<SpellSchool, Holder<Attribute>> schoolToEffectAttribute = new ConcurrentHashMap<>();
@@ -40,7 +40,7 @@ public class PotencyAttributeEventHandler {
 
    @SubscribeEvent
    public static void onPotionAdd(MobEffectEvent.Added event) {
-// note lyrellion if you are reading this and want to make bagels for elemancy. I ask you keep the double schools to 37.5 and the quad school to 25 for balancing reasons
+//lyrellion if you are reading this and want to make bagels for elemancy. I ask you keep the double schools to 37.5 and the quad school to 25 for balancing reasons
        LivingEntity living = event.getEntity();
        Set<SpellSchool> schools;
        if (living.getAttribute(MartialRegistry.ELEMENTAL_POTENCY) != null) {

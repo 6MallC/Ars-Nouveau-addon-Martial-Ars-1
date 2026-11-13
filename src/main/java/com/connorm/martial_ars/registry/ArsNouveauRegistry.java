@@ -52,5 +52,7 @@ public class ArsNouveauRegistry {
         PerkRegistry.registerPerk(OriginBunclePerk.INSTANCE);
         PerkRegistry.registerPerk(OriginGolemPerk.INSTANCE);
         PerkRegistry.registerPerk(OriginWixiePerk.INSTANCE);
+        PerkRegistry.registerPerk(OriginWardingPerk.INSTANCE);
+        PerkRegistry.registerPerk(OriginWhirliPerk.INSTANCE);
     }
 }
