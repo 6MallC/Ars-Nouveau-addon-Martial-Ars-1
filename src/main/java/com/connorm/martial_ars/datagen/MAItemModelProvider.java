@@ -35,6 +35,7 @@ public class MAItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.OriginSpellPower.get());
         basicItem(MartialRegistry.OriginGolem.get());
         basicItem(MartialRegistry.OriginWarding.get());
+        basicItem(MartialRegistry.OriginTotem.get());
         basicItem(MartialRegistry.OriginBlank.get());
 
 

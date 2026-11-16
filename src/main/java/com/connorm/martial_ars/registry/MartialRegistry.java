@@ -123,6 +123,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> OriginWhirli = (DeferredItem<Item>) ITEMS.register("origin_thread_whirli",
             () -> new Item(new Item.Properties()));
+        public static final DeferredItem<Item> OriginTotem = (DeferredItem<Item>) ITEMS.register("origin_thread_undying",
+                () -> new Item(new Item.Properties()));
         public static final DeferredItem<Item> OriginBlank = (DeferredItem<Item>) ITEMS.register("origin_thread_blank",
                 () -> new Item(new Item.Properties()));
     // TOOLS
