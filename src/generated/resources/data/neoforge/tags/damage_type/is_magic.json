@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "martial_ars:evil_fall",
+      "required": false
+    },
+    {
+      "id": "martial_ars:refraction",
+      "required": false
+    }
+  ]
+}

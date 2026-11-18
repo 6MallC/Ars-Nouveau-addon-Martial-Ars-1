@@ -36,15 +36,21 @@ public class ArcaneForgeEntity extends BlockEntity implements MenuProvider {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
         }
-        /*
+
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack){
             switch (slot){
                 case 0:
-                    return true; //stack.getTags() == MartialTags.Items.Weapon_Handles;
+                    return stack.is(MartialTags.Items.Weapon_Handles);
+                case 1:
+                    return stack.is(MartialTags.Items.Weapon_Heads);
+                case 2:
+                    return stack.is(MartialTags.Items.Matrices);
+                case 3:
+                    return stack.is(MartialTags.Items.Martial_Weapons);
             }
             return false;
-        }*/
+        }
     };
 
 

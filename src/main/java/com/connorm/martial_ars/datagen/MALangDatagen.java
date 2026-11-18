@@ -28,11 +28,11 @@ public class MALangDatagen extends LanguageProvider {
         add("item.martial_ars.spear_handle", "Enchanter's Spear Handle");
         add("item.martial_ars.spear_head","Enchanter's Spear Head");
         add("item.martial_ars.enchanters_kunai","Enchanter's Kunai");
-        add("item.martial_ars.blank_inlay","Blank Inlay");
-        add("item.martial_ars.delay_inlay", "Delay Inlay");
-        add("item.martial_ars.luck_inlay", "Luck Inlay");
-        add("item.martial_ars.attack_inlay", "Attack Inlay");
-        add("item.martial_ars.discount_inlay", "Discount Inlay");
+        add("item.martial_ars.blank_inlay","Blank Etching");
+        add("item.martial_ars.delay_inlay", "Delay Etching");
+        add("item.martial_ars.luck_inlay", "Luck Etching");
+        add("item.martial_ars.attack_inlay", "Attack Etching");
+        add("item.martial_ars.discount_inlay", "Discount Etching");
         add("item.martial_ars.kunai_handle", "Enchanter's Kunai Handle");
         add("item.martial_ars.kunai_blade", "Enchanter's Kunai Blade");
         add("martial_ars.spear.invalid", "Hey uh, take the form glyph off your spell and try again.");

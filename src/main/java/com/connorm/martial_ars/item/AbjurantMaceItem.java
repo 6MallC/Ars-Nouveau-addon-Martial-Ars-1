@@ -1,16 +1,21 @@
 package com.connorm.martial_ars.item;
 
 import com.hollingsworth.arsnouveau.api.item.ICasterTool;
+import com.hollingsworth.arsnouveau.api.mana.IManaCap;
 import com.hollingsworth.arsnouveau.api.mana.IManaDiscountEquipment;
 import com.hollingsworth.arsnouveau.api.spell.*;
 import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.IWrappedCaster;
 import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.LivingCaster;
 import com.hollingsworth.arsnouveau.api.spell.wrapped_caster.PlayerCaster;
+import com.hollingsworth.arsnouveau.api.util.CuriosUtil;
 import com.hollingsworth.arsnouveau.client.gui.SpellTooltip;
+import com.hollingsworth.arsnouveau.common.mixin.LivingAccessor;
 import com.hollingsworth.arsnouveau.common.perk.RepairingPerk;
 import com.hollingsworth.arsnouveau.common.spell.method.MethodTouch;
 import com.hollingsworth.arsnouveau.common.util.PortUtil;
 import com.hollingsworth.arsnouveau.setup.config.Config;
+import com.hollingsworth.arsnouveau.setup.registry.CapabilityRegistry;
+import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -23,6 +28,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
@@ -30,6 +36,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MaceItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -91,7 +99,28 @@ public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Pl
        return InteractionResultHolder.sidedSuccess(itemstack,pLevel.isClientSide());
 }
 
+    public static void doJump(Player player) {
 
+        if (!CuriosUtil.hasItem(player, ItemsRegistry.JUMP_RING.get()) && player.hasItemInSlot(EquipmentSlot.MAINHAND)) {
+            IManaCap manaCap = CapabilityRegistry.getMana(player);
+            if (manaCap == null || (manaCap.getCurrentMana() < Config.JUMP_RING_COST.get() && !player.isCreative())) {
+                return;
+            }
+            if (player.isSpectator() || player.abilities.flying || player.isSwimming()) {
+                return;
+            }
+            manaCap.removeMana(Config.JUMP_RING_COST.get());
+            LivingAccessor accessor = (LivingAccessor) player;
+            double d0 = (double) accessor.callGetJumpPower() + player.getJumpBoostPower() + 0.1f;
+            Vec3 lookVec = player.getLookAngle();
+            double lookScale = 0.7;
+            player.setDeltaMovement(lookVec.x * lookScale, d0, lookVec.z * lookScale);
+            player.hasImpulse = true;
+            player.hurtMarked = true;
+            player.fallDistance = 0;
+            CommonHooks.onLivingJump(player);
+        }
+    }
 
 
     @Override

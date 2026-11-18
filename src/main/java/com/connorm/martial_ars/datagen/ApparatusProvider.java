@@ -57,6 +57,18 @@ public class ApparatusProvider extends ApparatusRecipeProvider {
                     .withPedestalItem(8,MartialRegistry.SourceIngot)
                     .build()
             );
+            recipes.add(builder()
+                    .withResult(MartialRegistry.CONTAMINATIONPERK)
+                    .withReagent(ItemsRegistry.BLANK_THREAD)
+                    .withPedestalItem(3,ItemsRegistry.EARTH_ESSENCE)
+                    .build()
+            );
+            recipes.add(builder()
+                    .withResult(MartialRegistry.EvaporationPERK)
+                    .withReagent(ItemsRegistry.BLANK_THREAD)
+                    .withPedestalItem(3,ItemsRegistry.WATER_ESSENCE)
+                    .build()
+            );
         }
 
     }

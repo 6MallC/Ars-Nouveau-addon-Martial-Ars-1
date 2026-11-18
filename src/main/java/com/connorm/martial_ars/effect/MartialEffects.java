@@ -17,8 +17,14 @@ public class MartialEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
     DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, MartialArs.MODID);
 
+    // Special
     public static final Holder<MobEffect> REPAIR_EFFECT = MOB_EFFECTS.register("repairing",
             () -> new RepairEffect(MobEffectCategory.BENEFICIAL, 20021));
+    public static final Holder<MobEffect> WEAK_KNEES_EFFECT = MOB_EFFECTS.register("fall_vulnerability",
+            () -> new WeakKneesEffect(MobEffectCategory.HARMFUL, 20021));
+
+
+    // Attribute Mods
     public static final DeferredHolder<MobEffect, MobEffect> MANA_DECAY_EFFECT = MOB_EFFECTS.register("mana_decay",
             () -> new PublicEffect(MobEffectCategory.HARMFUL, 8080895).addAttributeModifier(PerkAttributes.MANA_REGEN_BONUS, ArsNouveau.prefix("mana_regen_bonus"), -10, AttributeModifier.Operation.ADD_VALUE));
 

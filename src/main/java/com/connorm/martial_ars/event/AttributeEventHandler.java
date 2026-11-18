@@ -16,6 +16,9 @@ public class AttributeEventHandler {
         LivingEntity target = event.getEntity();
         if (target.level.isClientSide)
             return;
+        if (event.getEffectInstance().duration == -1){
+            return;
+        }
         double bonus = 0.0;
         Holder<MobEffect> holder = event.getEffectInstance().getEffect();
         MobEffect effect = holder.value();
@@ -26,7 +29,7 @@ public class AttributeEventHandler {
             event.getEffectInstance().duration = (int) (event.getEffectInstance().duration * bonus);
         }
     }
-
+    @SubscribeEvent
     public static void handleHealing(LivingHealEvent event) {
         if (event.getEntity() instanceof Player player) {
            double bonus = PerkUtil.valueOrZero(player, MartialRegistry.WhirliHealing);

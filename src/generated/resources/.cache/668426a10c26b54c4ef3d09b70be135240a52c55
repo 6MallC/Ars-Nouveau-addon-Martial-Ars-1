@@ -1,0 +1,5 @@
+// 1.21.1	2026-11-17T19:04:22.3139662	Tags for minecraft:damage_type mod id martial_ars
+9510df247c72c6b65bf51b3996899c05cde5dfe1 data/minecraft/tags/damage_type/bypasses_armor.json
+5e83858e911ee656a059e8000529846eba1d217e data/minecraft/tags/damage_type/bypasses_cooldown.json
+9510df247c72c6b65bf51b3996899c05cde5dfe1 data/minecraft/tags/damage_type/no_knockback.json
+9510df247c72c6b65bf51b3996899c05cde5dfe1 data/neoforge/tags/damage_type/is_magic.json

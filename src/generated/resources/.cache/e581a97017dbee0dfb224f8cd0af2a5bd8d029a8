@@ -1,5 +1,7 @@
-// 1.21.1	2026-09-30T01:03:56.8828279	Apparatus
+// 1.21.1	2026-11-18T09:27:36.7968136	Apparatus
 070ffb41f26c7b71b1611e61a3d784a2e93e1a20 data/ars_nouveau/recipe/mages_shades_item.json
 891b3d691c90981c8a107beaeeb45b699f9ec1e5 data/ars_nouveau/recipe/sourceingot_block.json
 88e3d0425edfc85f2f22b7946d95256efe90b4ae data/ars_nouveau/recipe/source_ingot.json
 c89be31b0db00aa312084bf54f541d9d1f611c38 data/ars_nouveau/recipe/source_matrix.json
+b96c29ebd20167d0dd05b2b8faf4f2bf8ed27485 data/ars_nouveau/recipe/thread_contamination.json
+92d9fdb5326e2f087f0a06496b6fa171c63d9777 data/ars_nouveau/recipe/thread_evaporation.json

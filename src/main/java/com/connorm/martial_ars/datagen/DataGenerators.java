@@ -41,8 +41,10 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ImbuementProvider(generator));
         generator.addProvider(event.includeServer(), new GlyphProvider(generator));
         generator.addProvider(event.includeServer(), new ApparatusProvider(generator));
-        generator.addProvider(event.includeServer(), new PotionEffectTagProvider(output, provider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new MAPotionEffectTagProvider(output, provider, existingFileHelper));
         generator.addProvider(event.includeClient(), new MALangDatagen(output, MartialArs.MODID, "en_us"));
         generator.addProvider(event.includeServer(), new MABladeCasterTomeProvider(generator));
+        event.getGenerator().addProvider(event.includeServer(), new MADamageTypeProvider(output, provider));
+        event.getGenerator().addProvider(event.includeServer(), new MADamageTypeProvider.MADamageTagsProvider(output, provider, existingFileHelper));
     }
 }

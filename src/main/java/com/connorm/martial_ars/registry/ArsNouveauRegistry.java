@@ -55,5 +55,7 @@ public class ArsNouveauRegistry {
         PerkRegistry.registerPerk(OriginWardingPerk.INSTANCE);
         PerkRegistry.registerPerk(OriginWhirliPerk.INSTANCE);
         PerkRegistry.registerPerk(OriginUndyingPerk.INSTANCE);
+        PerkRegistry.registerPerk(ContaminationPerk.INSTANCE);
+        PerkRegistry.registerPerk(EvaporationPerk.INSTANCE);
     }
 }

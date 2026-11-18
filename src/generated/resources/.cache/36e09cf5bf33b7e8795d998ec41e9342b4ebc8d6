@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-16T04:23:48.6417106	Item Models: martial_ars
+// 1.21.1	2026-11-18T08:01:51.8355543	Item Models: martial_ars
 1909b9936a5362416837336535e4155ab809735b assets/martial_ars/models/item/air_bagel.json
 c2d93964fb6c6fc948a9381002caeddfd5a6abec assets/martial_ars/models/item/archmage.armament.json
 571c57483fc378ac3a8ae6f57016df102fbbfcea assets/martial_ars/models/item/attack_inlay.json
@@ -22,4 +22,6 @@ dfa22a8722d8136cfc9a6a254dcd9f7f9481d3b6 assets/martial_ars/models/item/origin_t
 564590311c839716f840fca46b85f9e4b3b7dd0f assets/martial_ars/models/item/origin_thread_wixie.json
 5e57fdcaeba4a8b43ecf219fe20bc5501847c791 assets/martial_ars/models/item/source_ingot.json
 7afae59f7d81739a9206b3a3b3172e9c8540790a assets/martial_ars/models/item/source_matrix.json
+3d57f59ca988ea15eb39dc5212e78a79ac1c5527 assets/martial_ars/models/item/thread_contamination.json
+ac914fc87e83bfdb7060ae2566508a4575e42817 assets/martial_ars/models/item/thread_evaporation.json
 13793a562d9ad8224acc8fd4b459a996e1035fdc assets/martial_ars/models/item/water_bagel.json

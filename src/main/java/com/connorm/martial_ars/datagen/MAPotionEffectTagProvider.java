@@ -14,9 +14,9 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
- public class PotionEffectTagProvider extends IntrinsicHolderTagsProvider<MobEffect>  {
+ public class MAPotionEffectTagProvider extends IntrinsicHolderTagsProvider<MobEffect>  {
 
-        public PotionEffectTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        public MAPotionEffectTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper) {
             super(pOutput, Registries.MOB_EFFECT, pProvider, ef -> BuiltInRegistries.MOB_EFFECT.getResourceKey(ef).get(), ArsNouveau.MODID, existingFileHelper);
         }
 

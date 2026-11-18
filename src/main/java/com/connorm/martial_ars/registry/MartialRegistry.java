@@ -1,5 +1,6 @@
 package com.connorm.martial_ars.registry;
 import com.alexthw.sauce.registry.ModRegistry;
+import com.connorm.martial_ars.MartialArs;
 import com.connorm.martial_ars.block.ArcaneForgeBlock;
 import com.connorm.martial_ars.item.*;
 import com.connorm.martial_ars.item.curio.bangles.AirBagles;
@@ -16,9 +17,12 @@ import com.hollingsworth.arsnouveau.api.spell.SpellCaster;
 import com.hollingsworth.arsnouveau.setup.registry.DataComponentRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -127,6 +131,12 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                 () -> new Item(new Item.Properties()));
         public static final DeferredItem<Item> OriginBlank = (DeferredItem<Item>) ITEMS.register("origin_thread_blank",
                 () -> new Item(new Item.Properties()));
+
+        public static final DeferredItem<Item> CONTAMINATIONPERK = (DeferredItem<Item>) ITEMS.register("thread_contamination",
+                () -> new Item(new Item.Properties()));
+        public static final DeferredItem<Item> EvaporationPERK = (DeferredItem<Item>) ITEMS.register("thread_evaporation",
+                () -> new Item(new Item.Properties()));
+
     // TOOLS
 
     public static final DeferredItem<KunaiItem> EnchantersKunai = (DeferredItem<KunaiItem>) ITEMS.register("enchanters_kunai",
@@ -263,6 +273,11 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                 .forEach(player -> ATTRIBUTES.getEntries().forEach(
                         v -> event.add(player, v)));
     }
+
+    // Damage Types
+    public static final ResourceKey<DamageType> EVILFALL = ResourceKey.create(Registries.DAMAGE_TYPE, MartialArs.prefix("evil_fall"));
+        public static final ResourceKey<DamageType> REFRACTION = ResourceKey.create(Registries.DAMAGE_TYPE, MartialArs.prefix("refraction"));
+
     // BLOCKS
     public static final DeferredBlock<Block> sourceingot_block = registerBlock("sourceingot_block",
             () -> new Block(BlockBehaviour.Properties.of()
