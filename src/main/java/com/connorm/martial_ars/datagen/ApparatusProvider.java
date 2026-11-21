@@ -69,6 +69,12 @@ public class ApparatusProvider extends ApparatusRecipeProvider {
                     .withPedestalItem(3,ItemsRegistry.WATER_ESSENCE)
                     .build()
             );
+            recipes.add(builder()
+                    .withResult(MartialRegistry.ElectrocutionPERK)
+                    .withReagent(ItemsRegistry.BLANK_THREAD)
+                    .withPedestalItem(3,ItemsRegistry.AIR_ESSENCE)
+                    .build()
+            );
         }
 
     }

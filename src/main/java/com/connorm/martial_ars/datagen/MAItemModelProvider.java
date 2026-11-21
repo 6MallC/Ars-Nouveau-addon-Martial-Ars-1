@@ -39,6 +39,7 @@ public class MAItemModelProvider extends ItemModelProvider {
         basicItem(MartialRegistry.OriginBlank.get());
         basicItem(MartialRegistry.CONTAMINATIONPERK.get());
         basicItem(MartialRegistry.EvaporationPERK.get());
+        basicItem(MartialRegistry.ElectrocutionPERK.get());
 
 
 

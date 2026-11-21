@@ -136,6 +136,8 @@ import static net.minecraft.core.registries.Registries.SOUND_EVENT;
                 () -> new Item(new Item.Properties()));
         public static final DeferredItem<Item> EvaporationPERK = (DeferredItem<Item>) ITEMS.register("thread_evaporation",
                 () -> new Item(new Item.Properties()));
+        public static final DeferredItem<Item> ElectrocutionPERK = (DeferredItem<Item>) ITEMS.register("thread_electrocution",
+                () -> new Item(new Item.Properties()));
 
     // TOOLS
 
