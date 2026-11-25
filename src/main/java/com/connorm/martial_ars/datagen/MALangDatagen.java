@@ -73,6 +73,9 @@ public class MALangDatagen extends LanguageProvider {
         add("item.martial_ars.origin_thread_blank", "Blank Origin Thread");
         add("attributes.martial_ars.ailment_duration","Ailment Duration");
         add("attributes.martial_ars.whirli_heal","Healing Multiplier");
+        add("effect.martial_ars.contaminate_effect", "Contaminate");
+        add("effect.martial_ars.evaporate_effect", "Evaporate");
+        add("effect.martial_ars.electrocute_effect", "Electrocute");
 
 
         // add("", "");
